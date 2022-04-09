@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>处理输出 | WaleGarrett</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/notes/logo.jpg">
+    <meta name="description" content="WaleGarrett的学习记录">
+    
+    <link rel="preload" href="/notes/assets/css/0.styles.54ab1000.css" as="style"><link rel="preload" href="/notes/assets/js/app.c9da24a6.js" as="script"><link rel="preload" href="/notes/assets/js/3.15042843.js" as="script"><link rel="preload" href="/notes/assets/js/1.8ca8e0eb.js" as="script"><link rel="preload" href="/notes/assets/js/69.a4267fbd.js" as="script"><link rel="prefetch" href="/notes/assets/js/10.1becd84f.js"><link rel="prefetch" href="/notes/assets/js/100.e686635a.js"><link rel="prefetch" href="/notes/assets/js/101.d90ba6a2.js"><link rel="prefetch" href="/notes/assets/js/102.37c9c783.js"><link rel="prefetch" href="/notes/assets/js/103.dec1797e.js"><link rel="prefetch" href="/notes/assets/js/104.9e4cdf99.js"><link rel="prefetch" href="/notes/assets/js/105.8616c171.js"><link rel="prefetch" href="/notes/assets/js/106.bc2f20eb.js"><link rel="prefetch" href="/notes/assets/js/107.4fc0003b.js"><link rel="prefetch" href="/notes/assets/js/108.f7ed7756.js"><link rel="prefetch" href="/notes/assets/js/109.867fe8d3.js"><link rel="prefetch" href="/notes/assets/js/11.11eeb9c8.js"><link rel="prefetch" href="/notes/assets/js/110.ce3c1db9.js"><link rel="prefetch" href="/notes/assets/js/111.5f88fd17.js"><link rel="prefetch" href="/notes/assets/js/112.0ec3be4a.js"><link rel="prefetch" href="/notes/assets/js/113.b17af37a.js"><link rel="prefetch" href="/notes/assets/js/114.c3bd0ee7.js"><link rel="prefetch" href="/notes/assets/js/115.e942f535.js"><link rel="prefetch" href="/notes/assets/js/116.a07fe354.js"><link rel="prefetch" href="/notes/assets/js/117.7f109010.js"><link rel="prefetch" href="/notes/assets/js/118.70cf9c49.js"><link rel="prefetch" href="/notes/assets/js/119.68965728.js"><link rel="prefetch" href="/notes/assets/js/12.e21b4812.js"><link rel="prefetch" href="/notes/assets/js/120.9065ed1d.js"><link rel="prefetch" href="/notes/assets/js/121.a8a35fe7.js"><link rel="prefetch" href="/notes/assets/js/122.70596256.js"><link rel="prefetch" href="/notes/assets/js/123.b9715cd7.js"><link rel="prefetch" href="/notes/assets/js/124.7345d826.js"><link rel="prefetch" href="/notes/assets/js/125.d4392f5d.js"><link rel="prefetch" href="/notes/assets/js/126.ff7fff9e.js"><link rel="prefetch" href="/notes/assets/js/127.acc1dff7.js"><link rel="prefetch" href="/notes/assets/js/128.81dcc7a3.js"><link rel="prefetch" href="/notes/assets/js/129.6c2d778a.js"><link rel="prefetch" href="/notes/assets/js/13.afb6371c.js"><link rel="prefetch" href="/notes/assets/js/130.1c463291.js"><link rel="prefetch" href="/notes/assets/js/131.fade390b.js"><link rel="prefetch" href="/notes/assets/js/132.a1fe16f6.js"><link rel="prefetch" href="/notes/assets/js/133.a719a028.js"><link rel="prefetch" href="/notes/assets/js/134.66c5c006.js"><link rel="prefetch" href="/notes/assets/js/135.5b78fa9f.js"><link rel="prefetch" href="/notes/assets/js/136.2e6405e5.js"><link rel="prefetch" href="/notes/assets/js/137.41fb8a7a.js"><link rel="prefetch" href="/notes/assets/js/138.06de929f.js"><link rel="prefetch" href="/notes/assets/js/139.2f7ab686.js"><link rel="prefetch" href="/notes/assets/js/14.a2175c4c.js"><link rel="prefetch" href="/notes/assets/js/140.6918a01b.js"><link rel="prefetch" href="/notes/assets/js/141.95f9f12a.js"><link rel="prefetch" href="/notes/assets/js/142.aa0cee93.js"><link rel="prefetch" href="/notes/assets/js/143.d60a38b0.js"><link rel="prefetch" href="/notes/assets/js/144.638c8e0a.js"><link rel="prefetch" href="/notes/assets/js/145.1a1685af.js"><link rel="prefetch" href="/notes/assets/js/146.bc665756.js"><link rel="prefetch" href="/notes/assets/js/147.809233d9.js"><link rel="prefetch" href="/notes/assets/js/148.d6b15e4e.js"><link rel="prefetch" href="/notes/assets/js/149.646dfac5.js"><link rel="prefetch" href="/notes/assets/js/15.7ec2be59.js"><link rel="prefetch" href="/notes/assets/js/150.64b53d63.js"><link rel="prefetch" href="/notes/assets/js/151.0984c27e.js"><link rel="prefetch" href="/notes/assets/js/152.42cf7076.js"><link rel="prefetch" href="/notes/assets/js/153.80ae1b86.js"><link rel="prefetch" href="/notes/assets/js/154.1b7e1514.js"><link rel="prefetch" href="/notes/assets/js/155.0a6c1fb7.js"><link rel="prefetch" href="/notes/assets/js/156.916e2a53.js"><link rel="prefetch" href="/notes/assets/js/157.8d361889.js"><link rel="prefetch" href="/notes/assets/js/158.858d71f6.js"><link rel="prefetch" href="/notes/assets/js/159.9a2f07f9.js"><link rel="prefetch" href="/notes/assets/js/16.679c7661.js"><link rel="prefetch" href="/notes/assets/js/160.4f54106a.js"><link rel="prefetch" href="/notes/assets/js/161.3cc67e9e.js"><link rel="prefetch" href="/notes/assets/js/162.c94a5be4.js"><link rel="prefetch" href="/notes/assets/js/163.dc11bf4c.js"><link rel="prefetch" href="/notes/assets/js/164.5f0bb30d.js"><link rel="prefetch" href="/notes/assets/js/165.17595a0b.js"><link rel="prefetch" href="/notes/assets/js/166.26cc364b.js"><link rel="prefetch" href="/notes/assets/js/167.a8b2ddf0.js"><link rel="prefetch" href="/notes/assets/js/168.17f43071.js"><link rel="prefetch" href="/notes/assets/js/169.d5e82e04.js"><link rel="prefetch" href="/notes/assets/js/17.016980ed.js"><link rel="prefetch" href="/notes/assets/js/170.11696f57.js"><link rel="prefetch" href="/notes/assets/js/171.70305f2f.js"><link rel="prefetch" href="/notes/assets/js/172.f4b63da4.js"><link rel="prefetch" href="/notes/assets/js/173.42057c95.js"><link rel="prefetch" href="/notes/assets/js/174.246a6e0b.js"><link rel="prefetch" href="/notes/assets/js/175.4855ab27.js"><link rel="prefetch" href="/notes/assets/js/176.d75790bd.js"><link rel="prefetch" href="/notes/assets/js/177.f616c3f5.js"><link rel="prefetch" href="/notes/assets/js/178.659b087d.js"><link rel="prefetch" href="/notes/assets/js/179.010eacce.js"><link rel="prefetch" href="/notes/assets/js/18.6f1dbb8f.js"><link rel="prefetch" href="/notes/assets/js/180.a11dd312.js"><link rel="prefetch" href="/notes/assets/js/181.c74fb0b6.js"><link rel="prefetch" href="/notes/assets/js/182.4f548539.js"><link rel="prefetch" href="/notes/assets/js/183.32dc4b08.js"><link rel="prefetch" href="/notes/assets/js/184.7b15f3e9.js"><link rel="prefetch" href="/notes/assets/js/185.ad484525.js"><link rel="prefetch" href="/notes/assets/js/186.db3693bc.js"><link rel="prefetch" href="/notes/assets/js/187.2a0df038.js"><link rel="prefetch" href="/notes/assets/js/188.987a82c9.js"><link rel="prefetch" href="/notes/assets/js/189.c693f3a1.js"><link rel="prefetch" href="/notes/assets/js/19.9e1eac04.js"><link rel="prefetch" href="/notes/assets/js/190.2e253fc8.js"><link rel="prefetch" href="/notes/assets/js/191.d70ee914.js"><link rel="prefetch" href="/notes/assets/js/192.4f808c44.js"><link rel="prefetch" href="/notes/assets/js/193.133fd0a8.js"><link rel="prefetch" href="/notes/assets/js/194.c1c26af9.js"><link rel="prefetch" href="/notes/assets/js/195.5d112624.js"><link rel="prefetch" href="/notes/assets/js/196.e756a155.js"><link rel="prefetch" href="/notes/assets/js/197.6f9b8105.js"><link rel="prefetch" href="/notes/assets/js/198.3c59ba72.js"><link rel="prefetch" href="/notes/assets/js/199.15e2d96e.js"><link rel="prefetch" href="/notes/assets/js/20.e41f5564.js"><link rel="prefetch" href="/notes/assets/js/200.992db7f7.js"><link rel="prefetch" href="/notes/assets/js/201.9c266b22.js"><link rel="prefetch" href="/notes/assets/js/202.842ef603.js"><link rel="prefetch" href="/notes/assets/js/203.01bca3f3.js"><link rel="prefetch" href="/notes/assets/js/204.f9c2a70d.js"><link rel="prefetch" href="/notes/assets/js/205.f9268403.js"><link rel="prefetch" href="/notes/assets/js/206.4cf08b44.js"><link rel="prefetch" href="/notes/assets/js/207.0ef45ecc.js"><link rel="prefetch" href="/notes/assets/js/208.0ac3b838.js"><link rel="prefetch" href="/notes/assets/js/209.5e055156.js"><link rel="prefetch" href="/notes/assets/js/21.2d865954.js"><link rel="prefetch" href="/notes/assets/js/210.d8204d91.js"><link rel="prefetch" href="/notes/assets/js/211.acc0168d.js"><link rel="prefetch" href="/notes/assets/js/212.5eec4fbf.js"><link rel="prefetch" href="/notes/assets/js/213.272bf6e6.js"><link rel="prefetch" href="/notes/assets/js/214.bf006247.js"><link rel="prefetch" href="/notes/assets/js/215.f11c4fd7.js"><link rel="prefetch" href="/notes/assets/js/216.cf94ea1b.js"><link rel="prefetch" href="/notes/assets/js/217.330e075c.js"><link rel="prefetch" href="/notes/assets/js/218.0b9e982c.js"><link rel="prefetch" href="/notes/assets/js/219.7e778a76.js"><link rel="prefetch" href="/notes/assets/js/22.88dd9e53.js"><link rel="prefetch" href="/notes/assets/js/220.6d5ffbc6.js"><link rel="prefetch" href="/notes/assets/js/221.bac51660.js"><link rel="prefetch" href="/notes/assets/js/23.a8a4e106.js"><link rel="prefetch" href="/notes/assets/js/24.6a7395f6.js"><link rel="prefetch" href="/notes/assets/js/25.3e79ff45.js"><link rel="prefetch" href="/notes/assets/js/26.33e76c58.js"><link rel="prefetch" href="/notes/assets/js/27.2e20fce9.js"><link rel="prefetch" href="/notes/assets/js/28.92202fbe.js"><link rel="prefetch" href="/notes/assets/js/29.31e72924.js"><link rel="prefetch" href="/notes/assets/js/30.63118840.js"><link rel="prefetch" href="/notes/assets/js/31.40bb3db2.js"><link rel="prefetch" href="/notes/assets/js/32.34771f12.js"><link rel="prefetch" href="/notes/assets/js/33.12f2bfaf.js"><link rel="prefetch" href="/notes/assets/js/34.0685ab4b.js"><link rel="prefetch" href="/notes/assets/js/35.497cff30.js"><link rel="prefetch" href="/notes/assets/js/36.1f5c1fc2.js"><link rel="prefetch" href="/notes/assets/js/37.bd6b811a.js"><link rel="prefetch" href="/notes/assets/js/38.a7a23117.js"><link rel="prefetch" href="/notes/assets/js/39.cdf8ca3c.js"><link rel="prefetch" href="/notes/assets/js/4.0716db17.js"><link rel="prefetch" href="/notes/assets/js/40.21388ef8.js"><link rel="prefetch" href="/notes/assets/js/41.ee9dc436.js"><link rel="prefetch" href="/notes/assets/js/42.a3ec0597.js"><link rel="prefetch" href="/notes/assets/js/43.be5d9816.js"><link rel="prefetch" href="/notes/assets/js/44.2f99673b.js"><link rel="prefetch" href="/notes/assets/js/45.c443ff93.js"><link rel="prefetch" href="/notes/assets/js/46.bd004ac4.js"><link rel="prefetch" href="/notes/assets/js/47.20add895.js"><link rel="prefetch" href="/notes/assets/js/48.1c5da96b.js"><link rel="prefetch" href="/notes/assets/js/49.31c7e29d.js"><link rel="prefetch" href="/notes/assets/js/5.03d74ef1.js"><link rel="prefetch" href="/notes/assets/js/50.b48ca783.js"><link rel="prefetch" href="/notes/assets/js/51.b4bc061c.js"><link rel="prefetch" href="/notes/assets/js/52.77dc2135.js"><link rel="prefetch" href="/notes/assets/js/53.3fc2d110.js"><link rel="prefetch" href="/notes/assets/js/54.ab331494.js"><link rel="prefetch" href="/notes/assets/js/55.59fa9d3a.js"><link rel="prefetch" href="/notes/assets/js/56.6864911d.js"><link rel="prefetch" href="/notes/assets/js/57.44dbdabe.js"><link rel="prefetch" href="/notes/assets/js/58.516ab1c4.js"><link rel="prefetch" href="/notes/assets/js/59.56d4d38d.js"><link rel="prefetch" href="/notes/assets/js/6.c1d1ac7a.js"><link rel="prefetch" href="/notes/assets/js/60.9038d0d8.js"><link rel="prefetch" href="/notes/assets/js/61.d5696bbd.js"><link rel="prefetch" href="/notes/assets/js/62.59b5f172.js"><link rel="prefetch" href="/notes/assets/js/63.e9c7508b.js"><link rel="prefetch" href="/notes/assets/js/64.4241a14e.js"><link rel="prefetch" href="/notes/assets/js/65.91a07396.js"><link rel="prefetch" href="/notes/assets/js/66.b82f5c7e.js"><link rel="prefetch" href="/notes/assets/js/67.afcaae6c.js"><link rel="prefetch" href="/notes/assets/js/68.d4eb82fd.js"><link rel="prefetch" href="/notes/assets/js/7.8e24ac99.js"><link rel="prefetch" href="/notes/assets/js/70.430fd8cd.js"><link rel="prefetch" href="/notes/assets/js/71.1016e8c6.js"><link rel="prefetch" href="/notes/assets/js/72.9ec57099.js"><link rel="prefetch" href="/notes/assets/js/73.20c4449a.js"><link rel="prefetch" href="/notes/assets/js/74.39b9604e.js"><link rel="prefetch" href="/notes/assets/js/75.4f09e706.js"><link rel="prefetch" href="/notes/assets/js/76.88ffa9c5.js"><link rel="prefetch" href="/notes/assets/js/77.eec6caf8.js"><link rel="prefetch" href="/notes/assets/js/78.166b5a56.js"><link rel="prefetch" href="/notes/assets/js/79.ef2af5da.js"><link rel="prefetch" href="/notes/assets/js/8.00d48dd8.js"><link rel="prefetch" href="/notes/assets/js/80.c0eb3a50.js"><link rel="prefetch" href="/notes/assets/js/81.21ed8523.js"><link rel="prefetch" href="/notes/assets/js/82.a7717793.js"><link rel="prefetch" href="/notes/assets/js/83.cb39ac8d.js"><link rel="prefetch" href="/notes/assets/js/84.3a0c34dc.js"><link rel="prefetch" href="/notes/assets/js/85.379f9075.js"><link rel="prefetch" href="/notes/assets/js/86.500344a3.js"><link rel="prefetch" href="/notes/assets/js/87.a52c8c96.js"><link rel="prefetch" href="/notes/assets/js/88.d14778d2.js"><link rel="prefetch" href="/notes/assets/js/89.ca52efc6.js"><link rel="prefetch" href="/notes/assets/js/9.5b519f35.js"><link rel="prefetch" href="/notes/assets/js/90.8529f3f5.js"><link rel="prefetch" href="/notes/assets/js/91.65963b3b.js"><link rel="prefetch" href="/notes/assets/js/92.041432c3.js"><link rel="prefetch" href="/notes/assets/js/93.d97cc1eb.js"><link rel="prefetch" href="/notes/assets/js/94.4c8de3b2.js"><link rel="prefetch" href="/notes/assets/js/95.81ea24d1.js"><link rel="prefetch" href="/notes/assets/js/96.4190ea57.js"><link rel="prefetch" href="/notes/assets/js/97.a72a27df.js"><link rel="prefetch" href="/notes/assets/js/98.504f98ad.js"><link rel="prefetch" href="/notes/assets/js/99.1da9035d.js">
+    <link rel="stylesheet" href="/notes/assets/css/0.styles.54ab1000.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>WaleGarrett</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>WaleGarrett的学习记录</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes/" class="home-link router-link-active"><img src="/notes/logo.jpg" alt="WaleGarrett" class="logo"> <span class="site-name">WaleGarrett</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>JavaSE</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/JavaSE/" class="nav-link"><i class="undefined"></i>
+  JavaSE基础
+</a></li></ul></li><li class="dropdown-item"><h4>Java IO</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java IO/" class="nav-link"><i class="undefined"></i>
+  Java IO
+</a></li></ul></li><li class="dropdown-item"><h4>Java容器</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java容器/" class="nav-link"><i class="undefined"></i>
+  Java容器
+</a></li></ul></li><li class="dropdown-item"><h4>Java并发</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/多线程与并发/" class="nav-link"><i class="undefined"></i>
+  多线程与并发
+</a></li></ul></li><li class="dropdown-item"><h4>JVM</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java运行时内存区.html" class="nav-link"><i class="undefined"></i>
+  Java运行时内存区
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java内存模型.html" class="nav-link"><i class="undefined"></i>
+  Java内存模型
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/类加载.html" class="nav-link"><i class="undefined"></i>
+  类加载
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/程序编译.html" class="nav-link"><i class="undefined"></i>
+  程序编译
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/虚拟机对象.html" class="nav-link"><i class="undefined"></i>
+  虚拟机对象
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/垃圾收集/" class="nav-link"><i class="undefined"></i>
+  垃圾收集
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/JVM调优.html" class="nav-link"><i class="undefined"></i>
+  JVM调优
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Spring系列
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring/" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring MVC/" class="nav-link"><i class="undefined"></i>
+  Spring MVC
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring Boot/" class="nav-link"><i class="undefined"></i>
+  Spring Boot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      计算机基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>操作系统</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/操作系统/" class="nav-link"><i class="undefined"></i>
+  操作系统知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>计算机网络</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据结构</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/数据库基础/" class="nav-link"><i class="undefined"></i>
+  数据库基础
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/数据库/MySQL/" class="nav-link"><i class="undefined"></i>
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      linux
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux命令/" class="nav-link"><i class="undefined"></i>
+  linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/脚本编程/" class="nav-link"><i class="undefined"></i>
+  脚本编程
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux内存管理/" class="nav-link"><i class="undefined"></i>
+  linux内存管理
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux文件系统/" class="nav-link"><i class="undefined"></i>
+  linux文件系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/git/git基础知识.html" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/maven/maven基础知识.html" class="nav-link"><i class="undefined"></i>
+  maven
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/kafka/" class="nav-link"><i class="undefined"></i>
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/HBase/" class="nav-link"><i class="undefined"></i>
+  HBase
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>ORM框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/MyBatis/" class="nav-link"><i class="undefined"></i>
+  MyBatis框架
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      架构
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/架构/" class="nav-link"><i class="undefined"></i>
+  系统架构
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.cnblogs.com/GarrettWale/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客文章
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><!----> <!----> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>211</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>106</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/notes/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>JavaSE</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/JavaSE/" class="nav-link"><i class="undefined"></i>
+  JavaSE基础
+</a></li></ul></li><li class="dropdown-item"><h4>Java IO</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java IO/" class="nav-link"><i class="undefined"></i>
+  Java IO
+</a></li></ul></li><li class="dropdown-item"><h4>Java容器</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java容器/" class="nav-link"><i class="undefined"></i>
+  Java容器
+</a></li></ul></li><li class="dropdown-item"><h4>Java并发</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/多线程与并发/" class="nav-link"><i class="undefined"></i>
+  多线程与并发
+</a></li></ul></li><li class="dropdown-item"><h4>JVM</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java运行时内存区.html" class="nav-link"><i class="undefined"></i>
+  Java运行时内存区
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java内存模型.html" class="nav-link"><i class="undefined"></i>
+  Java内存模型
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/类加载.html" class="nav-link"><i class="undefined"></i>
+  类加载
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/程序编译.html" class="nav-link"><i class="undefined"></i>
+  程序编译
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/虚拟机对象.html" class="nav-link"><i class="undefined"></i>
+  虚拟机对象
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/垃圾收集/" class="nav-link"><i class="undefined"></i>
+  垃圾收集
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/JVM调优.html" class="nav-link"><i class="undefined"></i>
+  JVM调优
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Spring系列
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring/" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring MVC/" class="nav-link"><i class="undefined"></i>
+  Spring MVC
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring Boot/" class="nav-link"><i class="undefined"></i>
+  Spring Boot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      计算机基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>操作系统</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/操作系统/" class="nav-link"><i class="undefined"></i>
+  操作系统知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>计算机网络</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据结构</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/数据库基础/" class="nav-link"><i class="undefined"></i>
+  数据库基础
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/数据库/MySQL/" class="nav-link"><i class="undefined"></i>
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      linux
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux命令/" class="nav-link"><i class="undefined"></i>
+  linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/脚本编程/" class="nav-link"><i class="undefined"></i>
+  脚本编程
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux内存管理/" class="nav-link"><i class="undefined"></i>
+  linux内存管理
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux文件系统/" class="nav-link"><i class="undefined"></i>
+  linux文件系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/git/git基础知识.html" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/maven/maven基础知识.html" class="nav-link"><i class="undefined"></i>
+  maven
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/kafka/" class="nav-link"><i class="undefined"></i>
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/HBase/" class="nav-link"><i class="undefined"></i>
+  HBase
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>ORM框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/MyBatis/" class="nav-link"><i class="undefined"></i>
+  MyBatis框架
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      架构
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/架构/" class="nav-link"><i class="undefined"></i>
+  系统架构
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.cnblogs.com/GarrettWale/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客文章
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>linux</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux命令/" class="sidebar-heading clickable"><span>linux命令</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux内存管理/" class="sidebar-heading clickable"><span>linux内存管理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux文件系统/" class="sidebar-heading clickable"><span>linux文件系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/脚本编程/" class="sidebar-heading clickable open"><span>脚本编程</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/blog/linux/脚本编程/脚本编程基础.html" class="sidebar-link">脚本编程基础</a></li><li><a href="/notes/blog/linux/脚本编程/处理输入.html" class="sidebar-link">处理输入</a></li><li><a href="/notes/blog/linux/脚本编程/处理输出.html" class="active sidebar-link">处理输出</a></li><li><a href="/notes/blog/linux/脚本编程/结构化命令.html" class="sidebar-link">结构化命令</a></li><li><a href="/notes/blog/linux/脚本编程/函数.html" class="sidebar-link">函数</a></li><li><a href="/notes/blog/linux/脚本编程/sed与gawk.html" class="sidebar-link">sed与gawk</a></li></ul></section></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>处理输出</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page"><section><div class="page-title"><h1 class="title">处理输出</h1> <div data-v-f875f3fc><!----> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>4/1/2022</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>linux</span><span class="tag-item" data-v-f875f3fc>shell</span></i></div></div> <div class="theme-reco-content content__default"><p>到目前为止，本书中出现的脚本都是通过将数据打印在屏幕上或将数据重定向到文件中来显示信息。之前演示了如何将命令的输出重定向到文件中。本章将会展开这个主题，演示如何将脚本的输出重定向到 Linux 系统的不同位置。</p> <h2 id="理解输入和输出"><a href="#理解输入和输出" class="header-anchor">#</a> 理解输入和输出</h2> <p>至此你已经知道了两种显示脚本输出的方法：</p> <ul><li>在显示器屏幕上显示输出</li> <li>将输出重定向到文件中</li></ul> <p>这两种方法要么将数据输出全部显示，要么什么都不显示。但有时将一部分数据在显示器上显示，另一部分数据保存到文件中也是不错的。对此，了解 Linux 如何处理输入输出能够帮助你就能将脚本输出放到正确位置。</p> <p>下面几节会介绍如何用标准的 Linux 输入和输出系统来将脚本输出导向特定位置。</p> <h3 id="标准文件描述符"><a href="#标准文件描述符" class="header-anchor">#</a> 标准文件描述符</h3> <p>Linux 系统将每个对象当作文件处理。这包括输入和输出进程。Linux 用<code>文件描述符</code>（filedescriptor）来标识每个文件对象。<strong>==文件描述符是一个非负整数，可以唯一标识会话中打开的文件==</strong>。每个进程一次最多可以有九个文件描述符。出于特殊目的，bash shell 保留了前三个文件描述符（0、1 和 2）。这三个特殊文件描述符会处理脚本的输入和输出。</p> <ul><li>0 缩写:STDIN 含义:标准输入</li> <li>1 缩写:STDOUT 含义:标准输出</li> <li>2 缩写:STDERR 含义:标准错误</li></ul> <p>shell 用它们将 shell 默认的输入和输出导向到相应的位置。下面几节将会进一步介绍这些标准文件描述符。</p> <ol><li>STDIN</li></ol> <p>STDIN 文件描述符代表 shell 的标准输入。对终端界面来说，标准输入是键盘。shell 从 STDIN 文件描述符对应的键盘获得输入，在用户输入时处理每个字符。</p> <p><strong>在使用输入重定向符号（&lt;）时，Linux 会用重定向指定的文件来替换标准输入文件描述符。它会读取文件并提取数据，就如同它是键盘上键入的。</strong></p> <p>许多 bash 命令能接受 STDIN 的输入，尤其是没有在命令行上指定文件的话。下面是个用 cat 命令处理 STDIN 输入的数据的例子。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span>
+this is a <span class="token builtin class-name">test</span>
+this is a <span class="token builtin class-name">test</span>
+this is a second test.
+this is a second test.
+</code></pre></div><p>当在命令行上只输入 cat 命令时，它会从 STDIN 接受输入。输入一行，cat 命令就会显示出一行。但你也可以通过 STDIN 重定向符号强制 cat 命令接受来自另一个非 STDIN 文件的输入。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> <span class="token operator">&lt;</span> testfile
+This is the first line.
+This is the second line.
+This is the third line.
+$
+</code></pre></div><p>现在 cat 命令会用 testfile 文件中的行作为输入。你可以使用这种技术将数据输入到任何能从 STDIN 接受数据的 shell 命令中。</p> <ol start="2"><li>STDOUT</li></ol> <p>STDOUT 文件描述符代表 shell 的标准输出。在终端界面上，标准输出就是终端显示器。shell 的所有输出（包括 shell 中运行的程序和脚本）会被定向到标准输出中，也就是显示器。</p> <p>默认情况下，大多数 bash 命令会将输出导向 STDOUT 文件描述符。你可以用输出重定向来改变输出位置。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">ls</span> -l <span class="token operator">&gt;</span> test2
+$ <span class="token function">cat</span> test2
+total <span class="token number">20</span>
+-rw-rw-r-- <span class="token number">1</span> rich rich <span class="token number">53</span> <span class="token number">2014</span>-10-16 <span class="token number">11</span>:30 <span class="token builtin class-name">test</span>
+-rw-rw-r-- <span class="token number">1</span> rich rich  <span class="token number">0</span> <span class="token number">2014</span>-10-16 <span class="token number">11</span>:32 test2
+</code></pre></div><p>通过输出重定向符号，通常会显示到显示器的所有输出会被 shell 重定向到指定的重定向文件。你也可以将数据追加到某个文件。这可以用&gt;&gt;符号来完成</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">who</span> <span class="token operator">&gt;&gt;</span> test2
+$ <span class="token function">cat</span> test2
+total <span class="token number">20</span>
+-rw-rw-r-- <span class="token number">1</span> rich rich <span class="token number">53</span> <span class="token number">2014</span>-10-16 <span class="token number">11</span>:30 <span class="token builtin class-name">test</span>
+-rw-rw-r-- <span class="token number">1</span> rich rich  <span class="token number">0</span> <span class="token number">2014</span>-10-16 <span class="token number">11</span>:32 test2
+rich     pts/0        <span class="token number">2014</span>-10-17 <span class="token number">15</span>:34 <span class="token punctuation">(</span><span class="token number">192.168</span>.1.2<span class="token punctuation">)</span>
+$
+
+</code></pre></div><p>who 命令生成的输出会被追加到 test2 文件中已有数据的后面。</p> <p>但是，如果你对脚本使用了标准输出重定向，你会遇到一个问题。下面的例子说明了可能会出现什么情况。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">ls</span> -al badfile <span class="token operator">&gt;</span> test3
+ls: cannot access badfile: No such <span class="token function">file</span> or directory
+$ <span class="token function">cat</span> test3
+$
+</code></pre></div><p>当命令生成错误消息时，shell 并未将错误消息重定向到输出重定向文件。shell 创建了输出重定向文件，但错误消息却显示在了显示器屏幕上。注意，在显示 test3 文件的内容时并没有任何错误。test3 文件创建成功了，只是里面是空的。</p> <p>shell 对于错误消息的处理是跟普通输出分开的。如果你创建了在后台模式下运行的 shell 脚本，通常你必须依赖发送到日志文件的输出消息。用这种方法的话，如果出现了错误信息，这些信息是不会出现在日志文件中的。你需要换种方法来处理。</p> <ol start="3"><li>STDERR</li></ol> <p>shell 通过特殊的 STDERR 文件描述符来处理错误消息。STDERR 文件描述符代表 shell 的标准错误输出。shell 或 shell 中运行的程序和脚本出错时生成的错误消息都会发送到这个位置。</p> <p>默认情况下，STDERR 文件描述符会和 STDOUT 文件描述符指向同样的地方（尽管分配给它们的文件描述符值不同）。也就是说，默认情况下，错误消息也会输出到显示器输出中。</p> <p>但从上面的例子可以看出，STDERR 并不会随着 STDOUT 的重定向而发生改变。使用脚本时，你常常会想改变这种行为，尤其是当你希望将错误消息保存到日志文件中的时候。</p> <h3 id="重定向错误"><a href="#重定向错误" class="header-anchor">#</a> 重定向错误</h3> <p>你已经知道如何用重定向符号来重定向 STDOUT 数据。重定向 STDERR 数据也没太大差别，只要在使用重定向符号时定义 STDERR 文件描述符就可以了。有几种办法实现方法。</p> <ol><li>只重定向错误</li></ol> <p>你已经知道，STDERR 文件描述符被设成 2。可以选择只重定向错误消息，将该文件描述符值放在重定向符号前。该值必须紧紧地放在重定向符号前，否则不会工作。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">ls</span> -al badfile <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span> test4
+$ <span class="token function">cat</span> test4
+ls: cannot access badfile: No such <span class="token function">file</span> or directory
+$
+</code></pre></div><p>现在运行该命令，错误消息不会出现在屏幕上了。该命令生成的任何错误消息都会保存在输出文件中。用这种方法，shell 会只重定向错误消息，而非普通数据。这里是另一个将 STDOUT 和 STDERR 消息混杂在同一输出中的例子。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">ls</span> -al <span class="token builtin class-name">test</span> badtest test2 <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span> test5
+-rw-rw-r-- <span class="token number">1</span> rich rich <span class="token number">158</span> <span class="token number">2014</span>-10-16 <span class="token number">11</span>:32 test2
+$ <span class="token function">cat</span> test5
+ls: cannot access test: No such <span class="token function">file</span> or directory
+ls: cannot access badtest: No such <span class="token function">file</span> or directory
+$
+</code></pre></div><p>ls 命令的正常 STDOUT 输出仍然会发送到默认的 STDOUT 文件描述符，也就是显示器。由于该命令将文件描述符 2 的输出（STDERR）重定向到了一个输出文件，shell 会将生成的所有错误消息直接发送到指定的重定向文件中。</p> <ol start="2"><li>重定向错误和正常输出</li></ol> <p>如果想重定向错误和正常输出，必须用两个重定向符号。需要在符号前面放上待重定向数据所对应的文件描述符，然后指向用于保存数据的输出文件。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">ls</span> -al <span class="token builtin class-name">test</span> test2 test3 badtest <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span> test6 <span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span> test7
+$ <span class="token function">cat</span> test6
+ls: cannot access test: No such <span class="token function">file</span> or directory
+ls: cannot access badtest: No such <span class="token function">file</span> or directory
+$ <span class="token function">cat</span> test7
+-rw-rw-r-- <span class="token number">1</span> rich rich <span class="token number">158</span> <span class="token number">2014</span>-10-16 <span class="token number">11</span>:32 test2
+-rw-rw-r-- <span class="token number">1</span> rich rich   <span class="token number">0</span> <span class="token number">2014</span>-10-16 <span class="token number">11</span>:33 test3
+$
+</code></pre></div><p><strong>shell 利用 1&gt;符号将 ls 命令的正常输出重定向到了 test7 文件，而这些输出本该是进入 STDOUT 的。所有本该输出到 STDERR 的错误消息通过 2&gt;符号被重定向到了 test6 文件。</strong></p> <p>可以用这种方法将脚本的正常输出和脚本生成的错误消息分离开来。这样就可以轻松地识别出错误信息，再不用在成千上万行正常输出数据中翻腾了。</p> <p>另外，如果愿意，<strong>也可以将 STDERR 和 STDOUT 的输出重定向到同一个输出文件。为此 bash shell 提供了特殊的重定向符号&amp;&gt;。</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">ls</span> -al <span class="token builtin class-name">test</span> test2 test3 badtest <span class="token operator">&amp;&gt;</span> test7
+$ <span class="token function">cat</span> test7
+ls: cannot access test: No such <span class="token function">file</span> or directory
+ls: cannot access badtest: No such <span class="token function">file</span> or directory
+-rw-rw-r-- <span class="token number">1</span> rich rich <span class="token number">158</span> <span class="token number">2014</span>-10-16 <span class="token number">11</span>:32 test2
+-rw-rw-r-- <span class="token number">1</span> rich rich   <span class="token number">0</span> <span class="token number">2014</span>-10-16 <span class="token number">11</span>:33 test3 $
+</code></pre></div><p>当使用&amp;&gt;符时，命令生成的所有输出都会发送到同一位置，包括数据和错误。你会注意到其中一条错误消息出现的位置和预想中的不一样。badtest 文件（列出的最后一个文件）的这条错误消息出现在输出文件中的第二行。为了避免错误信息散落在输出文件中，相较于标准输出，bash shell 自动赋予了错误消息更高的优先级。这样你能够集中浏览错误信息了。</p> <h2 id="在脚本中重定向输出"><a href="#在脚本中重定向输出" class="header-anchor">#</a> 在脚本中重定向输出</h2> <p>可以在脚本中用 STDOUT 和 STDERR 文件描述符以在多个位置生成输出，只要简单地重定向相应的文件描述符就行了。有两种方法来在脚本中重定向输出：</p> <ul><li>临时重定向行输出</li> <li>永久重定向脚本中的所有命令</li></ul> <h3 id="临时重定向"><a href="#临时重定向" class="header-anchor">#</a> 临时重定向</h3> <p>如果有意在脚本中生成错误消息，可以将单独的一行输出重定向到 STDERR。你所需要做的是使用输出重定向符来将输出信息重定向到 STDERR 文件描述符。在重定向到文件描述符时，你必须在文件描述符数字之前加一个&amp;：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">echo</span> <span class="token string">&quot;This is an error message&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;2</span>
+</code></pre></div><p>这行会在脚本的 STDERR 文件描述符所指向的位置显示文本，而不是通常的 STDOUT。下面这个例子就利用了这项功能。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test8
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># testing STDERR messages</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is an error&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;2</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is normal output&quot;</span>
+$
+</code></pre></div><p>如果像平常一样运行这个脚本，你可能看不出什么区别。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./test8
+This is an error
+This is normal output
+$
+</code></pre></div><p>记住，<strong>默认情况下，Linux 会将 STDERR 导向 STDOUT。但是，如果你在运行脚本时重定向了 STDERR，脚本中所有导向 STDERR 的文本都会被重定向。</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./test8 <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span> test9
+This is normal output
+$ <span class="token function">cat</span> test9
+This is an error
+$
+</code></pre></div><p>太好了！通过 STDOUT 显示的文本显示在了屏幕上，而发送给 STDERR 的 echo 语句的文本则被重定向到了输出文件。这个方法非常适合在脚本中生成错误消息。如果有人用了你的脚本，他们可以像上面的例子中那样轻松地通过 STDERR 文件描述符重定向错误消息。</p> <h3 id="永久重定向"><a href="#永久重定向" class="header-anchor">#</a> 永久重定向</h3> <p>如果脚本中有大量数据需要重定向，那重定向每个 echo 语句就会很烦琐。取而代之，你可以用 exec 命令告诉 shell 在脚本执行期间重定向某个特定文件描述符。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test10
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># redirecting all output to a file</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span>testout
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is a test of redirecting all output&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;from a script to another file.&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;without having to redirect every individual line&quot;</span>
+$ ./test10
+$ <span class="token function">cat</span> testout
+This is a <span class="token builtin class-name">test</span> of redirecting all output
+from a script to another file.
+without having to redirect every individual line
+$
+</code></pre></div><p>exec 命令会启动一个新 shell 并将 STDOUT 文件描述符重定向到文件。脚本中发给 STDOUT 的所有输出会被重定向到文件。</p> <p>可以在脚本执行过程中重定向 STDOUT。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test11
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># redirecting output to different locations</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span>testerror
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is the start of the script&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;now redirecting all output to another location&quot;</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span>testout
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This output should go to the testout file&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;but this should go to the testerror file&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;2</span>
+$
+$ ./test11
+This is the start of the script
+now redirecting all output to another location
+$ <span class="token function">cat</span> testout
+This output should go to the testout <span class="token function">file</span>
+$ <span class="token function">cat</span> testerror
+but this should go to the testerror <span class="token function">file</span>
+$
+</code></pre></div><p>这个脚本用 exec 命令来将发给 STDERR 的输出重定向到文件 testerror。接下来，脚本用 echo 语句向 STDOUT 显示了几行文本。随后再次使用 exec 命令来将 STDOUT 重定向到 testout 文件。注意，尽管 STDOUT 被重定向了，但你仍然可以将 echo 语句的输出发给 STDERR，在本例中还是重定向到 testerror 文件。</p> <p>当你只想将脚本的部分输出重定向到其他位置时（如错误日志），这个特性用起来非常方便。不过这样做的话，会碰到一个问题。</p> <p>一旦重定向了 STDOUT 或 STDERR，就很难再将它们重定向回原来的位置。如果你需要在重定向中来回切换的话，有个办法可以用，后文将会讨论该方法以及如何在脚本中使用。</p> <h2 id="在脚本中重定向输入"><a href="#在脚本中重定向输入" class="header-anchor">#</a> 在脚本中重定向输入</h2> <p>你可以使用与脚本中重定向 STDOUT 和 STDERR 相同的方法来将 STDIN 从键盘重定向到其他位置。<strong>exec 命令允许你将 STDIN 重定向到 Linux 系统上的文件中：</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span> testfile
+</code></pre></div><p>这个命令会告诉 shell 它应该从文件 testfile 中获得输入，而不是 STDIN。这个重定向只要在脚本需要输入时就会作用。下面是该用法的实例。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test12
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># redirecting file input</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span> testfile
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">while</span> <span class="token builtin class-name">read</span> line
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Line #<span class="token variable">$count</span>: <span class="token variable">$line</span>&quot;</span>
+    <span class="token assign-left variable">count</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$count</span> + <span class="token number">1</span> <span class="token punctuation">]</span>
+<span class="token keyword">done</span>
+$ ./test12
+Line <span class="token comment">#1: This is the first line.</span>
+Line <span class="token comment">#2: This is the second line.</span>
+Line <span class="token comment">#3: This is the third line.</span>
+$
+</code></pre></div><p>上一章介绍了如何使用 read 命令读取用户在键盘上输入的数据。将 STDIN 重定向到文件后，当 read 命令试图从 STDIN 读入数据时，它会到文件去取数据，而不是键盘。这是在脚本中从待处理的文件中读取数据的绝妙办法。Linux 系统管理员的一项日常任务就是从日志文件中读取数据并处理。这是完成该任务最简单的办法。</p> <h2 id="创建自己的重定向"><a href="#创建自己的重定向" class="header-anchor">#</a> 创建自己的重定向</h2> <p>在脚本中重定向输入和输出时，并不局限于这 3 个默认的文件描述符。我曾提到过，在 shell 中最多可以有 9 个打开的文件描述符。其他 6 个从 3~8 的文件描述符均可用作输入或输出重定向。**你可以将这些文件描述符中的任意一个分配给文件，然后在脚本中使用它们。**本节将介绍如何在脚本中使用其他文件描述符。</p> <h3 id="创建输出文件描述符"><a href="#创建输出文件描述符" class="header-anchor">#</a> 创建输出文件描述符</h3> <p>可以用 exec 命令来给输出分配文件描述符。和标准的文件描述符一样，一旦将另一个文件描述符分配给一个文件，这个重定向就会一直有效，直到你重新分配。这里有个在脚本中使用其他文件描述符的简单例子。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test13
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># using an alternative file descriptor</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;</span>test13out
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This should display on the monitor&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;and this should be stored in the file&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;3</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Then this should be back on the monitor&quot;</span>
+$ ./test13
+This should display on the monitor
+Then this should be back on the monitor
+$ <span class="token function">cat</span> test13out
+and this should be stored <span class="token keyword">in</span> the <span class="token function">file</span>
+$
+</code></pre></div><p>这个脚本用 exec 命令将文件描述符 3 重定向到另一个文件。当脚本执行 echo 语句时，输出内容会像预想中那样显示在 STDOUT 上。但你重定向到文件描述符 3 的那行 echo 语句的输出却进入了另一个文件。这样你就可以在显示器上保持正常的输出，而将特定信息重定向到文件中（比如日志文件）。</p> <p>也可以不用创建新文件，而是使用 exec 命令来将输出追加到现有文件中。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;&gt;</span>test13out
+</code></pre></div><p>现在输出会被追加到 test13out 文件，而不是创建一个新文件。</p> <h3 id="重定向文件描述符"><a href="#重定向文件描述符" class="header-anchor">#</a> 重定向文件描述符</h3> <p>现在介绍怎么恢复已重定向的文件描述符。你可以分配另外一个文件描述符给标准文件描述符，反之亦然。这意味着你可以将 STDOUT 的原来位置重定向到另一个文件描述符，然后再利用该文件描述符重定向回 STDOUT。听起来可能有点复杂，但实际上相当直接。这个简单的例子能帮你理清楚。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test14
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># storing STDOUT, then coming back to it</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span>test14out
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This should store in the output file&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;along with this line.&quot;</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span><span class="token file-descriptor important">&amp;3</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Now things should be back to normal&quot;</span>
+$
+$ ./test14
+Now things should be back to normal
+$ <span class="token function">cat</span> test14out
+This should store <span class="token keyword">in</span> the output <span class="token function">file</span>
+along with this line.
+$
+</code></pre></div><p>这个例子有点叫人抓狂，来一段一段地看。首先，脚本将文件描述符 3 重定向到文件描述符 1 的当前位置，也就是 STDOUT。这意味着任何发送给文件描述符 3 的输出都将出现在显示器上。<br>
+第二个 exec 命令将 STDOUT 重定向到文件，shell 现在会将发送给 STDOUT 的输出直接重定向到输出文件中。但是，文件描述符 3 仍然指向 STDOUT 原来的位置，也就是显示器。如果此时将输出数据发送给文件描述符 3，它仍然会出现在显示器上，尽管 STDOUT 已经被重定向了。<br>
+在向 STDOUT（现在指向一个文件）发送一些输出之后，脚本将 STDOUT 重定向到文件描述符 3 的当前位置（现在仍然是显示器）。这意味着现在 STDOUT 又指向了它原来的位置：显示器。<br>
+这个方法可能有点叫人困惑，但这是一种在脚本中临时重定向输出，然后恢复默认输出设置的常用方法。</p> <h3 id="创建输入文件描述符"><a href="#创建输入文件描述符" class="header-anchor">#</a> 创建输入文件描述符</h3> <p>可以用和重定向输出文件描述符同样的办法重定向输入文件描述符。在重定向到文件之前，先将 STDIN 文件描述符保存到另外一个文件描述符，然后在读取完文件之后再将 STDIN 恢复到它原来的位置。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test15
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># redirecting input file descriptors</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">6</span>&lt;</span><span class="token file-descriptor important">&amp;0</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span> testfile
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">while</span> <span class="token builtin class-name">read</span> line
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Line #<span class="token variable">$count</span>: <span class="token variable">$line</span>&quot;</span>
+    <span class="token assign-left variable">count</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$count</span> + <span class="token number">1</span> <span class="token punctuation">]</span>
+<span class="token keyword">done</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span><span class="token file-descriptor important">&amp;6</span>
+<span class="token builtin class-name">read</span> -p <span class="token string">&quot;Are you done now? &quot;</span> answer
+<span class="token keyword">case</span> <span class="token variable">$answer</span> <span class="token keyword">in</span>
+    Y<span class="token operator">|</span>y<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Goodbye&quot;</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    N<span class="token operator">|</span>n<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Sorry, this is the end.&quot;</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+$ ./test15
+Line <span class="token comment">#1: This is the first line.</span>
+Line <span class="token comment">#2: This is the second line.</span>
+Line <span class="token comment">#3: This is the third line.</span>
+Are you <span class="token keyword">done</span> now? y
+Goodbye
+$
+</code></pre></div><p>在这个例子中，文件描述符 6 用来保存 STDIN 的位置。然后脚本将 STDIN 重定向到一个文件。read 命令的所有输入都来自重定向后的 STDIN（也就是输入文件）。在读取了所有行之后，脚本会将 STDIN 重定向到文件描述符 6，从而将 STDIN 恢复到原先的位置。该脚本用了另外一个 read 命令来测试 STDIN 是否恢复正常了。这次它会等待键盘的输入。</p> <h3 id="创建读写文件描述符"><a href="#创建读写文件描述符" class="header-anchor">#</a> 创建读写文件描述符</h3> <p>尽管看起来可能会很奇怪，但是你也可以打开单个文件描述符来作为输入和输出。可以用同一个文件描述符对同一个文件进行读写。不过用这种方法时，你要特别小心。由于你是对同一个文件进行数据读写，shell 会维护一个内部指针，指明在文件中的当前位置。任何读或写都会从文件指针上次的位置开始。如果不够小心，它会产生一些令人瞠目的结果。看看下面这个例子。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test16
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># testing input/output file descriptor</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&lt;&gt;</span> testfile
+<span class="token builtin class-name">read</span> line <span class="token operator">&lt;</span><span class="token file-descriptor important">&amp;3</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Read: <span class="token variable">$line</span>&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is a test line&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;3</span>
+$ <span class="token function">cat</span> testfile
+This is the first line.
+This is the second line.
+This is the third line.
+$ ./test16
+Read: This is the first line.
+$ <span class="token function">cat</span> testfile
+This is the first line.
+This is a <span class="token builtin class-name">test</span> line
+ine.
+This is the third line.
+$
+</code></pre></div><p>这个例子用了 exec 命令将文件描述符 3 分配给文件 testfile 以进行文件读写。接下来，它通过分配好的文件描述符，使用 read 命令读取文件中的第一行，然后将这一行显示在 STDOUT 上。最后，它用 echo 语句将一行数据写入由同一个文件描述符打开的文件中。</p> <p>在运行脚本时，一开始还算正常。输出内容表明脚本读取了 testfile 文件中的第一行。但如果你在脚本运行完毕后，查看 testfile 文件内容的话，你会发现写入文件中的数据覆盖了已有的数据。</p> <p>当脚本向文件中写入数据时，它会从文件指针所处的位置开始。read 命令读取了第一行数据，所以它使得文件指针指向了第二行数据的第一个字符。在 echo 语句将数据输出到文件时，它会将数据放在文件指针的当前位置，覆盖了该位置的已有数据。</p> <h3 id="关闭文件描述符"><a href="#关闭文件描述符" class="header-anchor">#</a> 关闭文件描述符</h3> <p>如果你创建了新的输入或输出文件描述符，shell 会在脚本退出时自动关闭它们。然而在有些情况下，你需要在脚本结束前手动关闭文件描述符。</p> <p>要关闭文件描述符，将它重定向到特殊符号&amp;-。脚本中看起来如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;&amp;</span>-
+</code></pre></div><p>该语句会关闭文件描述符 3，不再在脚本中使用它。这里有个例子来说明当你尝试使用已关闭的文件描述符时会怎样。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> badtest
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># testing closing file descriptors</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;</span> test17file
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is a test line of data&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;3</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;&amp;</span>-
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This won't work&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;3</span>
+$ ./badtest
+./badtest: <span class="token number">3</span>: Bad <span class="token function">file</span> descriptor
+$
+</code></pre></div><p>一旦关闭了文件描述符，就不能在脚本中向它写入任何数据，否则 shell 会生成错误消息。在关闭文件描述符时还要注意另一件事。如果随后你在脚本中打开了同一个输出文件，shell 会用一个新文件来替换已有文件。这意味着如果你输出数据，它就会覆盖已有文件。考虑下面这个问题的例子。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test17
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># testing closing file descriptors</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;</span> test17file
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is a test line of data&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;3</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;&amp;</span>-
+<span class="token function">cat</span> test17file
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;</span> test17file
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This'll be bad&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;3</span>
+$ ./test17
+This is a <span class="token builtin class-name">test</span> line of data
+$ <span class="token function">cat</span> test17file
+This'll be bad
+$
+</code></pre></div><p>在向 test17file 文件发送一个数据字符串并关闭该文件描述符之后，脚本用了 cat 命令来显示文件的内容。到目前为止，一切都还好。下一步，脚本重新打开了该输出文件并向它发送了另一个数据字符串。当显示该输出文件的内容时，你所能看到的只有第二个数据字符串。shell 覆盖了原来的输出文件。</p> <h2 id="列出打开的文件描述符"><a href="#列出打开的文件描述符" class="header-anchor">#</a> 列出打开的文件描述符</h2> <p>你能用的文件描述符只有 9 个，你可能会觉得这没什么复杂的。但有时要记住哪个文件描述符被重定向到了哪里很难。为了帮助你理清条理，bash shell 提供了 lsof 命令。lsof 命令会列出整个 Linux 系统打开的所有文件描述符。这是个有争议的功能，因为它会向非系统管理员用户提供 Linux 系统的信息。鉴于此，许多 Linux 系统隐藏了该命令，这样用户就不会一不小心就发现了。</p> <p>有大量的命令行选项和参数可以用来帮助过滤 lsof 的输出。最常用的有-p 和-d，前者允许指定进程 ID（PID），后者允许指定要显示的文件描述符编号。</p> <p>要想知道进程的当前 PID，可以用特殊环境变量$$（shell 会将它设为当前 PID）。-a 选项用来对其他两个选项的结果执行布尔 AND 运算，这会产生如下输出。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">lsof</span> -a -p <span class="token variable">$$</span> -d <span class="token number">0,1</span>,2
+lsof: WARNING: can't stat<span class="token punctuation">(</span><span class="token punctuation">)</span> tracefs <span class="token function">file</span> system /sys/kernel/debug/tracing
+      Output information may be incomplete.
+COMMAND    PID   <span class="token environment constant">USER</span>   FD   TYPE DEVICE SIZE/OFF NODE NAME
+<span class="token function">bash</span>    <span class="token number">162540</span> testuser    0u   CHR  <span class="token number">136,1</span>      0t0    <span class="token number">4</span> /dev/pts/1
+<span class="token function">bash</span>    <span class="token number">162540</span> testuser    1u   CHR  <span class="token number">136,1</span>      0t0    <span class="token number">4</span> /dev/pts/1
+<span class="token function">bash</span>    <span class="token number">162540</span> testuser    2u   CHR  <span class="token number">136,1</span>      0t0    <span class="token number">4</span> /dev/pts/1
+</code></pre></div><p>上例显示了当前进程（bash shell）的默认文件描述符（0、1 和 2）。同时可以注意到，因为是以非 root 用户执行，没有权限查看全部文件描述符信息，lsof 提示了你信息可能不完整。lsof 的默认输出中有 7 列信息，详情如下。</p> <ul><li>COMMAND 正在运行的命令名的前 9 个字符</li> <li>PID 进程的 PID</li> <li>USER 进程属主的登录名</li> <li>FD 文件描述符号以及访问类型（r 代表读，w 代表写，u 代表读写）</li> <li>TYPE 文件的类型（CHR 代表字符型，BLK 代表块型，DIR 代表目录，REG 代表常规文件）</li> <li>DEVICE 设备的设备号（主设备号和从设备号）</li> <li>SIZE 如果有的话，表示文件的大小</li> <li>NODE 本地文件的节点号</li> <li>NAME 文件名</li></ul> <p>与 STDIN、STDOUT 和 STDERR 关联的文件类型是字符型。因为 STDIN、STDOUT 和 STDERR 文件描述符都指向终端，所以输出文件的名称就是终端的设备名。所有 3 种标准文件都支持读和写（尽管向 STDIN 写数据以及从 STDOUT 读数据看起来有点奇怪）。</p> <p>现在看一下在打开了多个替代性文件描述符的脚本中使用 lsof 命令的结果。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test18
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># testing lsof with file descriptors</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;</span> test18file1
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">6</span>&gt;</span> test18file2
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">7</span>&lt;</span> testfile
+<span class="token function">lsof</span> -a -p <span class="token variable">$$</span> -d0,1,2,3,6,7
+$ ./test18
+lsof: WARNING: can't stat<span class="token punctuation">(</span><span class="token punctuation">)</span> tracefs <span class="token function">file</span> system /sys/kernel/debug/tracing
+      Output information may be incomplete.
+COMMAND    PID   <span class="token environment constant">USER</span>   FD   TYPE DEVICE SIZE/OFF     NODE NAME
+tt      <span class="token number">177709</span> testuser    0u   CHR  <span class="token number">136,1</span>      0t0        <span class="token number">4</span> /dev/pts/1
+tt      <span class="token number">177709</span> testuser    1u   CHR  <span class="token number">136,1</span>      0t0        <span class="token number">4</span> /dev/pts/1
+tt      <span class="token number">177709</span> testuser    2u   CHR  <span class="token number">136,1</span>      0t0        <span class="token number">4</span> /dev/pts/1
+tt      <span class="token number">177709</span> testuser    3w   REG  <span class="token number">259,4</span>        <span class="token number">0</span> <span class="token number">33822498</span> /home/testuser/test18file1
+tt      <span class="token number">177709</span> testuser    6w   REG  <span class="token number">259,4</span>        <span class="token number">0</span> <span class="token number">33822697</span> /home/testuser/test18file2
+tt      <span class="token number">177709</span> testuser    7r   REG  <span class="token number">259,4</span>       <span class="token number">73</span> <span class="token number">33823059</span> /home/testuser/testfile
+</code></pre></div><p>该脚本创建了 3 个替代性文件描述符，两个作为输出（3 和 6），一个作为输入（7）。在脚本运行 lsof 命令时，可以在输出中看到新的文件描述符。我们去掉了输出中的第一部分，这样你就能看到文件名的结果了。文件名显示了文件描述符所使用的文件的完整路径名。它将每个文件都显示成 REG 类型的，这说明它们是文件系统中的常规文件。</p> <h2 id="阻止命令输出"><a href="#阻止命令输出" class="header-anchor">#</a> 阻止命令输出</h2> <p>有时候，你可能不想显示脚本的输出。这在将脚本作为后台进程运行时很常见，尤其是当运行会生成很多烦琐的小错误的脚本时。要解决这个问题，可以将 STDERR 重定向到一个叫作 null 文件的特殊文件。null 文件跟它的名字很像，文件里什么都没有。shell 输出到 null 文件的任何数据都不会保存，全部都被丢掉了。</p> <p>在 Linux 系统上 null 文件的标准位置是/dev/null。你重定向到该位置的任何数据都会被丢掉，不会显示。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">ls</span> -al <span class="token operator">&gt;</span> /dev/null
+$ <span class="token function">cat</span> /dev/null
+$
+</code></pre></div><p>这是避免出现错误消息，也无需保存它们的一个常用方法。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">ls</span> -al badfile test16 <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span> /dev/null
+-rwxr--r--    <span class="token number">1</span> rich     rich          <span class="token number">135</span> Oct <span class="token number">29</span> <span class="token number">19</span>:57 test16*
+$
+</code></pre></div><p>也可以在输入重定向中将/dev/null 作为输入文件。由于/dev/null 文件不含有任何内容，程序员通常用它来快速清除现有文件中的数据，而不用先删除文件再重新创建。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> testfile
+This is the first line.
+This is the second line.
+This is the third line.
+$ <span class="token function">cat</span> /dev/null <span class="token operator">&gt;</span> testfile
+$ <span class="token function">cat</span> testfile
+$
+</code></pre></div><p>文件 testfile 仍然存在系统上，但现在它是空文件。这是清除日志文件的一个常用方法，因为日志文件必须时刻准备等待应用程序操作。</p> <h2 id="创建临时文件"><a href="#创建临时文件" class="header-anchor">#</a> 创建临时文件</h2> <p>Linux 系统有特殊的目录，专供临时文件使用。Linux 使用/tmp 目录来存放不需要永久保留的文件。大多数 Linux 发行版配置了系统在启动时自动删除/tmp 目录的所有文件。系统上的任何用户账户都有权限在读写/tmp 目录中的文件。这个特性为你提供了一种创建临时文件的简单方法，而且还不用操心清理工作。</p> <p>有个特殊命令可以用来创建临时文件。mktemp 命令可以在/tmp 目录中创建一个唯一的临时文件。shell 会创建这个文件，但不用默认的 umask 值 。它会将文件的读和写权限分配给文件的属主，并将你设成文件的属主。一旦创建了文件，你就在脚本中有了完整的读写权限，但其他人没法访问它（当然，root 用户除外）。</p> <h3 id="创建本地临时文件"><a href="#创建本地临时文件" class="header-anchor">#</a> 创建本地临时文件</h3> <p>默认情况下，mktemp 会在本地目录中创建一个文件。要用 mktemp 命令在本地目录中创建一个临时文件，你只要指定一个文件名模板就行了。模板可以包含任意文本文件名，在文件名末尾加上 2 个以上 X 就行了。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ mktemp testing.XXXXXX
+testing.4OnP2E
+$ <span class="token function">ls</span> -al testing*
+-rw-------   <span class="token number">1</span> rich     rich      <span class="token number">0</span> Oct <span class="token number">17</span> <span class="token number">21</span>:30 testing.UfIi13
+$
+</code></pre></div><p>mktemp 命令会用 6 个字符码替换这 6 个 X，从而保证文件名在目录中是唯一的。你可以创建多个临时文件，它可以保证每个文件都是唯一的。mktemp 命令的输出正是它所创建的文件的名字。在脚本中使用 mktemp 命令时，可能要将文件名保存到变量中，这样就能在后面的脚本中引用了。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test19
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># creating and using a temp file</span>
+<span class="token assign-left variable">tempfile</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>mktemp test19.XXXXXX<span class="token variable">)</span></span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;</span><span class="token variable">$tempfile</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This script writes to temp file <span class="token variable">$tempfile</span>&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is the first line&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;3</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is the second line.&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;3</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is the last line.&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;3</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">3</span>&gt;&amp;</span>-
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Done creating temp file. The contents are:&quot;</span>
+<span class="token function">cat</span> <span class="token variable">$tempfile</span>
+<span class="token function">rm</span> -f <span class="token variable">$tempfile</span> <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span> /dev/null
+$ ./test19
+This script writes to temp <span class="token function">file</span> test19.vCHoya
+Done creating temp file.
+The contents are:
+This is the first line
+This is the second line.
+This is the last line.
+$ <span class="token function">ls</span> -al test19*
+-rwxr--r--    <span class="token number">1</span> rich     rich          <span class="token number">356</span> Oct <span class="token number">29</span> <span class="token number">22</span>:03 test19*
+$
+</code></pre></div><p>这个脚本用 mktemp 命令来创建临时文件并将文件名赋给$tempfile 变量。接着将这个临时文件作为文件描述符 3 的输出重定向文件。在将临时文件名显示在 STDOUT 之后，向临时文件中写入了几行文本，然后关闭了文件描述符。最后，显示出临时文件的内容，并用 rm 命令将其删除。</p> <h3 id="在-tmp-目录创建临时文件"><a href="#在-tmp-目录创建临时文件" class="header-anchor">#</a> 在/tmp 目录创建临时文件</h3> <p>-t 选项会强制 mktemp 命令来在系统的临时目录来创建该文件。在用这个特性时，mktemp 命令会返回用来创建临时文件的全路径，而不是只有文件名。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ mktemp -t test.XXXXXX
+/tmp/test.xG3374
+$ <span class="token function">ls</span> -al /tmp/test*
+-rw------- <span class="token number">1</span> rich rich <span class="token number">0</span> <span class="token number">2014</span>-10-29 <span class="token number">18</span>:41 /tmp/test.xG3374
+$
+</code></pre></div><p>由于 mktemp 命令返回了全路径名，你可以在 Linux 系统上的任何目录下引用该临时文件，不管临时目录在哪里。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test20
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># creating a temp file in /tmp</span>
+<span class="token assign-left variable">tempfile</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>mktemp -t tmp.XXXXXX<span class="token variable">)</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is a test file.&quot;</span> <span class="token operator">&gt;</span> <span class="token variable">$tempfile</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is the second line of the test.&quot;</span> <span class="token operator">&gt;&gt;</span> <span class="token variable">$tempfile</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;The temp file is located at: <span class="token variable">$tempfile</span>&quot;</span>
+<span class="token function">cat</span> <span class="token variable">$tempfile</span>
+<span class="token function">rm</span> -f <span class="token variable">$tempfile</span>
+$ ./test20
+The temp <span class="token function">file</span> is located at: /tmp/tmp.Ma3390
+This is a <span class="token builtin class-name">test</span> file.
+This is the second line of the test.
+$
+</code></pre></div><p>在 mktemp 创建临时文件时，它会将全路径名返回给变量。这样你就能在任何命令中使用该值来引用临时文件了。</p> <h3 id="创建临时目录"><a href="#创建临时目录" class="header-anchor">#</a> 创建临时目录</h3> <p>-d 选项告诉 mktemp 命令来创建一个临时目录而不是临时文件。这样你就能用该目录进行任何需要的操作了，比如创建其他的临时文件。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test21
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># using a temporary directory</span>
+<span class="token assign-left variable">tempdir</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>mktemp -d dir.XXXXXX<span class="token variable">)</span></span>
+<span class="token builtin class-name">cd</span> <span class="token variable">$tempdir</span>
+<span class="token assign-left variable">tempfile1</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>mktemp temp.XXXXXX<span class="token variable">)</span></span>
+<span class="token assign-left variable">tempfile2</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>mktemp temp.XXXXXX<span class="token variable">)</span></span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">7</span>&gt;</span> <span class="token variable">$tempfile1</span>
+<span class="token builtin class-name">exec</span> <span class="token operator"><span class="token file-descriptor important">8</span>&gt;</span> <span class="token variable">$tempfile2</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Sending data to directory <span class="token variable">$tempdir</span>&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is a test line of data for <span class="token variable">$tempfile1</span>&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;7</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is a test line of data for <span class="token variable">$tempfile2</span>&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;8</span>
+$ ./test21
+Sending data to directory dir.ouT8S8
+$ <span class="token function">ls</span> -al
+total <span class="token number">72</span>
+drwxr-xr-x    <span class="token number">3</span> rich     rich         <span class="token number">4096</span> Oct <span class="token number">17</span> <span class="token number">22</span>:20 ./
+drwxr-xr-x    <span class="token number">9</span> rich     rich         <span class="token number">4096</span> Oct <span class="token number">17</span> 09:44 <span class="token punctuation">..</span>/
+drwx------    <span class="token number">2</span> rich     rich         <span class="token number">4096</span> Oct <span class="token number">17</span> <span class="token number">22</span>:20 dir.ouT8S8/
+-rwxr--r--    <span class="token number">1</span> rich     rich          <span class="token number">338</span> Oct <span class="token number">17</span> <span class="token number">22</span>:20 test21*
+$ <span class="token builtin class-name">cd</span> dir.ouT8S8
+<span class="token punctuation">[</span>dir.ouT8S8<span class="token punctuation">]</span>$ <span class="token function">ls</span> -al
+total <span class="token number">16</span>
+drwx------    <span class="token number">2</span> rich     rich         <span class="token number">4096</span> Oct <span class="token number">17</span> <span class="token number">22</span>:20 ./
+drwxr-xr-x    <span class="token number">3</span> rich     rich         <span class="token number">4096</span> Oct <span class="token number">17</span> <span class="token number">22</span>:20 <span class="token punctuation">..</span>/
+-rw-------    <span class="token number">1</span> rich     rich           <span class="token number">44</span> Oct <span class="token number">17</span> <span class="token number">22</span>:20 temp.N5F3O6
+-rw-------    <span class="token number">1</span> rich     rich           <span class="token number">44</span> Oct <span class="token number">17</span> <span class="token number">22</span>:20 temp.SQslb7
+<span class="token punctuation">[</span>dir.ouT8S8<span class="token punctuation">]</span>$ <span class="token function">cat</span> temp.N5F3O6
+This is a <span class="token builtin class-name">test</span> line of data <span class="token keyword">for</span> temp.N5F3O6
+<span class="token punctuation">[</span>dir.ouT8S8<span class="token punctuation">]</span>$ <span class="token function">cat</span> temp.SQslb7
+This is a <span class="token builtin class-name">test</span> line of data <span class="token keyword">for</span> temp.SQslb7
+<span class="token punctuation">[</span>dir.ouT8S8<span class="token punctuation">]</span>$
+</code></pre></div><p>这段脚本在当前目录创建了一个临时目录，然后它用 cd 命令进入该目录，并创建了两个临时文件。之后这两个临时文件被分配给文件描述符，用来存储脚本的输出。</p> <h2 id="记录消息-tee"><a href="#记录消息-tee" class="header-anchor">#</a> 记录消息-tee</h2> <p>将输出同时发送到显示器和日志文件，这种做法有时候能够派上用场。你不用将输出重定向两次，只要用特殊的 tee 命令就行。<strong>tee 命令相当于管道的一个 T 型接头。它将从 STDIN 过来的数据同时发往两处。一处是 STDOUT，另一处是 tee 命令行所指定的文件名：</strong><code>tee filename</code></p> <p>由于 tee 会重定向来自 STDIN 的数据，你可以用它配合管道命令来重定向命令输出。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">date</span> <span class="token operator">|</span> <span class="token function">tee</span> testfile
+Sun Oct <span class="token number">19</span> <span class="token number">18</span>:56:21 EDT <span class="token number">2014</span>
+$ <span class="token function">cat</span> testfile
+Sun Oct <span class="token number">19</span> <span class="token number">18</span>:56:21 EDT <span class="token number">2014</span>
+$
+</code></pre></div><p>输出出现在了 STDOUT 中，同时也写入了指定的文件中。注意，默认情况下，tee 命令会在每次使用时覆盖输出文件内容。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">who</span> <span class="token operator">|</span> <span class="token function">tee</span> testfile
+rich     pts/0        <span class="token number">2014</span>-10-17 <span class="token number">18</span>:41 <span class="token punctuation">(</span><span class="token number">192.168</span>.1.2<span class="token punctuation">)</span>
+$ <span class="token function">cat</span> testfile
+rich     pts/0        <span class="token number">2014</span>-10-17 <span class="token number">18</span>:41 <span class="token punctuation">(</span><span class="token number">192.168</span>.1.2<span class="token punctuation">)</span>
+$
+</code></pre></div><p>如果你想将数据追加到文件中，必须用-a 选项。</p> <p>利用 tee，既能将数据保存在文件中，也能将数据显示在屏幕上。现在你就可以在为用户显示输出的同时再永久保存一份输出内容了。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test22
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># using the tee command for logging</span>
+<span class="token assign-left variable">tempfile</span><span class="token operator">=</span>test22file
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is the start of the test&quot;</span> <span class="token operator">|</span> <span class="token function">tee</span> <span class="token variable">$tempfile</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is the second line of the test&quot;</span> <span class="token operator">|</span> <span class="token function">tee</span> -a <span class="token variable">$tempfile</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is the end of the test&quot;</span> <span class="token operator">|</span> <span class="token function">tee</span> -a <span class="token variable">$tempfile</span>
+$ ./test22
+This is the start of the <span class="token builtin class-name">test</span>
+This is the second line of the <span class="token builtin class-name">test</span>
+This is the end of the <span class="token builtin class-name">test</span>
+$ <span class="token function">cat</span> test22file
+This is the start of the <span class="token builtin class-name">test</span>
+This is the second line of the <span class="token builtin class-name">test</span>
+This is the end of the <span class="token builtin class-name">test</span>
+$
+</code></pre></div><h2 id="实例"><a href="#实例" class="header-anchor">#</a> 实例</h2> <p>文件重定向常见于脚本需要读入文件和输出文件时。下面的样例脚本两件事都做了。它读取.csv 格式的数据文件，输出 SQL INSERT 语句来将数据插入数据库。shell 脚本使用命令行参数指定待读取的.csv 文件。.csv 格式用于从电子表格中导出数据，所以你可以把数据库数据放入电子表格中，把电子表格保存成.csv 格式，读取文件，然后创建 INSERT 语句将数据插入 MySQL 数据库。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token variable">$cat</span> test23
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># read file and create INSERT statements for MySQL</span>
+<span class="token assign-left variable">outfile</span><span class="token operator">=</span><span class="token string">'members.sql'</span>
+<span class="token assign-left variable"><span class="token environment constant">IFS</span></span><span class="token operator">=</span><span class="token string">','</span>
+<span class="token keyword">while</span> <span class="token builtin class-name">read</span> lname fname address city state <span class="token function">zip</span>
+<span class="token keyword">do</span>
+    <span class="token function">cat</span> <span class="token operator">&gt;&gt;</span> <span class="token variable">$outfile</span> <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+        INSERT INTO members (lname,fname,address,city,state,zip) VALUES
+        ('<span class="token variable">$lname</span>', '<span class="token variable">$fname</span>', '<span class="token variable">$address</span>', '<span class="token variable">$city</span>', '<span class="token variable">$state</span>', '<span class="token variable">$zip</span>');
+EOF</span>
+<span class="token keyword">done</span> <span class="token operator">&lt;</span> <span class="token variable">${1}</span>
+$
+</code></pre></div><p>这个脚本很短小，这都要感谢有了文件重定向！脚本中出现了三处重定向操作。while 循环使用 read 语句从数据文件中读取文本。注意在 done 语句中出现的重定向符号：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token keyword">done</span> <span class="token operator">&lt;</span> <span class="token variable">${1}</span>
+</code></pre></div><p>当运行程序 test23 时，$1 代表第一个命令行参数。它指明了待读取数据的文件。read 语句会使用 IFS 字符解析读入的文本，我们在这里将 IFS 指定为逗号。</p> <p>脚本中另外两处重定向操作出现在同一条语句中：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">&gt;&gt;</span> <span class="token variable">$outfile</span> <span class="token operator">&lt;&lt;</span> EOF
+</code></pre></div><p>这条语句中包含一个输出追加重定向（双大于号）和一个输入追加重定向（双小于号）。输出重定向将 cat 命令的输出追加到由$outfile 变量指定的文件中。cat 命令的输入不再取自标准输入，而是被重定向到脚本中存储的数据。EOF 符号标记了追加到文件中的数据的起止。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>INSERT INTO members <span class="token punctuation">(</span>lname,fname,address,city,state,zip<span class="token punctuation">)</span> VALUES
+<span class="token punctuation">(</span><span class="token string">'$lname'</span>, <span class="token string">'$fname'</span>, <span class="token string">'$address'</span>, <span class="token string">'$city'</span>, <span class="token string">'$state'</span>, <span class="token string">'$zip'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>上面的文本生成了一个标准的 SQL INSERT 语句。注意，其中的数据会由变量来替换，变量中内容则是由 read 语句存入的。所以 while 循环一次读取一行数据，将这些值放入 INSERT 语句模板中，然后将结果输出到输出文件中。</p> <p>在这个例子中，使用以下输入数据文件。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> members.csv
+Blum,Richard,123 Main St.,Chicago,IL,60601
+Blum,Barbara,123 Main St.,Chicago,IL,60601
+Bresnahan,Christine,456 Oak Ave.,Columbus,OH,43201
+Bresnahan,Timothy,456 Oak Ave.,Columbus,OH,43201
+$
+</code></pre></div><p>运行脚本时，显示器上不会出现任何输出：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./test23 members.csv
+$
+</code></pre></div><p>但是在 members.sql 输出文件中，你会看到如下输出内容。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> members.sql
+INSERT INTO members <span class="token punctuation">(</span>lname,fname,address,city,state,zip<span class="token punctuation">)</span> VALUES <span class="token punctuation">(</span><span class="token string">'Blum'</span>,  <span class="token string">'Richard'</span>, <span class="token string">'123 Main St.'</span>, <span class="token string">'Chicago'</span>, <span class="token string">'IL'</span>, <span class="token string">'60601'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+INSERT INTO members <span class="token punctuation">(</span>lname,fname,address,city,state,zip<span class="token punctuation">)</span> VALUES <span class="token punctuation">(</span><span class="token string">'Blum'</span>,  <span class="token string">'Barbara'</span>, <span class="token string">'123 Main St.'</span>, <span class="token string">'Chicago'</span>, <span class="token string">'IL'</span>, <span class="token string">'60601'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+INSERT INTO members <span class="token punctuation">(</span>lname,fname,address,city,state,zip<span class="token punctuation">)</span> VALUES <span class="token punctuation">(</span><span class="token string">'Bresnahan'</span>,  <span class="token string">'Christine'</span>, <span class="token string">'456 Oak Ave.'</span>, <span class="token string">'Columbus'</span>, <span class="token string">'OH'</span>, <span class="token string">'43201'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+INSERT INTO members <span class="token punctuation">(</span>lname,fname,address,city,state,zip<span class="token punctuation">)</span> VALUES <span class="token punctuation">(</span><span class="token string">'Bresnahan'</span>,  <span class="token string">'Timothy'</span>, <span class="token string">'456 Oak Ave.'</span>, <span class="token string">'Columbus'</span>, <span class="token string">'OH'</span>, <span class="token string">'43201'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$
+</code></pre></div><p>结果和我们预想的一样！现在可以将 members.sql 文件导入 MySQL 数据表中了。</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <p><a href="https://archlinuxstudio.github.io/ShellTutorial/#/shellBasic/shell_output" target="_blank" rel="noopener noreferrer">Linux命令行与Shell脚本教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">4/4/2022, 11:35:53 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/notes/blog/linux/脚本编程/处理输入.html" class="prev">
+            处理输入
+          </a></span> <span class="next"><a href="/notes/blog/linux/脚本编程/结构化命令.html">
+            结构化命令
+          </a></span></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-22d702a7><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#理解输入和输出" class="sidebar-link reco-side-理解输入和输出" data-v-22d702a7>理解输入和输出</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#标准文件描述符" class="sidebar-link reco-side-标准文件描述符" data-v-22d702a7>标准文件描述符</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#重定向错误" class="sidebar-link reco-side-重定向错误" data-v-22d702a7>重定向错误</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#在脚本中重定向输出" class="sidebar-link reco-side-在脚本中重定向输出" data-v-22d702a7>在脚本中重定向输出</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#临时重定向" class="sidebar-link reco-side-临时重定向" data-v-22d702a7>临时重定向</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#永久重定向" class="sidebar-link reco-side-永久重定向" data-v-22d702a7>永久重定向</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#在脚本中重定向输入" class="sidebar-link reco-side-在脚本中重定向输入" data-v-22d702a7>在脚本中重定向输入</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#创建自己的重定向" class="sidebar-link reco-side-创建自己的重定向" data-v-22d702a7>创建自己的重定向</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#创建输出文件描述符" class="sidebar-link reco-side-创建输出文件描述符" data-v-22d702a7>创建输出文件描述符</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#重定向文件描述符" class="sidebar-link reco-side-重定向文件描述符" data-v-22d702a7>重定向文件描述符</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#创建输入文件描述符" class="sidebar-link reco-side-创建输入文件描述符" data-v-22d702a7>创建输入文件描述符</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#创建读写文件描述符" class="sidebar-link reco-side-创建读写文件描述符" data-v-22d702a7>创建读写文件描述符</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#关闭文件描述符" class="sidebar-link reco-side-关闭文件描述符" data-v-22d702a7>关闭文件描述符</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#列出打开的文件描述符" class="sidebar-link reco-side-列出打开的文件描述符" data-v-22d702a7>列出打开的文件描述符</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#阻止命令输出" class="sidebar-link reco-side-阻止命令输出" data-v-22d702a7>阻止命令输出</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#创建临时文件" class="sidebar-link reco-side-创建临时文件" data-v-22d702a7>创建临时文件</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#创建本地临时文件" class="sidebar-link reco-side-创建本地临时文件" data-v-22d702a7>创建本地临时文件</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#在-tmp-目录创建临时文件" class="sidebar-link reco-side-在-tmp-目录创建临时文件" data-v-22d702a7>在/tmp 目录创建临时文件</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#创建临时目录" class="sidebar-link reco-side-创建临时目录" data-v-22d702a7>创建临时目录</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#记录消息-tee" class="sidebar-link reco-side-记录消息-tee" data-v-22d702a7>记录消息-tee</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#实例" class="sidebar-link reco-side-实例" data-v-22d702a7>实例</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%87%BA.html#参考" class="sidebar-link reco-side-参考" data-v-22d702a7>参考</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/notes/assets/js/app.c9da24a6.js" defer></script><script src="/notes/assets/js/3.15042843.js" defer></script><script src="/notes/assets/js/1.8ca8e0eb.js" defer></script><script src="/notes/assets/js/69.a4267fbd.js" defer></script>
+  </body>
+</html>

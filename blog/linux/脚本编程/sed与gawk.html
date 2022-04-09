@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>sed与gawk | WaleGarrett</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/notes/logo.jpg">
+    <meta name="description" content="WaleGarrett的学习记录">
+    
+    <link rel="preload" href="/notes/assets/css/0.styles.54ab1000.css" as="style"><link rel="preload" href="/notes/assets/js/app.c9da24a6.js" as="script"><link rel="preload" href="/notes/assets/js/3.15042843.js" as="script"><link rel="preload" href="/notes/assets/js/1.8ca8e0eb.js" as="script"><link rel="preload" href="/notes/assets/js/66.b82f5c7e.js" as="script"><link rel="prefetch" href="/notes/assets/js/10.1becd84f.js"><link rel="prefetch" href="/notes/assets/js/100.e686635a.js"><link rel="prefetch" href="/notes/assets/js/101.d90ba6a2.js"><link rel="prefetch" href="/notes/assets/js/102.37c9c783.js"><link rel="prefetch" href="/notes/assets/js/103.dec1797e.js"><link rel="prefetch" href="/notes/assets/js/104.9e4cdf99.js"><link rel="prefetch" href="/notes/assets/js/105.8616c171.js"><link rel="prefetch" href="/notes/assets/js/106.bc2f20eb.js"><link rel="prefetch" href="/notes/assets/js/107.4fc0003b.js"><link rel="prefetch" href="/notes/assets/js/108.f7ed7756.js"><link rel="prefetch" href="/notes/assets/js/109.867fe8d3.js"><link rel="prefetch" href="/notes/assets/js/11.11eeb9c8.js"><link rel="prefetch" href="/notes/assets/js/110.ce3c1db9.js"><link rel="prefetch" href="/notes/assets/js/111.5f88fd17.js"><link rel="prefetch" href="/notes/assets/js/112.0ec3be4a.js"><link rel="prefetch" href="/notes/assets/js/113.b17af37a.js"><link rel="prefetch" href="/notes/assets/js/114.c3bd0ee7.js"><link rel="prefetch" href="/notes/assets/js/115.e942f535.js"><link rel="prefetch" href="/notes/assets/js/116.a07fe354.js"><link rel="prefetch" href="/notes/assets/js/117.7f109010.js"><link rel="prefetch" href="/notes/assets/js/118.70cf9c49.js"><link rel="prefetch" href="/notes/assets/js/119.68965728.js"><link rel="prefetch" href="/notes/assets/js/12.e21b4812.js"><link rel="prefetch" href="/notes/assets/js/120.9065ed1d.js"><link rel="prefetch" href="/notes/assets/js/121.a8a35fe7.js"><link rel="prefetch" href="/notes/assets/js/122.70596256.js"><link rel="prefetch" href="/notes/assets/js/123.b9715cd7.js"><link rel="prefetch" href="/notes/assets/js/124.7345d826.js"><link rel="prefetch" href="/notes/assets/js/125.d4392f5d.js"><link rel="prefetch" href="/notes/assets/js/126.ff7fff9e.js"><link rel="prefetch" href="/notes/assets/js/127.acc1dff7.js"><link rel="prefetch" href="/notes/assets/js/128.81dcc7a3.js"><link rel="prefetch" href="/notes/assets/js/129.6c2d778a.js"><link rel="prefetch" href="/notes/assets/js/13.afb6371c.js"><link rel="prefetch" href="/notes/assets/js/130.1c463291.js"><link rel="prefetch" href="/notes/assets/js/131.fade390b.js"><link rel="prefetch" href="/notes/assets/js/132.a1fe16f6.js"><link rel="prefetch" href="/notes/assets/js/133.a719a028.js"><link rel="prefetch" href="/notes/assets/js/134.66c5c006.js"><link rel="prefetch" href="/notes/assets/js/135.5b78fa9f.js"><link rel="prefetch" href="/notes/assets/js/136.2e6405e5.js"><link rel="prefetch" href="/notes/assets/js/137.41fb8a7a.js"><link rel="prefetch" href="/notes/assets/js/138.06de929f.js"><link rel="prefetch" href="/notes/assets/js/139.2f7ab686.js"><link rel="prefetch" href="/notes/assets/js/14.a2175c4c.js"><link rel="prefetch" href="/notes/assets/js/140.6918a01b.js"><link rel="prefetch" href="/notes/assets/js/141.95f9f12a.js"><link rel="prefetch" href="/notes/assets/js/142.aa0cee93.js"><link rel="prefetch" href="/notes/assets/js/143.d60a38b0.js"><link rel="prefetch" href="/notes/assets/js/144.638c8e0a.js"><link rel="prefetch" href="/notes/assets/js/145.1a1685af.js"><link rel="prefetch" href="/notes/assets/js/146.bc665756.js"><link rel="prefetch" href="/notes/assets/js/147.809233d9.js"><link rel="prefetch" href="/notes/assets/js/148.d6b15e4e.js"><link rel="prefetch" href="/notes/assets/js/149.646dfac5.js"><link rel="prefetch" href="/notes/assets/js/15.7ec2be59.js"><link rel="prefetch" href="/notes/assets/js/150.64b53d63.js"><link rel="prefetch" href="/notes/assets/js/151.0984c27e.js"><link rel="prefetch" href="/notes/assets/js/152.42cf7076.js"><link rel="prefetch" href="/notes/assets/js/153.80ae1b86.js"><link rel="prefetch" href="/notes/assets/js/154.1b7e1514.js"><link rel="prefetch" href="/notes/assets/js/155.0a6c1fb7.js"><link rel="prefetch" href="/notes/assets/js/156.916e2a53.js"><link rel="prefetch" href="/notes/assets/js/157.8d361889.js"><link rel="prefetch" href="/notes/assets/js/158.858d71f6.js"><link rel="prefetch" href="/notes/assets/js/159.9a2f07f9.js"><link rel="prefetch" href="/notes/assets/js/16.679c7661.js"><link rel="prefetch" href="/notes/assets/js/160.4f54106a.js"><link rel="prefetch" href="/notes/assets/js/161.3cc67e9e.js"><link rel="prefetch" href="/notes/assets/js/162.c94a5be4.js"><link rel="prefetch" href="/notes/assets/js/163.dc11bf4c.js"><link rel="prefetch" href="/notes/assets/js/164.5f0bb30d.js"><link rel="prefetch" href="/notes/assets/js/165.17595a0b.js"><link rel="prefetch" href="/notes/assets/js/166.26cc364b.js"><link rel="prefetch" href="/notes/assets/js/167.a8b2ddf0.js"><link rel="prefetch" href="/notes/assets/js/168.17f43071.js"><link rel="prefetch" href="/notes/assets/js/169.d5e82e04.js"><link rel="prefetch" href="/notes/assets/js/17.016980ed.js"><link rel="prefetch" href="/notes/assets/js/170.11696f57.js"><link rel="prefetch" href="/notes/assets/js/171.70305f2f.js"><link rel="prefetch" href="/notes/assets/js/172.f4b63da4.js"><link rel="prefetch" href="/notes/assets/js/173.42057c95.js"><link rel="prefetch" href="/notes/assets/js/174.246a6e0b.js"><link rel="prefetch" href="/notes/assets/js/175.4855ab27.js"><link rel="prefetch" href="/notes/assets/js/176.d75790bd.js"><link rel="prefetch" href="/notes/assets/js/177.f616c3f5.js"><link rel="prefetch" href="/notes/assets/js/178.659b087d.js"><link rel="prefetch" href="/notes/assets/js/179.010eacce.js"><link rel="prefetch" href="/notes/assets/js/18.6f1dbb8f.js"><link rel="prefetch" href="/notes/assets/js/180.a11dd312.js"><link rel="prefetch" href="/notes/assets/js/181.c74fb0b6.js"><link rel="prefetch" href="/notes/assets/js/182.4f548539.js"><link rel="prefetch" href="/notes/assets/js/183.32dc4b08.js"><link rel="prefetch" href="/notes/assets/js/184.7b15f3e9.js"><link rel="prefetch" href="/notes/assets/js/185.ad484525.js"><link rel="prefetch" href="/notes/assets/js/186.db3693bc.js"><link rel="prefetch" href="/notes/assets/js/187.2a0df038.js"><link rel="prefetch" href="/notes/assets/js/188.987a82c9.js"><link rel="prefetch" href="/notes/assets/js/189.c693f3a1.js"><link rel="prefetch" href="/notes/assets/js/19.9e1eac04.js"><link rel="prefetch" href="/notes/assets/js/190.2e253fc8.js"><link rel="prefetch" href="/notes/assets/js/191.d70ee914.js"><link rel="prefetch" href="/notes/assets/js/192.4f808c44.js"><link rel="prefetch" href="/notes/assets/js/193.133fd0a8.js"><link rel="prefetch" href="/notes/assets/js/194.c1c26af9.js"><link rel="prefetch" href="/notes/assets/js/195.5d112624.js"><link rel="prefetch" href="/notes/assets/js/196.e756a155.js"><link rel="prefetch" href="/notes/assets/js/197.6f9b8105.js"><link rel="prefetch" href="/notes/assets/js/198.3c59ba72.js"><link rel="prefetch" href="/notes/assets/js/199.15e2d96e.js"><link rel="prefetch" href="/notes/assets/js/20.e41f5564.js"><link rel="prefetch" href="/notes/assets/js/200.992db7f7.js"><link rel="prefetch" href="/notes/assets/js/201.9c266b22.js"><link rel="prefetch" href="/notes/assets/js/202.842ef603.js"><link rel="prefetch" href="/notes/assets/js/203.01bca3f3.js"><link rel="prefetch" href="/notes/assets/js/204.f9c2a70d.js"><link rel="prefetch" href="/notes/assets/js/205.f9268403.js"><link rel="prefetch" href="/notes/assets/js/206.4cf08b44.js"><link rel="prefetch" href="/notes/assets/js/207.0ef45ecc.js"><link rel="prefetch" href="/notes/assets/js/208.0ac3b838.js"><link rel="prefetch" href="/notes/assets/js/209.5e055156.js"><link rel="prefetch" href="/notes/assets/js/21.2d865954.js"><link rel="prefetch" href="/notes/assets/js/210.d8204d91.js"><link rel="prefetch" href="/notes/assets/js/211.acc0168d.js"><link rel="prefetch" href="/notes/assets/js/212.5eec4fbf.js"><link rel="prefetch" href="/notes/assets/js/213.272bf6e6.js"><link rel="prefetch" href="/notes/assets/js/214.bf006247.js"><link rel="prefetch" href="/notes/assets/js/215.f11c4fd7.js"><link rel="prefetch" href="/notes/assets/js/216.cf94ea1b.js"><link rel="prefetch" href="/notes/assets/js/217.330e075c.js"><link rel="prefetch" href="/notes/assets/js/218.0b9e982c.js"><link rel="prefetch" href="/notes/assets/js/219.7e778a76.js"><link rel="prefetch" href="/notes/assets/js/22.88dd9e53.js"><link rel="prefetch" href="/notes/assets/js/220.6d5ffbc6.js"><link rel="prefetch" href="/notes/assets/js/221.bac51660.js"><link rel="prefetch" href="/notes/assets/js/23.a8a4e106.js"><link rel="prefetch" href="/notes/assets/js/24.6a7395f6.js"><link rel="prefetch" href="/notes/assets/js/25.3e79ff45.js"><link rel="prefetch" href="/notes/assets/js/26.33e76c58.js"><link rel="prefetch" href="/notes/assets/js/27.2e20fce9.js"><link rel="prefetch" href="/notes/assets/js/28.92202fbe.js"><link rel="prefetch" href="/notes/assets/js/29.31e72924.js"><link rel="prefetch" href="/notes/assets/js/30.63118840.js"><link rel="prefetch" href="/notes/assets/js/31.40bb3db2.js"><link rel="prefetch" href="/notes/assets/js/32.34771f12.js"><link rel="prefetch" href="/notes/assets/js/33.12f2bfaf.js"><link rel="prefetch" href="/notes/assets/js/34.0685ab4b.js"><link rel="prefetch" href="/notes/assets/js/35.497cff30.js"><link rel="prefetch" href="/notes/assets/js/36.1f5c1fc2.js"><link rel="prefetch" href="/notes/assets/js/37.bd6b811a.js"><link rel="prefetch" href="/notes/assets/js/38.a7a23117.js"><link rel="prefetch" href="/notes/assets/js/39.cdf8ca3c.js"><link rel="prefetch" href="/notes/assets/js/4.0716db17.js"><link rel="prefetch" href="/notes/assets/js/40.21388ef8.js"><link rel="prefetch" href="/notes/assets/js/41.ee9dc436.js"><link rel="prefetch" href="/notes/assets/js/42.a3ec0597.js"><link rel="prefetch" href="/notes/assets/js/43.be5d9816.js"><link rel="prefetch" href="/notes/assets/js/44.2f99673b.js"><link rel="prefetch" href="/notes/assets/js/45.c443ff93.js"><link rel="prefetch" href="/notes/assets/js/46.bd004ac4.js"><link rel="prefetch" href="/notes/assets/js/47.20add895.js"><link rel="prefetch" href="/notes/assets/js/48.1c5da96b.js"><link rel="prefetch" href="/notes/assets/js/49.31c7e29d.js"><link rel="prefetch" href="/notes/assets/js/5.03d74ef1.js"><link rel="prefetch" href="/notes/assets/js/50.b48ca783.js"><link rel="prefetch" href="/notes/assets/js/51.b4bc061c.js"><link rel="prefetch" href="/notes/assets/js/52.77dc2135.js"><link rel="prefetch" href="/notes/assets/js/53.3fc2d110.js"><link rel="prefetch" href="/notes/assets/js/54.ab331494.js"><link rel="prefetch" href="/notes/assets/js/55.59fa9d3a.js"><link rel="prefetch" href="/notes/assets/js/56.6864911d.js"><link rel="prefetch" href="/notes/assets/js/57.44dbdabe.js"><link rel="prefetch" href="/notes/assets/js/58.516ab1c4.js"><link rel="prefetch" href="/notes/assets/js/59.56d4d38d.js"><link rel="prefetch" href="/notes/assets/js/6.c1d1ac7a.js"><link rel="prefetch" href="/notes/assets/js/60.9038d0d8.js"><link rel="prefetch" href="/notes/assets/js/61.d5696bbd.js"><link rel="prefetch" href="/notes/assets/js/62.59b5f172.js"><link rel="prefetch" href="/notes/assets/js/63.e9c7508b.js"><link rel="prefetch" href="/notes/assets/js/64.4241a14e.js"><link rel="prefetch" href="/notes/assets/js/65.91a07396.js"><link rel="prefetch" href="/notes/assets/js/67.afcaae6c.js"><link rel="prefetch" href="/notes/assets/js/68.d4eb82fd.js"><link rel="prefetch" href="/notes/assets/js/69.a4267fbd.js"><link rel="prefetch" href="/notes/assets/js/7.8e24ac99.js"><link rel="prefetch" href="/notes/assets/js/70.430fd8cd.js"><link rel="prefetch" href="/notes/assets/js/71.1016e8c6.js"><link rel="prefetch" href="/notes/assets/js/72.9ec57099.js"><link rel="prefetch" href="/notes/assets/js/73.20c4449a.js"><link rel="prefetch" href="/notes/assets/js/74.39b9604e.js"><link rel="prefetch" href="/notes/assets/js/75.4f09e706.js"><link rel="prefetch" href="/notes/assets/js/76.88ffa9c5.js"><link rel="prefetch" href="/notes/assets/js/77.eec6caf8.js"><link rel="prefetch" href="/notes/assets/js/78.166b5a56.js"><link rel="prefetch" href="/notes/assets/js/79.ef2af5da.js"><link rel="prefetch" href="/notes/assets/js/8.00d48dd8.js"><link rel="prefetch" href="/notes/assets/js/80.c0eb3a50.js"><link rel="prefetch" href="/notes/assets/js/81.21ed8523.js"><link rel="prefetch" href="/notes/assets/js/82.a7717793.js"><link rel="prefetch" href="/notes/assets/js/83.cb39ac8d.js"><link rel="prefetch" href="/notes/assets/js/84.3a0c34dc.js"><link rel="prefetch" href="/notes/assets/js/85.379f9075.js"><link rel="prefetch" href="/notes/assets/js/86.500344a3.js"><link rel="prefetch" href="/notes/assets/js/87.a52c8c96.js"><link rel="prefetch" href="/notes/assets/js/88.d14778d2.js"><link rel="prefetch" href="/notes/assets/js/89.ca52efc6.js"><link rel="prefetch" href="/notes/assets/js/9.5b519f35.js"><link rel="prefetch" href="/notes/assets/js/90.8529f3f5.js"><link rel="prefetch" href="/notes/assets/js/91.65963b3b.js"><link rel="prefetch" href="/notes/assets/js/92.041432c3.js"><link rel="prefetch" href="/notes/assets/js/93.d97cc1eb.js"><link rel="prefetch" href="/notes/assets/js/94.4c8de3b2.js"><link rel="prefetch" href="/notes/assets/js/95.81ea24d1.js"><link rel="prefetch" href="/notes/assets/js/96.4190ea57.js"><link rel="prefetch" href="/notes/assets/js/97.a72a27df.js"><link rel="prefetch" href="/notes/assets/js/98.504f98ad.js"><link rel="prefetch" href="/notes/assets/js/99.1da9035d.js">
+    <link rel="stylesheet" href="/notes/assets/css/0.styles.54ab1000.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>WaleGarrett</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>WaleGarrett的学习记录</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes/" class="home-link router-link-active"><img src="/notes/logo.jpg" alt="WaleGarrett" class="logo"> <span class="site-name">WaleGarrett</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>JavaSE</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/JavaSE/" class="nav-link"><i class="undefined"></i>
+  JavaSE基础
+</a></li></ul></li><li class="dropdown-item"><h4>Java IO</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java IO/" class="nav-link"><i class="undefined"></i>
+  Java IO
+</a></li></ul></li><li class="dropdown-item"><h4>Java容器</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java容器/" class="nav-link"><i class="undefined"></i>
+  Java容器
+</a></li></ul></li><li class="dropdown-item"><h4>Java并发</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/多线程与并发/" class="nav-link"><i class="undefined"></i>
+  多线程与并发
+</a></li></ul></li><li class="dropdown-item"><h4>JVM</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java运行时内存区.html" class="nav-link"><i class="undefined"></i>
+  Java运行时内存区
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java内存模型.html" class="nav-link"><i class="undefined"></i>
+  Java内存模型
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/类加载.html" class="nav-link"><i class="undefined"></i>
+  类加载
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/程序编译.html" class="nav-link"><i class="undefined"></i>
+  程序编译
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/虚拟机对象.html" class="nav-link"><i class="undefined"></i>
+  虚拟机对象
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/垃圾收集/" class="nav-link"><i class="undefined"></i>
+  垃圾收集
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/JVM调优.html" class="nav-link"><i class="undefined"></i>
+  JVM调优
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Spring系列
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring/" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring MVC/" class="nav-link"><i class="undefined"></i>
+  Spring MVC
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring Boot/" class="nav-link"><i class="undefined"></i>
+  Spring Boot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      计算机基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>操作系统</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/操作系统/" class="nav-link"><i class="undefined"></i>
+  操作系统知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>计算机网络</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据结构</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/数据库基础/" class="nav-link"><i class="undefined"></i>
+  数据库基础
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/数据库/MySQL/" class="nav-link"><i class="undefined"></i>
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      linux
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux命令/" class="nav-link"><i class="undefined"></i>
+  linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/脚本编程/" class="nav-link"><i class="undefined"></i>
+  脚本编程
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux内存管理/" class="nav-link"><i class="undefined"></i>
+  linux内存管理
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux文件系统/" class="nav-link"><i class="undefined"></i>
+  linux文件系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/git/git基础知识.html" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/maven/maven基础知识.html" class="nav-link"><i class="undefined"></i>
+  maven
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/kafka/" class="nav-link"><i class="undefined"></i>
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/HBase/" class="nav-link"><i class="undefined"></i>
+  HBase
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>ORM框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/MyBatis/" class="nav-link"><i class="undefined"></i>
+  MyBatis框架
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      架构
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/架构/" class="nav-link"><i class="undefined"></i>
+  系统架构
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.cnblogs.com/GarrettWale/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客文章
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><!----> <!----> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>211</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>106</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/notes/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>JavaSE</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/JavaSE/" class="nav-link"><i class="undefined"></i>
+  JavaSE基础
+</a></li></ul></li><li class="dropdown-item"><h4>Java IO</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java IO/" class="nav-link"><i class="undefined"></i>
+  Java IO
+</a></li></ul></li><li class="dropdown-item"><h4>Java容器</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java容器/" class="nav-link"><i class="undefined"></i>
+  Java容器
+</a></li></ul></li><li class="dropdown-item"><h4>Java并发</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/多线程与并发/" class="nav-link"><i class="undefined"></i>
+  多线程与并发
+</a></li></ul></li><li class="dropdown-item"><h4>JVM</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java运行时内存区.html" class="nav-link"><i class="undefined"></i>
+  Java运行时内存区
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java内存模型.html" class="nav-link"><i class="undefined"></i>
+  Java内存模型
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/类加载.html" class="nav-link"><i class="undefined"></i>
+  类加载
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/程序编译.html" class="nav-link"><i class="undefined"></i>
+  程序编译
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/虚拟机对象.html" class="nav-link"><i class="undefined"></i>
+  虚拟机对象
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/垃圾收集/" class="nav-link"><i class="undefined"></i>
+  垃圾收集
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/JVM调优.html" class="nav-link"><i class="undefined"></i>
+  JVM调优
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Spring系列
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring/" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring MVC/" class="nav-link"><i class="undefined"></i>
+  Spring MVC
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring Boot/" class="nav-link"><i class="undefined"></i>
+  Spring Boot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      计算机基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>操作系统</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/操作系统/" class="nav-link"><i class="undefined"></i>
+  操作系统知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>计算机网络</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据结构</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/数据库基础/" class="nav-link"><i class="undefined"></i>
+  数据库基础
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/数据库/MySQL/" class="nav-link"><i class="undefined"></i>
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      linux
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux命令/" class="nav-link"><i class="undefined"></i>
+  linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/脚本编程/" class="nav-link"><i class="undefined"></i>
+  脚本编程
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux内存管理/" class="nav-link"><i class="undefined"></i>
+  linux内存管理
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux文件系统/" class="nav-link"><i class="undefined"></i>
+  linux文件系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/git/git基础知识.html" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/maven/maven基础知识.html" class="nav-link"><i class="undefined"></i>
+  maven
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/kafka/" class="nav-link"><i class="undefined"></i>
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/HBase/" class="nav-link"><i class="undefined"></i>
+  HBase
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>ORM框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/MyBatis/" class="nav-link"><i class="undefined"></i>
+  MyBatis框架
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      架构
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/架构/" class="nav-link"><i class="undefined"></i>
+  系统架构
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.cnblogs.com/GarrettWale/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客文章
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>linux</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux命令/" class="sidebar-heading clickable"><span>linux命令</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux内存管理/" class="sidebar-heading clickable"><span>linux内存管理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux文件系统/" class="sidebar-heading clickable"><span>linux文件系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/脚本编程/" class="sidebar-heading clickable open"><span>脚本编程</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/blog/linux/脚本编程/脚本编程基础.html" class="sidebar-link">脚本编程基础</a></li><li><a href="/notes/blog/linux/脚本编程/处理输入.html" class="sidebar-link">处理输入</a></li><li><a href="/notes/blog/linux/脚本编程/处理输出.html" class="sidebar-link">处理输出</a></li><li><a href="/notes/blog/linux/脚本编程/结构化命令.html" class="sidebar-link">结构化命令</a></li><li><a href="/notes/blog/linux/脚本编程/函数.html" class="sidebar-link">函数</a></li><li><a href="/notes/blog/linux/脚本编程/sed与gawk.html" class="active sidebar-link">sed与gawk</a></li></ul></section></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>sed与gawk</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page"><section><div class="page-title"><h1 class="title">sed与gawk</h1> <div data-v-f875f3fc><!----> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>4/1/2022</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>linux</span><span class="tag-item" data-v-f875f3fc>shell</span></i></div></div> <div class="theme-reco-content content__default"><p>到目前为止， shell 脚本最常见的一个用途就是处理文本文件。检查日志文件、读取配置文件、处理数据元素，shell 脚本可以帮助我们将文本文件中各种数据的日常处理任务自动化。但仅靠 shell 脚本命令来处理文本文件的内容有点勉为其难。如果想在 shell 脚本中处理任何类型的数据，你得熟悉 Linux 中的 sed 和 gawk 工具。这两个工具能够极大简化需要进行的数据处理任务。</p> <p>大多数情况，我们使用 vim 这类编辑器处理文本，但有时候，你会发现需要自动处理文本文件，可你又不想动用全副武装的交互式文本编辑器。在这种情况下，有个能够轻松实现自动格式化、插入、修改或删除文本元素的简单命令行编辑器就方便多了。</p> <p>Linux 系统提供了两个常见的具备上述功能的工具。本节将会介绍 Linux 世界中最广泛使用的两个命令行编辑器：sed 和 gawk。</p> <h2 id="sed-编辑器"><a href="#sed-编辑器" class="header-anchor">#</a> sed 编辑器</h2> <p>sed 编辑器被称作<code>流编辑器</code>（stream editor），和普通的交互式文本编辑器恰好相反。在交互式文本编辑器中（比如 vim），你可以用键盘命令来交互式地插入、删除或替换数据中的文本。<strong>==流编辑器则会在编辑器处理数据之前基于预先提供的一组规则来编辑数据流。==</strong></p> <p>sed 编辑器可以根据命令来处理数据流中的数据，这些命令要么从命令行中输入，要么存储在一个命令文本文件中。sed 编辑器会执行下列操作。</p> <ul><li>一次从输入中读取一行数据。</li> <li>根据所提供的编辑器命令匹配数据。</li> <li>按照命令修改流中的数据。</li> <li>将新的数据输出到 STDOUT。</li></ul> <p>在流编辑器将所有命令与一行数据匹配完毕后，它会读取下一行数据并重复这个过程。在流编辑器处理完流中的所有数据行后，它就会终止。</p> <p>由于命令是按顺序逐行给出的，sed 编辑器只需对数据流进行一遍处理就可以完成编辑操作。这使得 sed 编辑器要比交互式编辑器快得多，你可以快速完成对数据的自动修改。</p> <p>sed 命令的格式如下。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sed</span> options script <span class="token function">file</span>
+</code></pre></div><p>选项允许你修改 sed 命令的行为，可以使用的选项已在下面列出</p> <ul><li>-e script 在处理输入时，将 script 中指定的命令添加到已有的命令中</li> <li>-f file 在处理输入时，将 file 中指定的命令添加到已有的命令中</li> <li>-n 不产生命令输出，使用 print 命令来完成输出</li></ul> <p>script 参数指定了应用于流数据上的单个命令。如果需要用多个命令，要么使用-e 选项在命令行中指定，要么使用-f 选项在单独的文件中指定。有大量的命令可用来处理数据。我们将会在本章后面介绍一些 sed 编辑器的基本命令，然后在后续章节中会看到另外一些高级命令。</p> <h3 id="在命令行定义编辑器命令"><a href="#在命令行定义编辑器命令" class="header-anchor">#</a> 在命令行定义编辑器命令</h3> <p>默认情况下，sed 编辑器会将指定的命令应用到 STDIN 输入流上。这样你可以直接将数据通过管道输入 sed 编辑器处理。这里有个简单的示例。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">&quot;This is a test&quot;</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/test/big test/'</span>
+This is a big <span class="token builtin class-name">test</span>
+$
+</code></pre></div><p>这个例子在 sed 编辑器中使用了 s 命令。<strong>s 命令会用斜线间指定的第二个文本字符串来替换第一个文本字符串模式。在本例中是 big test 替换了 test。</strong></p> <p>在运行这个例子时，结果应该立即就会显示出来。这就是使用 sed 编辑器的强大之处。你可以同时对数据做出多处修改，而所消耗的时间却只够一些交互式编辑器启动而已。</p> <p>当然，这个简单的测试只是修改了一行数据。不过就算编辑整个文件，处理速度也相差无几。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data1.txt
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+$
+$ <span class="token function">sed</span> <span class="token string">'s/dog/cat/'</span> data1.txt
+The quick brown fox jumps over the lazy cat.
+The quick brown fox jumps over the lazy cat.
+The quick brown fox jumps over the lazy cat.
+The quick brown fox jumps over the lazy cat.
+$
+</code></pre></div><p>sed 命令几乎瞬间就执行完并返回数据。在处理每行数据的同时，结果也显示出来了。可以在 sed 编辑器处理完整个文件之前就开始观察结果。</p> <p>重要的是，要记住，<strong>==sed 编辑器并不会修改文本文件的数据。它只会将修改后的数据发送到 STDOUT。如果你查看原来的文本文件，它仍然保留着原始数据。==</strong></p> <h3 id="在命令行使用多个编辑器命令"><a href="#在命令行使用多个编辑器命令" class="header-anchor">#</a> 在命令行使用多个编辑器命令</h3> <p>要在 sed 命令行上执行多个命令时，只要用-e 选项就可以了。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> -e <span class="token string">'s/brown/green/; s/dog/cat/'</span> data1.txt
+The quick green fox jumps over the lazy cat.
+The quick green fox jumps over the lazy cat.
+The quick green fox jumps over the lazy cat.
+The quick green fox jumps over the lazy cat.
+</code></pre></div><p>两个命令都作用到文件中的每行数据上。命令之间必须用分号隔开，并且在命令末尾和分号之间不能有空格。</p> <p>如果不想用分号，也可以用 bash shell 中的次提示符来分隔命令。只要输入第一个单引号标示出 sed 程序脚本的起始（sed 编辑器命令列表），bash 会继续提示你输入更多命令，直到输入了标示结束的单引号。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> -e <span class="token string">'
+&gt; s/brown/green/
+&gt; s/fox/elephant/
+&gt; s/dog/cat/'</span> data1.txt
+The quick green elephant jumps over the lazy cat.
+The quick green elephant jumps over the lazy cat.
+The quick green elephant jumps over the lazy cat.
+The quick green elephant jumps over the lazy cat.
+$
+</code></pre></div><p>必须记住，要在封尾单引号所在行结束命令。bash shell 一旦发现了封尾的单引号，就会执行命令。开始后，sed 命令就会将你指定的每条命令应用到文本文件中的每一行上。</p> <h3 id="从文件中读取编辑器命令"><a href="#从文件中读取编辑器命令" class="header-anchor">#</a> 从文件中读取编辑器命令</h3> <p>最后，如果有大量要处理的 sed 命令，那么将它们放进一个单独的文件中通常会更方便一些。可以在 sed 命令中用-f 选项来指定文件。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> script1.sed
+s/brown/green/
+s/fox/elephant/
+s/dog/cat/
+$
+$ <span class="token function">sed</span> -f script1.sed data1.txt
+The quick green elephant jumps over the lazy cat.
+The quick green elephant jumps over the lazy cat.
+The quick green elephant jumps over the lazy cat.
+The quick green elephant jumps over the lazy cat.
+$
+</code></pre></div><p>在这种情况下，不用在每条命令后面放一个分号。sed 编辑器知道每行都是一条单独的命令。跟在命令行输入命令一样，sed 编辑器会从指定文件中读取命令，并将它们应用到数据文件中的每一行上。</p> <blockquote><p>我们很容易就会把 sed 编辑器脚本文件与 bash shell 脚本文件搞混。为了避免这种情况，可以使用.sed 作为 sed 脚本文件的扩展名。</p></blockquote> <h3 id="更多的替换选项"><a href="#更多的替换选项" class="header-anchor">#</a> 更多的替换选项</h3> <p>你已经懂得了如何用 s 命令（<strong>substitute</strong>）来在行中替换文本。这个命令还有另外一些选项能让事情变得更为简单。关于替换命令如何替换字符串中所匹配的模式需要注意一点。看看下面这个例子中会出现什么情况。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data4.txt
+This is a <span class="token builtin class-name">test</span> of the <span class="token builtin class-name">test</span> script.
+This is the second <span class="token builtin class-name">test</span> of the <span class="token builtin class-name">test</span> script.
+$
+$ <span class="token function">sed</span> <span class="token string">'s/test/trial/'</span> data4.txt
+This is a trial of the <span class="token builtin class-name">test</span> script.
+This is the second trial of the <span class="token builtin class-name">test</span> script.
+$
+</code></pre></div><p>替换命令在替换多行中的文本时能正常工作，但默认情况下它只替换每行中出现的第一处。要让替换命令能够替换一行中不同地方出现的文本必须使用<code>替换标记</code>（substitution flag）。替换标记会在替换命令字符串之后设置。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>s/pattern/replacement/flags
+</code></pre></div><p>有 4 种可用的替换标记：</p> <ul><li>数字，表明新文本将替换第几处模式匹配的地方；</li> <li>g，表明新文本将会替换所有匹配的文本；</li> <li>p，表明原先行的内容要打印出来；</li> <li>w file，将替换的结果写到文件中。</li></ul> <p>在第一类替换中，可以指定 sed 编辑器用新文本替换第几处模式匹配的地方。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'s/test/trial/2'</span> data4.txt
+This is a <span class="token builtin class-name">test</span> of the trial script.
+This is the second <span class="token builtin class-name">test</span> of the trial script.
+$
+</code></pre></div><p>将替换标记指定为 2 的结果就是：sed 编辑器只替换每行中第二次出现的匹配模式。而 g 替换标记使你能替换文本中匹配模式所匹配的每处地方。p 替换标记会打印与替换命令中指定的模式匹配的行。这通常会和 sed 的-n 选项一起使用。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data5.txt
+This is a <span class="token builtin class-name">test</span> line.
+This is a different line.
+$
+$ <span class="token function">sed</span> -n <span class="token string">'s/test/trial/p'</span> data5.txt
+This is a trial line.
+$
+</code></pre></div><p>-n 选项将禁止 sed 编辑器输出。但 p 替换标记会输出修改过的行。将二者配合使用的效果就是只输出被替换命令修改过的行。</p> <p>w 替换标记会产生同样的输出，不过会将输出保存到指定文件中。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'s/test/trial/w test.txt'</span> data5.txt
+This is a trial line.
+This is a different line.
+$
+$ <span class="token function">cat</span> test.txt
+This is a trial line.
+$
+</code></pre></div><p>sed 编辑器的正常输出是在 STDOUT 中，而只有那些包含匹配模式的行才会保存在指定的输出文件中。</p> <hr> <p>有时你会在文本字符串中遇到一些不太方便在替换模式中使用的字符。Linux 中一个常见的例子就是正斜线（/）。替换文件中的路径名会比较麻烦。比如，如果想用 C shell 替换/etc/passwd 文件中的 bash shell，必须这么做：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'s/\/bin\/bash/\/bin\/csh/'</span> /etc/passwd
+</code></pre></div><p>由于正斜线通常用作字符串分隔符，因而如果它出现在了模式文本中的话，必须用反斜线来转义。这通常会带来一些困惑和错误。要解决这个问题，sed 编辑器允许选择其他字符来作为替换命令中的字符串分隔符：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'s!/bin/bash!/bin/csh!'</span> /etc/passwd
+</code></pre></div><p>在这个例子中，感叹号被用作字符串分隔符，这样路径名就更容易阅读和理解了</p> <h3 id="使用地址"><a href="#使用地址" class="header-anchor">#</a> 使用地址</h3> <p>默认情况下，在 sed 编辑器中使用的命令会作用于文本数据的所有行。如果只想将命令作用于特定行或某些行，则必须用<code>行寻址</code>（line addressing）。在 sed 编辑器中有两种形式的行寻址：</p> <ul><li>以数字形式表示行区间</li> <li>用文本模式来过滤出行</li></ul> <p>两种形式都使用相同的格式来指定地址：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>address<span class="token punctuation">]</span>command
+</code></pre></div><p>也可以将特定地址的多个命令分组：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>address <span class="token punctuation">{</span>
+    command1
+    command2
+    command3
+<span class="token punctuation">}</span>
+</code></pre></div><p>sed 编辑器会将指定的每条命令作用到匹配指定地址的行上。下面将会演示如何在 sed 编辑器脚本中使用两种寻址方法。</p> <p>当使用数字方式的行寻址时，可以用行在文本流中的行位置来引用。sed 编辑器会将文本流中的第一行编号为 1，然后继续按顺序为接下来的行分配行号。在命令中指定的地址可以是单个行号，或是用起始行号、逗号以及结尾行号指定的一定区间范围内的行。这里有个 sed 命令作用到指定行号的例子。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'2s/dog/cat/'</span> data1.txt
+The quick brown fox jumps over the lazy dog
+The quick brown fox jumps over the lazy <span class="token function">cat</span>
+The quick brown fox jumps over the lazy dog
+The quick brown fox jumps over the lazy dog
+$
+</code></pre></div><p>sed 编辑器只修改地址指定的第二行的文本。这里有另一个例子，这次使用了行地址区间。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'2,3s/dog/cat/'</span> data1.txt
+The quick brown fox jumps over the lazy dog
+The quick brown fox jumps over the lazy <span class="token function">cat</span>
+The quick brown fox jumps over the lazy <span class="token function">cat</span>
+The quick brown fox jumps over the lazy dog
+$
+</code></pre></div><p>如果想将命令作用到文本中从某行开始的所有行，可以用特殊地址——美元符。可能你并不知道文本中到底有多少行数据，因此美元符用起来通常很方便。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'2,$s/dog/cat/'</span> data1.txt
+The quick brown fox jumps over the lazy dog
+The quick brown fox jumps over the lazy <span class="token function">cat</span>
+The quick brown fox jumps over the lazy <span class="token function">cat</span>
+The quick brown fox jumps over the lazy <span class="token function">cat</span>
+$
+</code></pre></div><hr> <p>另一种限制命令作用到哪些行上的方法会稍稍复杂一些。sed 编辑器允许指定文本模式来过滤出命令要作用的行。格式如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>/pattern/command
+</code></pre></div><p>必须用正斜线将要指定的 pattern 封起来。sed 编辑器会将该命令作用到包含指定文本模式的行上。举个例子，如果你想只修改用户 Samantha 的默认 shell，可以使用 sed 命令。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">grep</span> Samantha /etc/passwd
+Samantha:x:502:502::/home/Samantha:/bin/bash
+$
+$ <span class="token function">sed</span> <span class="token string">'/Samantha/s/bash/csh/'</span> /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+<span class="token punctuation">[</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+Christine:x:501:501:Christine B:/home/Christine:/bin/bash
+Samantha:x:502:502::/home/Samantha:/bin/csh
+Timothy:x:503:503::/home/Timothy:/bin/bash
+$
+</code></pre></div><p>该命令只作用到匹配文本模式的行上。虽然使用固定文本模式能帮你过滤出特定的值，就跟上面这个用户名的例子一样，但其作用难免有限。sed 编辑器在文本模式中采用了一种称为<code>正则表达式</code>（regular expression）的特性来帮助你创建匹配效果更好的模式。<br>
+正则表达式允许创建高级文本模式匹配表达式来匹配各种数据。这些表达式结合了一系列通配符、特殊字符以及固定文本字符来生成能够匹配几乎任何形式文本的简练模式。正则表达式是 shell 脚本编程中令人心生退意的部分之一，下一章将会详细介绍相关内容。</p> <hr> <p>如果需要在单行上执行多条命令，可以用花括号将多条命令组合在一起。sed 编辑器会处理地址行处列出的每条命令。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'2{
+&gt; s/fox/elephant/
+&gt; s/dog/cat/
+&gt; }'</span> data1.txt
+The quick brown fox jumps over the lazy dog.
+The quick brown elephant jumps over the lazy cat.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+$
+</code></pre></div><p>两条命令都会作用到该地址上。当然，也可以在一组命令前指定一个地址区间。sed 编辑器会将所有命令作用到该地址区间内的所有行上。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'3,${
+&gt; s/brown/green/
+&gt; s/lazy/active/ &gt; }'</span> data1.txt
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick green fox jumps over the active dog.
+The quick green fox jumps over the active dog.
+$
+</code></pre></div><h3 id="删除行"><a href="#删除行" class="header-anchor">#</a> 删除行</h3> <p>文本替换命令不是 sed 编辑器唯一的命令。如果需要删除文本流中的特定行，可以用删除命令。**删除命令 d 名副其实，它会删除匹配指定寻址模式的所有行。**使用该命令时要特别小心，如果你忘记加入寻址模式的话，流中的所有文本行都会被删除。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data1.txt
+The quick brown fox jumps over the lazy dog
+The quick brown fox jumps over the lazy dog
+The quick brown fox jumps over the lazy dog
+The quick brown fox jumps over the lazy dog
+$
+$ <span class="token function">sed</span> <span class="token string">'d'</span> data1.txt
+$
+</code></pre></div><p>当和指定地址一起使用时，删除命令显然能发挥出最大的功用。可以从数据流中删除特定的文本行，通过行号指定：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+$
+$ <span class="token function">sed</span> <span class="token string">'3d'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>或者通过特定行区间指定：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'2,3d'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>或者通过特殊的文件结尾字符：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'3,$d'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+$
+</code></pre></div><p>sed 编辑器的模式匹配特性也适用于删除命令。sed 编辑器会删掉包含匹配指定模式的行。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'/number 1/d'</span> data6.txt
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><blockquote><p>记住，sed 编辑器不会修改原始文件。你删除的行只是从 sed 编辑器的输出中消失了。原始文件仍然包含那些“删掉的”行。</p></blockquote> <p>也可以使用两个文本模式来删除某个区间内的行，但这么做时要小心。你指定的第一个模式会“打开”行删除功能，第二个模式会“关闭”行删除功能。sed 编辑器会删除两个指定行之间的所有行（包括指定的行）。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'/1/,/3/d'</span> data6.txt
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>除此之外，你要特别小心，因为只要 sed 编辑器在数据流中匹配到了开始模式，删除功能就会打开。这可能会导致意外的结果。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data7.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+This is line number <span class="token number">1</span> again.
+This is text you want to keep.
+This is the last line <span class="token keyword">in</span> the file.
+$
+$ <span class="token function">sed</span> <span class="token string">'/1/,/3/d'</span> data7.txt
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>第二个出现数字“1”的行再次触发了删除命令，因为没有找到停止模式，所以就将数据流中的剩余行全部删除了。当然，如果你指定了一个从未在文本中出现的停止模式，显然会出现另外一个问题。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'/1/,/5/d'</span> data7.txt
+$
+</code></pre></div><p>因为删除功能在匹配到第一个模式的时候打开了，但一直没匹配到结束模式，所以整个数据流都被删掉了。</p> <h3 id="插入和附加文本"><a href="#插入和附加文本" class="header-anchor">#</a> 插入和附加文本</h3> <p>如你所期望的，跟其他编辑器类似，sed 编辑器允许向数据流插入和附加文本行。两个操作的区别可能比较让人费解：</p> <ul><li>插入（insert）命令（i）会在指定行前增加一个新行；</li> <li>附加（append）命令（a）会在指定行后增加一个新行。</li></ul> <p>这两条命令的费解之处在于它们的格式。它们不能在单个命令行上使用。你必须指定是要将行插入还是附加到另一行。格式如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sed</span> <span class="token string">'[address]command\
+new line'</span>
+</code></pre></div><p>new line 中的文本将会出现在 sed 编辑器输出中你指定的位置。记住，当使用插入命令时，文本会出现在数据流文本的前面。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">&quot;Test Line 2&quot;</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'i\Test Line 1'</span>
+Test Line <span class="token number">1</span>
+Test Line <span class="token number">2</span>
+$
+</code></pre></div><p>当使用附加命令时，文本会出现在数据流文本的后面。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">&quot;Test Line 2&quot;</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'a\Test Line 1'</span>
+Test Line <span class="token number">2</span>
+Test Line <span class="token number">1</span>
+$
+</code></pre></div><p>在命令行界面提示符上使用 sed 编辑器时，你会看到次提示符来提醒输入新的行数据。你必须在该行完成 sed 编辑器命令。一旦你输入了结尾的单引号，bash shell 就会执行该命令。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">&quot;Test Line 2&quot;</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'i\
+&gt; Test Line 1'</span>
+Test Line <span class="token number">1</span>
+Test Line <span class="token number">2</span>
+$
+</code></pre></div><p>这样能够给数据流中的文本前面或后面添加文本，但如果要向数据流内部添加文本呢？要向数据流行内部插入或附加数据，你必须用寻址来告诉 sed 编辑器你想让数据出现在什么位置。可以在用这些命令时只指定一个行地址。可以匹配一个数字行号或文本模式，但不能用地址区间。这合乎逻辑，因为你只能将文本插入或附加到单个行的前面或后面，而不是行区间的前面或后面。下面的例子是将一个新行插入到数据流第三行前。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'3i\
+&gt; This is an inserted line.'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is an inserted line.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>下面的例子是将一个新行附加到数据流中第三行后。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'3a\
+&gt; This is an inserted line.'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is an inserted line.
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>它使用与插入命令相同的过程，只是将新文本行放到了指定的行号后面。如果你有一个多行数据流，想要将新行附加到数据流的末尾，只要用代表数据最后一行的美元符就可以了。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'$a\
+&gt; This is an inserted line.'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+This is an inserted line.
+$
+</code></pre></div><p>同样的方法也适用于要在数据流起始位置增加一个新行。只要在第一行之前插入新行即可。<br>
+要插入或附加多行文本，就必须对要插入或附加的新文本中的每一行使用反斜线，直到最后一行。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'1i\
+&gt; This is one line of new text.\
+&gt; This is another line of new text.'</span> data6.txt
+This is one line of new text.
+This is another line of new text.
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>指定的两行都会被添加到数据流中。</p> <h3 id="修改行"><a href="#修改行" class="header-anchor">#</a> 修改行</h3> <p>修改（change）命令允许修改数据流中整行文本的内容。它跟插入和附加命令的工作机制一样，你必须在 sed 命令中单独指定新行。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'3c\
+&gt; This is a changed line of text.'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is a changed line of text.
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>在这个例子中，sed 编辑器会修改第三行中的文本。也可以用文本模式来寻址。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'/number 3/c\
+&gt; This is a changed line of text.'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is a changed line of text.
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>文本模式修改命令会修改它匹配的数据流中的任意文本行。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data8.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+This is line number <span class="token number">1</span> again.
+This is yet another line.
+This is the last line <span class="token keyword">in</span> the file.
+$
+$ <span class="token function">sed</span> <span class="token string">'/number 1/c\
+&gt; This is a changed line of text.'</span> data8.txt
+This is a changed line of text.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+This is a changed line of text.
+This is yet another line.
+This is the last line <span class="token keyword">in</span> the file.
+$
+</code></pre></div><p>你可以在修改命令中使用地址区间，但结果未必如愿。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'2,3c\
+&gt; This is a new line of text.'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is a new line of text.
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>sed 编辑器会用这一行文本来替换数据流中的两行文本，而不是逐一修改这两行文本。</p> <h3 id="转换命令"><a href="#转换命令" class="header-anchor">#</a> 转换命令</h3> <p>转换（transform）命令（y）是唯一可以处理单个字符的 sed 编辑器命令。转换命令格式如下。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>address<span class="token punctuation">]</span>y/inchars/outchars/
+</code></pre></div><p>转换命令会对 inchars 和 outchars 值进行一对一的映射。inchars 中的第一个字符会被转换为 outchars 中的第一个字符，第二个字符会被转换成 outchars 中的第二个字符。这个映射过程会一直持续到处理完指定字符。如果 inchars 和 outchars 的长度不同，则 sed 编辑器会产生一条错误消息。这里有个使用转换命令的简单例子。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'y/123/789/'</span> data8.txt
+This is line number <span class="token number">7</span>.
+This is line number <span class="token number">8</span>.
+This is line number <span class="token number">9</span>.
+This is line number <span class="token number">4</span>.
+This is line number <span class="token number">7</span> again.
+This is yet another line.
+This is the last line <span class="token keyword">in</span> the file.
+$
+</code></pre></div><p>如你在输出中看到的，inchars 模式中指定字符的每个实例都会被替换成 outchars 模式中相同位置的那个字符。转换命令是一个全局命令，也就是说，它会文本行中找到的所有指定字符自动进行转换，而不会考虑它们出现的位置。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">&quot;This 1 is a test of 1 try.&quot;</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'y/123/456/'</span>
+This <span class="token number">4</span> is a <span class="token builtin class-name">test</span> of <span class="token number">4</span> try.
+$
+</code></pre></div><p>sed 编辑器转换了在文本行中匹配到的字符 1 的两个实例。你无法限定只转换在特定地方出现的字符。</p> <h3 id="回顾打印"><a href="#回顾打印" class="header-anchor">#</a> 回顾打印</h3> <p>之前介绍了如何使用 p <code>标记</code>和替换命令显示 sed 编辑器修改过的行。另外有 3 个命令也能用来打印数据流中的信息：</p> <ul><li>p 命令用来打印文本行；</li> <li>等号（=）命令用来打印行号；</li> <li>l（小写的 L）命令用来列出行。</li></ul> <hr> <p>跟替换命令中的 p <code>标记</code>类似，p <code>命令</code>可以打印 sed 编辑器输出中的一行。如果只用这个命令，也没什么特别的。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">&quot;this is a test&quot;</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'p'</span>
+this is a <span class="token builtin class-name">test</span>
+this is a <span class="token builtin class-name">test</span>
+$
+</code></pre></div><p>它所做的就是打印已有的数据文本。打印命令最常见的用法是打印包含匹配文本模式的行。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+$
+$ <span class="token function">sed</span> -n <span class="token string">'/number 3/p'</span> data6.txt
+This is line number <span class="token number">3</span>.
+$
+</code></pre></div><p>在命令行上用-n 选项，你可以禁止输出其他行，只打印包含匹配文本模式的行。也可以用它来快速打印数据流中的某些行。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> -n <span class="token string">'2,3p'</span> data6.txt
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+$
+</code></pre></div><p>如果需要在修改之前查看行，也可以使用打印命令，比如与替换或修改命令一起使用。可以创建一个脚本在修改行之前显示该行。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> -n <span class="token string">'/3/{
+&gt; p
+&gt; s/line/test/p
+&gt; }'</span> data6.txt
+This is line number <span class="token number">3</span>.
+This is <span class="token builtin class-name">test</span> number <span class="token number">3</span>.
+$
+</code></pre></div><p>sed 编辑器命令会查找包含数字 3 的行，然后执行两条命令。首先，脚本用 p 命令来打印出原始行；然后它用 s 命令替换文本，并用 p 标记打印出替换结果。输出同时显示了原来的行文本和新的行文本。</p> <hr> <p>等号命令会打印行在数据流中的当前行号。行号由数据流中的换行符决定。每次数据流中出现一个换行符，sed 编辑器会认为一行文本结束了。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data1.txt
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+$
+$ <span class="token function">sed</span> <span class="token string">'='</span> data1.txt
+<span class="token number">1</span>
+The quick brown fox jumps over the lazy dog.
+<span class="token number">2</span>
+The quick brown fox jumps over the lazy dog.
+<span class="token number">3</span>
+The quick brown fox jumps over the lazy dog.
+<span class="token number">4</span>
+The quick brown fox jumps over the lazy dog.
+$
+</code></pre></div><p>sed 编辑器在实际的文本行出现前打印了行号。如果你要在数据流中查找特定文本模式的话，等号命令用起来非常方便。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> -n <span class="token string">'/number 4/{
+&gt; =
+&gt; p
+&gt; }'</span> data6.txt
+<span class="token number">4</span>
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>利用-n 选项，你就能让 sed 编辑器只显示包含匹配文本模式的行的行号和文本。</p> <hr> <p>列出（list）命令（l）可以打印数据流中的文本和不可打印的 ASCII 字符。任何不可打印字符要么在其八进制值前加一个反斜线，要么使用标准 C 风格的命名法（用于常见的不可打印字符），比如\t，来代表制表符。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data9.txt
+This    line    contains        tabs.
+$
+$ <span class="token function">sed</span> -n <span class="token string">'l'</span> data9.txt
+This<span class="token punctuation">\</span>tline<span class="token punctuation">\</span>tcontains<span class="token punctuation">\</span>ttabs.$
+$
+</code></pre></div><p>制表符的位置使用\t 来显示。行尾的美元符表示换行符。如果数据流包含了转义字符，列出命令会在必要时候用八进制码来显示。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data10.txt
+This line contains an escape character.
+$
+$ <span class="token function">sed</span> -n <span class="token string">'l'</span> data10.txt
+This line contains an escape character. <span class="token punctuation">\</span>a$
+$
+</code></pre></div><p>data10.txt 文本文件包含了一个转义控制码来产生铃声。当用 cat 命令来显示文本文件时，你看不到转义控制码，只能听到声音（如果你的音箱打开的话）。但是，利用列出命令，你就能显示出所使用的转义控制码。</p> <h3 id="使用-sed-处理文件"><a href="#使用-sed-处理文件" class="header-anchor">#</a> 使用 sed 处理文件</h3> <p>替换命令包含一些可以用于文件的标记。还有一些 sed 编辑器命令也可以实现同样的目标，不需要非得替换文本。</p> <p>w 命令用来向文件写入行。该命令的格式如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>address<span class="token punctuation">]</span>w filename0
+</code></pre></div><p>filename 可以使用相对路径或绝对路径，但不管是哪种，运行 sed 编辑器的用户都必须有文件的写权限。地址可以是 sed 中支持的任意类型的寻址方式，例如单个行号、文本模式、行区间或文本模式。</p> <p>下面的例子是将数据流中的前两行打印到一个文本文件中。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'1,2w test.txt'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+$
+$ <span class="token function">cat</span> test.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+$
+</code></pre></div><p>当然，如果你不想让行显示到 STDOUT 上，你可以用 sed 命令的-n 选项。<br>
+如果要根据一些公用的文本值从主文件中创建一份数据文件，比如下面的邮件列表中的，那么 w 命令会非常好用。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data11.txt
+Blum, R       Browncoat
+McGuiness, A  Alliance
+Bresnahan, C  Browncoat
+Harken, C     Alliance
+$
+$ <span class="token function">sed</span> -n <span class="token string">'/Browncoat/w Browncoats.txt'</span> data11.txt
+$
+$ <span class="token function">cat</span> Browncoats.txt
+Blum, R       Browncoat
+Bresnahan, C  Browncoat
+$
+</code></pre></div><p>sed 编辑器会只将包含文本模式的数据行写入目标文件。</p> <hr> <p>你已经了解了如何在 sed 命令行上向数据流中插入或附加文本。读取（read）命令（r）允许你将一个独立文件中的数据插入到数据流中。读取命令的格式如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>address<span class="token punctuation">]</span>r filename
+</code></pre></div><p>filename 参数指定了数据文件的绝对路径或相对路径。你在读取命令中使用地址区间，只能指定单独一个行号或文本模式地址。sed 编辑器会将文件中的文本插入到指定地址后。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data12.txt
+This is an added line.
+This is the second added line.
+$
+$ <span class="token function">sed</span> <span class="token string">'3r data12.txt'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is an added line.
+This is the second added line.
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>sed 编辑器会将数据文件中的所有文本行都插入到数据流中。同样的方法在使用文本模式地址时也适用。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'/number 2/r data12.txt'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is an added line.
+This is the second added line.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+$
+</code></pre></div><p>如果你要在数据流的末尾添加文本，只需用美元符地址符就行了。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'$r data12.txt'</span> data6.txt
+This is line number <span class="token number">1</span>.
+This is line number <span class="token number">2</span>.
+This is line number <span class="token number">3</span>.
+This is line number <span class="token number">4</span>.
+This is an added line.
+This is the second added line.
+$
+</code></pre></div><p>读取命令的另一个很酷的用法是和删除命令配合使用：利用另一个文件中的数据来替换文件中的占位文本。举例来说，假定你有一份套用信件保存在文本文件中：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> notice.std
+Would the following people:
+LIST
+please report to the ship's captain.
+$
+</code></pre></div><p>套用信件将通用占位文本 LIST 放在人物名单的位置。要在占位文本后插入名单，只需读取命令就行了。但这样的话，占位文本仍然会留在输出中。要删除占位文本的话，你可以用删除命令。结果如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> <span class="token string">'/LIST/{
+&gt; r data11.txt
+&gt; d
+&gt; }'</span> notice.std
+Would the following people:
+Blum, R       Browncoat
+McGuiness, A  Alliance
+Bresnahan, C  Browncoat
+Harken, C     Alliance
+please report to the ship's captain.
+$
+</code></pre></div><p>现在占位文本已经被替换成了数据文件中的名单。</p> <h2 id="gawk-程序"><a href="#gawk-程序" class="header-anchor">#</a> gawk 程序</h2> <p>虽然 sed 编辑器是非常方便自动修改文本文件的工具，但其也有自身的限制。<strong>通常你需要一个用来处理文件中的数据的更高级工具，它能提供一个类编程环境来修改和重新组织文件中的数据。这正是 gawk 能够做到的。</strong></p> <blockquote><p>很多发行版中都没有默认安装 gawk 程序。如果你所用的 Linux 发行版中没有包含 gawk，请自行安装。arch linux 可直接安装包组 base-devel 来使用 gawk</p></blockquote> <p>gawk 程序是 Unix 中的原始 awk 程序的 GNU 版本。gawk 程序让流编辑迈上了一个新的台阶，它提供了一种编程语言而不只是编辑器命令。在 gawk 编程语言中，你可以做下面的事情：</p> <ul><li>定义变量来保存数据；</li> <li>使用算术和字符串操作符来处理数据；</li> <li>使用结构化编程概念（比如 if-then 语句和循环）来为数据处理增加处理逻辑；</li> <li>通过提取数据文件中的数据元素，将其重新排列或格式化，生成格式化报告。</li></ul> <p>gawk 程序的报告生成能力通常用来从大文本文件中提取数据元素，并将它们格式化成可读的报告。其中最完美的例子是<strong>格式化日志文件</strong>。在日志文件中找出错误行会很难，gawk 程序可以让你从日志文件中过滤出需要的数据元素，然后你可以将其格式化，使得重要的数据更易于阅读。gawk 的强大之处在于程序脚本。可以写脚本来读取文本行的数据，然后处理并显示数据，创建任何类型的输出报告。</p> <h3 id="基础用法"><a href="#基础用法" class="header-anchor">#</a> 基础用法</h3> <p>gawk 程序的基本格式如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">gawk</span> options program <span class="token function">file</span>
+</code></pre></div><p>如下显示了 gawk 程序的可用选项。命令行选项提供了一个简单的途径来定制 gawk 程序中的功能。我们会在探索 gawk 时进一步了解这些选项。</p> <ul><li>-F fs 指定行中划分数据字段的字段分隔符</li> <li>-f file 从指定的文件中读取程序</li> <li>-v var=value 定义 gawk 程序中的一个变量及其默认值</li> <li>-mf N 指定要处理的数据文件中的最大字段数</li> <li>-mr N 指定数据文件中的最大数据行数</li> <li>-W keyword 指定 gawk 的兼容模式或警告等级</li></ul> <p>gawk 程序脚本用一对花括号来定义。你必须将脚本命令放到两个花括号（{}）中。如果你错误地使用了圆括号来包含 gawk 脚本，就会得到一条类似于下面的错误提示。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">gawk</span> <span class="token string">'(print &quot;Hello World!&quot;}'</span>
+gawk: <span class="token punctuation">(</span>print <span class="token string">&quot;Hello World!&quot;</span><span class="token punctuation">}</span>
+gawk:  ^ syntax error
+</code></pre></div><p>由于 gawk 命令行假定脚本是单个文本字符串，你还必须将脚本放到单引号中。下面的例子在命令行上指定了一个简单的 gawk 程序脚本：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">gawk</span> <span class="token string">'{print &quot;Hello World!&quot;}'</span>
+</code></pre></div><p>这个程序脚本定义了一个命令：print 命令。这个命令名副其实：它会将文本打印到 STDOUT。如果尝试运行这个命令，你可能会有些失望，因为什么都不会发生。原因在于没有在命令行上指定文件名，所以 gawk 程序会从 STDIN 接收数据。在运行这个程序时，它会一直等待从 STDIN 输入的文本。<br>
+如果你输入一行文本并按下回车键，gawk 会对这行文本运行一遍程序脚本。跟 sed 编辑器一样，gawk 程序会针对数据流中的每行文本执行程序脚本。由于程序脚本被设为显示一行固定的文本字符串，因此不管你在数据流中输入什么文本，都会得到同样的文本输出。<br>
+要终止这个 gawk 程序，你必须表明数据流已经结束了。bash shell 提供了一个组合键来生成 EOF（End-of-File）字符。Ctrl+D 组合键会在 bash 中产生一个 EOF 字符。这个组合键能够终止该 gawk 程序并返回到命令行界面提示符下。</p> <h3 id="使用数据字段变量"><a href="#使用数据字段变量" class="header-anchor">#</a> 使用数据字段变量</h3> <p>gawk 的主要特性之一是其处理文本文件中数据的能力。它会自动给一行中的每个数据元素分配一个变量。默认情况下，gawk 会将如下变量分配给它在文本行中发现的数据字段：</p> <ul><li>$0 代表整个文本行；</li> <li>$1 代表文本行中的第 1 个数据字段；</li> <li>$2 代表文本行中的第 2 个数据字段；</li> <li>$n 代表文本行中的第 n 个数据字段。</li></ul> <p>在文本行中，每个数据字段都是通过<code>字段分隔符</code>划分的。gawk 在读取一行文本时，会用预定义的字段分隔符划分每个数据字段。gawk 中默认的字段分隔符是任意的空白字符（例如空格或制表符）。</p> <p>在下面的例子中，gawk 程序读取文本文件，只显示第 1 个数据字段的值。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data2.txt
+One line of <span class="token builtin class-name">test</span> text.
+Two lines of <span class="token builtin class-name">test</span> text.
+Three lines of <span class="token builtin class-name">test</span> text.
+$
+$ <span class="token function">gawk</span> <span class="token string">'{print $1}'</span> data2.txt
+One
+Two
+Three
+$
+</code></pre></div><p>该程序用$1 字段变量来仅显示每行文本的第 1 个数据字段。</p> <p>如果你要读取采用了其他字段分隔符的文件，可以用-F 选项指定。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">gawk</span> -F: <span class="token string">'{print $1}'</span> /etc/passwd
+root
+bin
+daemon
+adm
+lp
+<span class="token function">sync</span>
+<span class="token function">shutdown</span>
+<span class="token function">halt</span>
+mail
+<span class="token punctuation">[</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code></pre></div><p>这个简短的程序显示了系统中密码文件的第 1 个数据字段。由于/etc/passwd 文件用冒号来分隔数字字段，因而如果要划分开每个数据元素，则必须在 gawk 选项中将冒号指定为字段分隔符。</p> <h3 id="在程序脚本中使用多个命令"><a href="#在程序脚本中使用多个命令" class="header-anchor">#</a> 在程序脚本中使用多个命令</h3> <p>如果一种编程语言只能执行一条命令，那么它不会有太大用处。gawk 编程语言允许你将多条命令组合成一个正常的程序。要在命令行上的程序脚本中使用多条命令，只要在命令之间放个分号即可。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">&quot;My name is Rich&quot;</span> <span class="token operator">|</span> <span class="token function">gawk</span> <span class="token string">'{$4=&quot;Christine&quot;; print $0}'</span>
+My name is Christine
+$
+</code></pre></div><p>第一条命令会给字段变量$4 赋值。第二条命令会打印整个数据字段。注意， gawk 程序在输出中已经将原文本中的第四个数据字段替换成了新值。<br>
+也可以用次提示符一次一行地输入程序脚本命令。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">gawk</span> <span class="token string">'{
+&gt; $4=&quot;Christine&quot;
+&gt; print $0}'</span>
+My name is Rich
+My name is Christine
+$
+</code></pre></div><p>在你用了表示起始的单引号后，bash shell 会使用次提示符来提示你输入更多数据。你可以每次在每行加一条命令，直到输入了结尾的单引号。因为没有在命令行中指定文件名，gawk 程序会从 STDIN 中获得数据。当运行这个程序的时候，它会等着读取来自 STDIN 的文本。要退出程序，只需按下 Ctrl+D 组合键来表明数据结束。</p> <h3 id="从文件中读取程序"><a href="#从文件中读取程序" class="header-anchor">#</a> 从文件中读取程序</h3> <p>跟 sed 编辑器一样，gawk 编辑器允许将程序存储到文件中，然后再在命令行中引用。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> script2.gawk
+<span class="token punctuation">{</span>print <span class="token variable">$1</span> <span class="token string">&quot;'s home directory is &quot;</span> <span class="token variable">$6</span><span class="token punctuation">}</span>
+$
+$ <span class="token function">gawk</span> -F: -f script2.gawk /etc/passwd
+root<span class="token string">'s home directory is /root
+bin'</span>s home directory is /bin
+daemon<span class="token string">'s home directory is /sbin
+adm'</span>s home directory is /var/adm
+lp<span class="token string">'s home directory is /var/spool/lpd
+[...]
+Christine'</span>s home directory is /home/Christine
+Samantha's home directory is /home/Samantha
+$
+</code></pre></div><p>script2.gawk 程序脚本会再次使用 print 命令打印/etc/passwd 文件的主目录数据字段（字段变量$6），以及 userid 数据字段（字段变量$1）<br>
+可以在程序文件中指定多条命令。要这么做的话，只要一条命令放一行即可，不需要用分号。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> script3.gawk
+<span class="token punctuation">{</span>
+text <span class="token operator">=</span> <span class="token string">&quot;'s home directory is &quot;</span>
+print <span class="token variable">$1</span> text <span class="token variable">$6</span>
+<span class="token punctuation">}</span>
+$
+$ <span class="token function">gawk</span> -F: -f script3.gawk /etc/passwd
+root<span class="token string">'s home directory is /root
+bin'</span>s home directory is /bin
+daemon<span class="token string">'s home directory is /sbin
+adm'</span>s home directory is /var/adm
+lp<span class="token string">'s home directory is /var/spool/lpd
+[...]
+Christine'</span>s home directory is /home/Christine S
+amantha's home directory is /home/Samantha
+$
+</code></pre></div><p>script3.gawk 程序脚本定义了一个变量来保存 print 命令中用到的文本字符串。注意，gawk 程序在引用变量值时并未像 shell 脚本一样使用美元符。</p> <h3 id="在处理数据前运行脚本"><a href="#在处理数据前运行脚本" class="header-anchor">#</a> 在处理数据前运行脚本</h3> <p>gawk 还允许指定程序脚本何时运行。默认情况下，gawk 会从输入中读取一行文本，然后针对该行的数据执行程序脚本。有时可能需要在处理数据前运行脚本，比如为报告创建标题。BEGIN 关键字就是用来做这个的。它会强制 gawk 在读取数据前执行 BEGIN 关键字后指定的程序脚本。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">gawk</span> <span class="token string">'BEGIN {print &quot;Hello World!&quot;}'</span>
+Hello World<span class="token operator">!</span>
+$
+</code></pre></div><p>这次 print 命令会在读取数据前显示文本。但在它显示了文本后，它会快速退出，不等待任何数据。如果想使用正常的程序脚本中处理数据，必须用另一个脚本区域来定义程序。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> data3.txt
+Line <span class="token number">1</span>
+Line <span class="token number">2</span>
+Line <span class="token number">3</span>
+$
+$ <span class="token function">gawk</span> <span class="token string">'BEGIN {print &quot;The data3 File Contents:&quot;}
+&gt; {print $0}'</span> data3.txt
+The data3 File Contents:
+Line <span class="token number">1</span>
+Line <span class="token number">2</span>
+Line <span class="token number">3</span>
+$
+</code></pre></div><p>在 gawk 执行了 BEGIN 脚本后，它会用第二段脚本来处理文件数据。这么做时要小心，两段脚本仍然被认为是 gawk 命令行中的一个文本字符串。你需要相应地加上单引号。</p> <h3 id="在处理数据后运行脚本"><a href="#在处理数据后运行脚本" class="header-anchor">#</a> 在处理数据后运行脚本</h3> <p>与 BEGIN 关键字类似，END 关键字允许你指定一个程序脚本，gawk 会在读完数据后执行它。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">gawk</span> <span class="token string">'BEGIN {print &quot;The data3 File Contents:&quot;}
+&gt; {print $0}
+&gt; END {print &quot;End of File&quot;}'</span> data3.txt
+The data3 File Contents:
+Line <span class="token number">1</span>
+Line <span class="token number">2</span>
+Line <span class="token number">3</span>
+End of File
+$
+</code></pre></div><p>当 gawk 程序打印完文件内容后，它会执行 END 脚本中的命令。这是在处理完所有正常数据后给报告添加页脚的最佳方法。</p> <p>可以将所有这些内容放到一起组成一个漂亮的小程序脚本文件，用它从一个简单的数据文件中创建一份完整的报告。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> script4.gawk BEGIN <span class="token punctuation">{</span>
+print <span class="token string">&quot;The latest list of users and shells&quot;</span>
+print <span class="token string">&quot; UserID <span class="token entity" title="\t">\t</span> Shell&quot;</span>
+print <span class="token string">&quot;-------- <span class="token entity" title="\t">\t</span> -------&quot;</span>
+<span class="token assign-left variable">FS</span><span class="token operator">=</span><span class="token string">&quot;:&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">{</span> print <span class="token variable">$1</span> <span class="token string">&quot;     <span class="token entity" title="\t">\t</span> &quot;</span>  <span class="token variable">$7</span>
+<span class="token punctuation">}</span>
+
+END <span class="token punctuation">{</span>
+print <span class="token string">&quot;This concludes the listing&quot;</span>
+<span class="token punctuation">}</span>
+$
+</code></pre></div><p>这个脚本用 BEGIN 脚本来为报告创建标题。它还定义了一个叫作 FS 的特殊变量。这是定义字段分隔符的另一种方法。这样你就不用依靠脚本用户在命令行选项中定义字段分隔符了。</p> <p>下面是这个 gawk 程序脚本的输出（有部分删节）。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>
+$ <span class="token function">gawk</span> -f script4.gawk /etc/passwd
+The latest list of <span class="token function">users</span> and shells
+UserID          Shell
+--------         -------
+root             /bin/bash
+bin              /sbin/nologin
+daemon           /sbin/nologin
+<span class="token punctuation">[</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+Christine        /bin/bash
+mysql            /bin/bash
+This concludes the listing
+$
+</code></pre></div><p>与预想的一样，BEGIN 脚本创建了标题，程序脚本处理特定数据文件（/etc/passwd）中的信息，END 脚本生成页脚。</p> <p>这个简单的脚本让你小试了一把 gawk 的强大威力。后续将继续介绍另外一些编写 gawk 脚本时的简单原则，以及一些可用于 gawk 程序脚本中的高级编程概念。学会了它们之后，就算是面对最晦涩的数据文件，你也能够创建出专业范儿的报告。</p> <hr> <p>使用 sed 和 gawk 程序的关键在于了解如何使用正则表达式。正则表达式是为提取和处理文本文件中数据创建定制过滤器的关键。下一章将会深入经常被人们误解的正则表达式世界，并演示如何构建正则表达式来操作各种类型的数据。</p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <p><a href="https://archlinuxstudio.github.io/ShellTutorial/#/shellAdvanced/sed_gawk_basic" target="_blank" rel="noopener noreferrer">Linux命令行与Shell脚本教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">4/4/2022, 12:05:53 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/notes/blog/linux/脚本编程/函数.html" class="prev">
+            函数
+          </a></span> <!----></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-22d702a7><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#sed-编辑器" class="sidebar-link reco-side-sed-编辑器" data-v-22d702a7>sed 编辑器</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#在命令行定义编辑器命令" class="sidebar-link reco-side-在命令行定义编辑器命令" data-v-22d702a7>在命令行定义编辑器命令</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#在命令行使用多个编辑器命令" class="sidebar-link reco-side-在命令行使用多个编辑器命令" data-v-22d702a7>在命令行使用多个编辑器命令</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#从文件中读取编辑器命令" class="sidebar-link reco-side-从文件中读取编辑器命令" data-v-22d702a7>从文件中读取编辑器命令</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#更多的替换选项" class="sidebar-link reco-side-更多的替换选项" data-v-22d702a7>更多的替换选项</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#使用地址" class="sidebar-link reco-side-使用地址" data-v-22d702a7>使用地址</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#删除行" class="sidebar-link reco-side-删除行" data-v-22d702a7>删除行</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#插入和附加文本" class="sidebar-link reco-side-插入和附加文本" data-v-22d702a7>插入和附加文本</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#修改行" class="sidebar-link reco-side-修改行" data-v-22d702a7>修改行</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#转换命令" class="sidebar-link reco-side-转换命令" data-v-22d702a7>转换命令</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#回顾打印" class="sidebar-link reco-side-回顾打印" data-v-22d702a7>回顾打印</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#使用-sed-处理文件" class="sidebar-link reco-side-使用-sed-处理文件" data-v-22d702a7>使用 sed 处理文件</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#gawk-程序" class="sidebar-link reco-side-gawk-程序" data-v-22d702a7>gawk 程序</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#基础用法" class="sidebar-link reco-side-基础用法" data-v-22d702a7>基础用法</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#使用数据字段变量" class="sidebar-link reco-side-使用数据字段变量" data-v-22d702a7>使用数据字段变量</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#在程序脚本中使用多个命令" class="sidebar-link reco-side-在程序脚本中使用多个命令" data-v-22d702a7>在程序脚本中使用多个命令</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#从文件中读取程序" class="sidebar-link reco-side-从文件中读取程序" data-v-22d702a7>从文件中读取程序</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#在处理数据前运行脚本" class="sidebar-link reco-side-在处理数据前运行脚本" data-v-22d702a7>在处理数据前运行脚本</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#在处理数据后运行脚本" class="sidebar-link reco-side-在处理数据后运行脚本" data-v-22d702a7>在处理数据后运行脚本</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/sed%E4%B8%8Egawk.html#参考" class="sidebar-link reco-side-参考" data-v-22d702a7>参考</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/notes/assets/js/app.c9da24a6.js" defer></script><script src="/notes/assets/js/3.15042843.js" defer></script><script src="/notes/assets/js/1.8ca8e0eb.js" defer></script><script src="/notes/assets/js/66.b82f5c7e.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>物理内存管理 | WaleGarrett</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/notes/logo.jpg">
+    <meta name="description" content="WaleGarrett的学习记录">
+    
+    <link rel="preload" href="/notes/assets/css/0.styles.54ab1000.css" as="style"><link rel="preload" href="/notes/assets/js/app.c9da24a6.js" as="script"><link rel="preload" href="/notes/assets/js/3.15042843.js" as="script"><link rel="preload" href="/notes/assets/js/1.8ca8e0eb.js" as="script"><link rel="preload" href="/notes/assets/js/58.516ab1c4.js" as="script"><link rel="prefetch" href="/notes/assets/js/10.1becd84f.js"><link rel="prefetch" href="/notes/assets/js/100.e686635a.js"><link rel="prefetch" href="/notes/assets/js/101.d90ba6a2.js"><link rel="prefetch" href="/notes/assets/js/102.37c9c783.js"><link rel="prefetch" href="/notes/assets/js/103.dec1797e.js"><link rel="prefetch" href="/notes/assets/js/104.9e4cdf99.js"><link rel="prefetch" href="/notes/assets/js/105.8616c171.js"><link rel="prefetch" href="/notes/assets/js/106.bc2f20eb.js"><link rel="prefetch" href="/notes/assets/js/107.4fc0003b.js"><link rel="prefetch" href="/notes/assets/js/108.f7ed7756.js"><link rel="prefetch" href="/notes/assets/js/109.867fe8d3.js"><link rel="prefetch" href="/notes/assets/js/11.11eeb9c8.js"><link rel="prefetch" href="/notes/assets/js/110.ce3c1db9.js"><link rel="prefetch" href="/notes/assets/js/111.5f88fd17.js"><link rel="prefetch" href="/notes/assets/js/112.0ec3be4a.js"><link rel="prefetch" href="/notes/assets/js/113.b17af37a.js"><link rel="prefetch" href="/notes/assets/js/114.c3bd0ee7.js"><link rel="prefetch" href="/notes/assets/js/115.e942f535.js"><link rel="prefetch" href="/notes/assets/js/116.a07fe354.js"><link rel="prefetch" href="/notes/assets/js/117.7f109010.js"><link rel="prefetch" href="/notes/assets/js/118.70cf9c49.js"><link rel="prefetch" href="/notes/assets/js/119.68965728.js"><link rel="prefetch" href="/notes/assets/js/12.e21b4812.js"><link rel="prefetch" href="/notes/assets/js/120.9065ed1d.js"><link rel="prefetch" href="/notes/assets/js/121.a8a35fe7.js"><link rel="prefetch" href="/notes/assets/js/122.70596256.js"><link rel="prefetch" href="/notes/assets/js/123.b9715cd7.js"><link rel="prefetch" href="/notes/assets/js/124.7345d826.js"><link rel="prefetch" href="/notes/assets/js/125.d4392f5d.js"><link rel="prefetch" href="/notes/assets/js/126.ff7fff9e.js"><link rel="prefetch" href="/notes/assets/js/127.acc1dff7.js"><link rel="prefetch" href="/notes/assets/js/128.81dcc7a3.js"><link rel="prefetch" href="/notes/assets/js/129.6c2d778a.js"><link rel="prefetch" href="/notes/assets/js/13.afb6371c.js"><link rel="prefetch" href="/notes/assets/js/130.1c463291.js"><link rel="prefetch" href="/notes/assets/js/131.fade390b.js"><link rel="prefetch" href="/notes/assets/js/132.a1fe16f6.js"><link rel="prefetch" href="/notes/assets/js/133.a719a028.js"><link rel="prefetch" href="/notes/assets/js/134.66c5c006.js"><link rel="prefetch" href="/notes/assets/js/135.5b78fa9f.js"><link rel="prefetch" href="/notes/assets/js/136.2e6405e5.js"><link rel="prefetch" href="/notes/assets/js/137.41fb8a7a.js"><link rel="prefetch" href="/notes/assets/js/138.06de929f.js"><link rel="prefetch" href="/notes/assets/js/139.2f7ab686.js"><link rel="prefetch" href="/notes/assets/js/14.a2175c4c.js"><link rel="prefetch" href="/notes/assets/js/140.6918a01b.js"><link rel="prefetch" href="/notes/assets/js/141.95f9f12a.js"><link rel="prefetch" href="/notes/assets/js/142.aa0cee93.js"><link rel="prefetch" href="/notes/assets/js/143.d60a38b0.js"><link rel="prefetch" href="/notes/assets/js/144.638c8e0a.js"><link rel="prefetch" href="/notes/assets/js/145.1a1685af.js"><link rel="prefetch" href="/notes/assets/js/146.bc665756.js"><link rel="prefetch" href="/notes/assets/js/147.809233d9.js"><link rel="prefetch" href="/notes/assets/js/148.d6b15e4e.js"><link rel="prefetch" href="/notes/assets/js/149.646dfac5.js"><link rel="prefetch" href="/notes/assets/js/15.7ec2be59.js"><link rel="prefetch" href="/notes/assets/js/150.64b53d63.js"><link rel="prefetch" href="/notes/assets/js/151.0984c27e.js"><link rel="prefetch" href="/notes/assets/js/152.42cf7076.js"><link rel="prefetch" href="/notes/assets/js/153.80ae1b86.js"><link rel="prefetch" href="/notes/assets/js/154.1b7e1514.js"><link rel="prefetch" href="/notes/assets/js/155.0a6c1fb7.js"><link rel="prefetch" href="/notes/assets/js/156.916e2a53.js"><link rel="prefetch" href="/notes/assets/js/157.8d361889.js"><link rel="prefetch" href="/notes/assets/js/158.858d71f6.js"><link rel="prefetch" href="/notes/assets/js/159.9a2f07f9.js"><link rel="prefetch" href="/notes/assets/js/16.679c7661.js"><link rel="prefetch" href="/notes/assets/js/160.4f54106a.js"><link rel="prefetch" href="/notes/assets/js/161.3cc67e9e.js"><link rel="prefetch" href="/notes/assets/js/162.c94a5be4.js"><link rel="prefetch" href="/notes/assets/js/163.dc11bf4c.js"><link rel="prefetch" href="/notes/assets/js/164.5f0bb30d.js"><link rel="prefetch" href="/notes/assets/js/165.17595a0b.js"><link rel="prefetch" href="/notes/assets/js/166.26cc364b.js"><link rel="prefetch" href="/notes/assets/js/167.a8b2ddf0.js"><link rel="prefetch" href="/notes/assets/js/168.17f43071.js"><link rel="prefetch" href="/notes/assets/js/169.d5e82e04.js"><link rel="prefetch" href="/notes/assets/js/17.016980ed.js"><link rel="prefetch" href="/notes/assets/js/170.11696f57.js"><link rel="prefetch" href="/notes/assets/js/171.70305f2f.js"><link rel="prefetch" href="/notes/assets/js/172.f4b63da4.js"><link rel="prefetch" href="/notes/assets/js/173.42057c95.js"><link rel="prefetch" href="/notes/assets/js/174.246a6e0b.js"><link rel="prefetch" href="/notes/assets/js/175.4855ab27.js"><link rel="prefetch" href="/notes/assets/js/176.d75790bd.js"><link rel="prefetch" href="/notes/assets/js/177.f616c3f5.js"><link rel="prefetch" href="/notes/assets/js/178.659b087d.js"><link rel="prefetch" href="/notes/assets/js/179.010eacce.js"><link rel="prefetch" href="/notes/assets/js/18.6f1dbb8f.js"><link rel="prefetch" href="/notes/assets/js/180.a11dd312.js"><link rel="prefetch" href="/notes/assets/js/181.c74fb0b6.js"><link rel="prefetch" href="/notes/assets/js/182.4f548539.js"><link rel="prefetch" href="/notes/assets/js/183.32dc4b08.js"><link rel="prefetch" href="/notes/assets/js/184.7b15f3e9.js"><link rel="prefetch" href="/notes/assets/js/185.ad484525.js"><link rel="prefetch" href="/notes/assets/js/186.db3693bc.js"><link rel="prefetch" href="/notes/assets/js/187.2a0df038.js"><link rel="prefetch" href="/notes/assets/js/188.987a82c9.js"><link rel="prefetch" href="/notes/assets/js/189.c693f3a1.js"><link rel="prefetch" href="/notes/assets/js/19.9e1eac04.js"><link rel="prefetch" href="/notes/assets/js/190.2e253fc8.js"><link rel="prefetch" href="/notes/assets/js/191.d70ee914.js"><link rel="prefetch" href="/notes/assets/js/192.4f808c44.js"><link rel="prefetch" href="/notes/assets/js/193.133fd0a8.js"><link rel="prefetch" href="/notes/assets/js/194.c1c26af9.js"><link rel="prefetch" href="/notes/assets/js/195.5d112624.js"><link rel="prefetch" href="/notes/assets/js/196.e756a155.js"><link rel="prefetch" href="/notes/assets/js/197.6f9b8105.js"><link rel="prefetch" href="/notes/assets/js/198.3c59ba72.js"><link rel="prefetch" href="/notes/assets/js/199.15e2d96e.js"><link rel="prefetch" href="/notes/assets/js/20.e41f5564.js"><link rel="prefetch" href="/notes/assets/js/200.992db7f7.js"><link rel="prefetch" href="/notes/assets/js/201.9c266b22.js"><link rel="prefetch" href="/notes/assets/js/202.842ef603.js"><link rel="prefetch" href="/notes/assets/js/203.01bca3f3.js"><link rel="prefetch" href="/notes/assets/js/204.f9c2a70d.js"><link rel="prefetch" href="/notes/assets/js/205.f9268403.js"><link rel="prefetch" href="/notes/assets/js/206.4cf08b44.js"><link rel="prefetch" href="/notes/assets/js/207.0ef45ecc.js"><link rel="prefetch" href="/notes/assets/js/208.0ac3b838.js"><link rel="prefetch" href="/notes/assets/js/209.5e055156.js"><link rel="prefetch" href="/notes/assets/js/21.2d865954.js"><link rel="prefetch" href="/notes/assets/js/210.d8204d91.js"><link rel="prefetch" href="/notes/assets/js/211.acc0168d.js"><link rel="prefetch" href="/notes/assets/js/212.5eec4fbf.js"><link rel="prefetch" href="/notes/assets/js/213.272bf6e6.js"><link rel="prefetch" href="/notes/assets/js/214.bf006247.js"><link rel="prefetch" href="/notes/assets/js/215.f11c4fd7.js"><link rel="prefetch" href="/notes/assets/js/216.cf94ea1b.js"><link rel="prefetch" href="/notes/assets/js/217.330e075c.js"><link rel="prefetch" href="/notes/assets/js/218.0b9e982c.js"><link rel="prefetch" href="/notes/assets/js/219.7e778a76.js"><link rel="prefetch" href="/notes/assets/js/22.88dd9e53.js"><link rel="prefetch" href="/notes/assets/js/220.6d5ffbc6.js"><link rel="prefetch" href="/notes/assets/js/221.bac51660.js"><link rel="prefetch" href="/notes/assets/js/23.a8a4e106.js"><link rel="prefetch" href="/notes/assets/js/24.6a7395f6.js"><link rel="prefetch" href="/notes/assets/js/25.3e79ff45.js"><link rel="prefetch" href="/notes/assets/js/26.33e76c58.js"><link rel="prefetch" href="/notes/assets/js/27.2e20fce9.js"><link rel="prefetch" href="/notes/assets/js/28.92202fbe.js"><link rel="prefetch" href="/notes/assets/js/29.31e72924.js"><link rel="prefetch" href="/notes/assets/js/30.63118840.js"><link rel="prefetch" href="/notes/assets/js/31.40bb3db2.js"><link rel="prefetch" href="/notes/assets/js/32.34771f12.js"><link rel="prefetch" href="/notes/assets/js/33.12f2bfaf.js"><link rel="prefetch" href="/notes/assets/js/34.0685ab4b.js"><link rel="prefetch" href="/notes/assets/js/35.497cff30.js"><link rel="prefetch" href="/notes/assets/js/36.1f5c1fc2.js"><link rel="prefetch" href="/notes/assets/js/37.bd6b811a.js"><link rel="prefetch" href="/notes/assets/js/38.a7a23117.js"><link rel="prefetch" href="/notes/assets/js/39.cdf8ca3c.js"><link rel="prefetch" href="/notes/assets/js/4.0716db17.js"><link rel="prefetch" href="/notes/assets/js/40.21388ef8.js"><link rel="prefetch" href="/notes/assets/js/41.ee9dc436.js"><link rel="prefetch" href="/notes/assets/js/42.a3ec0597.js"><link rel="prefetch" href="/notes/assets/js/43.be5d9816.js"><link rel="prefetch" href="/notes/assets/js/44.2f99673b.js"><link rel="prefetch" href="/notes/assets/js/45.c443ff93.js"><link rel="prefetch" href="/notes/assets/js/46.bd004ac4.js"><link rel="prefetch" href="/notes/assets/js/47.20add895.js"><link rel="prefetch" href="/notes/assets/js/48.1c5da96b.js"><link rel="prefetch" href="/notes/assets/js/49.31c7e29d.js"><link rel="prefetch" href="/notes/assets/js/5.03d74ef1.js"><link rel="prefetch" href="/notes/assets/js/50.b48ca783.js"><link rel="prefetch" href="/notes/assets/js/51.b4bc061c.js"><link rel="prefetch" href="/notes/assets/js/52.77dc2135.js"><link rel="prefetch" href="/notes/assets/js/53.3fc2d110.js"><link rel="prefetch" href="/notes/assets/js/54.ab331494.js"><link rel="prefetch" href="/notes/assets/js/55.59fa9d3a.js"><link rel="prefetch" href="/notes/assets/js/56.6864911d.js"><link rel="prefetch" href="/notes/assets/js/57.44dbdabe.js"><link rel="prefetch" href="/notes/assets/js/59.56d4d38d.js"><link rel="prefetch" href="/notes/assets/js/6.c1d1ac7a.js"><link rel="prefetch" href="/notes/assets/js/60.9038d0d8.js"><link rel="prefetch" href="/notes/assets/js/61.d5696bbd.js"><link rel="prefetch" href="/notes/assets/js/62.59b5f172.js"><link rel="prefetch" href="/notes/assets/js/63.e9c7508b.js"><link rel="prefetch" href="/notes/assets/js/64.4241a14e.js"><link rel="prefetch" href="/notes/assets/js/65.91a07396.js"><link rel="prefetch" href="/notes/assets/js/66.b82f5c7e.js"><link rel="prefetch" href="/notes/assets/js/67.afcaae6c.js"><link rel="prefetch" href="/notes/assets/js/68.d4eb82fd.js"><link rel="prefetch" href="/notes/assets/js/69.a4267fbd.js"><link rel="prefetch" href="/notes/assets/js/7.8e24ac99.js"><link rel="prefetch" href="/notes/assets/js/70.430fd8cd.js"><link rel="prefetch" href="/notes/assets/js/71.1016e8c6.js"><link rel="prefetch" href="/notes/assets/js/72.9ec57099.js"><link rel="prefetch" href="/notes/assets/js/73.20c4449a.js"><link rel="prefetch" href="/notes/assets/js/74.39b9604e.js"><link rel="prefetch" href="/notes/assets/js/75.4f09e706.js"><link rel="prefetch" href="/notes/assets/js/76.88ffa9c5.js"><link rel="prefetch" href="/notes/assets/js/77.eec6caf8.js"><link rel="prefetch" href="/notes/assets/js/78.166b5a56.js"><link rel="prefetch" href="/notes/assets/js/79.ef2af5da.js"><link rel="prefetch" href="/notes/assets/js/8.00d48dd8.js"><link rel="prefetch" href="/notes/assets/js/80.c0eb3a50.js"><link rel="prefetch" href="/notes/assets/js/81.21ed8523.js"><link rel="prefetch" href="/notes/assets/js/82.a7717793.js"><link rel="prefetch" href="/notes/assets/js/83.cb39ac8d.js"><link rel="prefetch" href="/notes/assets/js/84.3a0c34dc.js"><link rel="prefetch" href="/notes/assets/js/85.379f9075.js"><link rel="prefetch" href="/notes/assets/js/86.500344a3.js"><link rel="prefetch" href="/notes/assets/js/87.a52c8c96.js"><link rel="prefetch" href="/notes/assets/js/88.d14778d2.js"><link rel="prefetch" href="/notes/assets/js/89.ca52efc6.js"><link rel="prefetch" href="/notes/assets/js/9.5b519f35.js"><link rel="prefetch" href="/notes/assets/js/90.8529f3f5.js"><link rel="prefetch" href="/notes/assets/js/91.65963b3b.js"><link rel="prefetch" href="/notes/assets/js/92.041432c3.js"><link rel="prefetch" href="/notes/assets/js/93.d97cc1eb.js"><link rel="prefetch" href="/notes/assets/js/94.4c8de3b2.js"><link rel="prefetch" href="/notes/assets/js/95.81ea24d1.js"><link rel="prefetch" href="/notes/assets/js/96.4190ea57.js"><link rel="prefetch" href="/notes/assets/js/97.a72a27df.js"><link rel="prefetch" href="/notes/assets/js/98.504f98ad.js"><link rel="prefetch" href="/notes/assets/js/99.1da9035d.js">
+    <link rel="stylesheet" href="/notes/assets/css/0.styles.54ab1000.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>WaleGarrett</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>WaleGarrett的学习记录</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes/" class="home-link router-link-active"><img src="/notes/logo.jpg" alt="WaleGarrett" class="logo"> <span class="site-name">WaleGarrett</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>JavaSE</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/JavaSE/" class="nav-link"><i class="undefined"></i>
+  JavaSE基础
+</a></li></ul></li><li class="dropdown-item"><h4>Java IO</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java IO/" class="nav-link"><i class="undefined"></i>
+  Java IO
+</a></li></ul></li><li class="dropdown-item"><h4>Java容器</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java容器/" class="nav-link"><i class="undefined"></i>
+  Java容器
+</a></li></ul></li><li class="dropdown-item"><h4>Java并发</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/多线程与并发/" class="nav-link"><i class="undefined"></i>
+  多线程与并发
+</a></li></ul></li><li class="dropdown-item"><h4>JVM</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java运行时内存区.html" class="nav-link"><i class="undefined"></i>
+  Java运行时内存区
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java内存模型.html" class="nav-link"><i class="undefined"></i>
+  Java内存模型
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/类加载.html" class="nav-link"><i class="undefined"></i>
+  类加载
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/程序编译.html" class="nav-link"><i class="undefined"></i>
+  程序编译
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/虚拟机对象.html" class="nav-link"><i class="undefined"></i>
+  虚拟机对象
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/垃圾收集/" class="nav-link"><i class="undefined"></i>
+  垃圾收集
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/JVM调优.html" class="nav-link"><i class="undefined"></i>
+  JVM调优
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Spring系列
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring/" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring MVC/" class="nav-link"><i class="undefined"></i>
+  Spring MVC
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring Boot/" class="nav-link"><i class="undefined"></i>
+  Spring Boot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      计算机基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>操作系统</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/操作系统/" class="nav-link"><i class="undefined"></i>
+  操作系统知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>计算机网络</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据结构</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/数据库基础/" class="nav-link"><i class="undefined"></i>
+  数据库基础
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/数据库/MySQL/" class="nav-link"><i class="undefined"></i>
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      linux
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux命令/" class="nav-link"><i class="undefined"></i>
+  linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/脚本编程/" class="nav-link"><i class="undefined"></i>
+  脚本编程
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux内存管理/" class="nav-link"><i class="undefined"></i>
+  linux内存管理
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux文件系统/" class="nav-link"><i class="undefined"></i>
+  linux文件系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/git/git基础知识.html" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/maven/maven基础知识.html" class="nav-link"><i class="undefined"></i>
+  maven
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/kafka/" class="nav-link"><i class="undefined"></i>
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/HBase/" class="nav-link"><i class="undefined"></i>
+  HBase
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>ORM框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/MyBatis/" class="nav-link"><i class="undefined"></i>
+  MyBatis框架
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      架构
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/架构/" class="nav-link"><i class="undefined"></i>
+  系统架构
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.cnblogs.com/GarrettWale/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客文章
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><!----> <!----> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>211</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>106</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/notes/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>JavaSE</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/JavaSE/" class="nav-link"><i class="undefined"></i>
+  JavaSE基础
+</a></li></ul></li><li class="dropdown-item"><h4>Java IO</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java IO/" class="nav-link"><i class="undefined"></i>
+  Java IO
+</a></li></ul></li><li class="dropdown-item"><h4>Java容器</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java容器/" class="nav-link"><i class="undefined"></i>
+  Java容器
+</a></li></ul></li><li class="dropdown-item"><h4>Java并发</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/多线程与并发/" class="nav-link"><i class="undefined"></i>
+  多线程与并发
+</a></li></ul></li><li class="dropdown-item"><h4>JVM</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java运行时内存区.html" class="nav-link"><i class="undefined"></i>
+  Java运行时内存区
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java内存模型.html" class="nav-link"><i class="undefined"></i>
+  Java内存模型
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/类加载.html" class="nav-link"><i class="undefined"></i>
+  类加载
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/程序编译.html" class="nav-link"><i class="undefined"></i>
+  程序编译
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/虚拟机对象.html" class="nav-link"><i class="undefined"></i>
+  虚拟机对象
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/垃圾收集/" class="nav-link"><i class="undefined"></i>
+  垃圾收集
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/JVM调优.html" class="nav-link"><i class="undefined"></i>
+  JVM调优
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Spring系列
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring/" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring MVC/" class="nav-link"><i class="undefined"></i>
+  Spring MVC
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring Boot/" class="nav-link"><i class="undefined"></i>
+  Spring Boot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      计算机基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>操作系统</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/操作系统/" class="nav-link"><i class="undefined"></i>
+  操作系统知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>计算机网络</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据结构</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/数据库基础/" class="nav-link"><i class="undefined"></i>
+  数据库基础
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/数据库/MySQL/" class="nav-link"><i class="undefined"></i>
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      linux
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux命令/" class="nav-link"><i class="undefined"></i>
+  linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/脚本编程/" class="nav-link"><i class="undefined"></i>
+  脚本编程
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux内存管理/" class="nav-link"><i class="undefined"></i>
+  linux内存管理
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux文件系统/" class="nav-link"><i class="undefined"></i>
+  linux文件系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/git/git基础知识.html" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/maven/maven基础知识.html" class="nav-link"><i class="undefined"></i>
+  maven
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/kafka/" class="nav-link"><i class="undefined"></i>
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/HBase/" class="nav-link"><i class="undefined"></i>
+  HBase
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>ORM框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/MyBatis/" class="nav-link"><i class="undefined"></i>
+  MyBatis框架
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      架构
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/架构/" class="nav-link"><i class="undefined"></i>
+  系统架构
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.cnblogs.com/GarrettWale/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客文章
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>linux</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux命令/" class="sidebar-heading clickable"><span>linux命令</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux内存管理/" class="sidebar-heading clickable open"><span>linux内存管理</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/blog/linux/linux内存管理/物理内存管理.html" class="active sidebar-link">物理内存管理</a></li><li><a href="/notes/blog/linux/linux内存管理/内存分配机制.html" class="sidebar-link">内存分配机制</a></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux文件系统/" class="sidebar-heading clickable"><span>linux文件系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/脚本编程/" class="sidebar-heading clickable"><span>脚本编程</span> <span class="arrow right"></span></a> <!----></section></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>物理内存管理</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page"><section><div class="page-title"><h1 class="title">物理内存管理</h1> <div data-v-f875f3fc><!----> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>4/2/2022</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>内存管理</span><span class="tag-item" data-v-f875f3fc>linux</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h2> <p>32位机器上的每个Linux进程通常有3GB的虚拟地址空间，还有1GB留给其页表和其他内核数据。在用户态下运行时，内核的1GB是不可见的，但是当进程陷入到内核时是可以访问的。==内核内存通常驻留在低端物理内存中，但是被映射到每个进程虚拟地址空间顶部的1GB中，在地址0xC0000000和0xFFFFFFFF（3～4GB）之间==。当进程创建的时候，进程地址空间被创建，并且当发生一个exec系统调用时被重写。</p> <p>为了允许多个进程共享物理内存，Linux监视物理内存的使用，在用户进程或者内核构件需要时分配更多的内存，把物理内存动态映射到不同进程的地址空间中去，把程序的可执行体、文件和其他状态信息移入移出内存来高效地利用平台资源并且保障程序执行的进展性。</p> <p>Linux 把物理内存划分为三个层次来管理: 存储节点（Node）、内存管理区(Zone)和页面(Page)</p> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202204021828246.png" alt=""></p> <p>现在有一个问题：</p> <blockquote><p>为什么linux描述物理内存需要划分这么多层次？</p></blockquote> <h2 id="nodes"><a href="#nodes" class="header-anchor">#</a> Nodes</h2> <hr> <h3 id="为什么需要node"><a href="#为什么需要node" class="header-anchor">#</a> 为什么需要Node？</h3> <p>在回答这个问题之前， 我们需要先了解计算机系统中的两个内存架构: <strong>UMA</strong> 和 <strong>NUMA</strong>。<br> <strong>UMA:</strong> Uniform Memory Access, 统一内存访问。每个CPU共享相同的内存地址空间。目前UMA架构广泛应用于嵌入式系统、手机以及个人电脑等。</p> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202204021828842.png" alt=""></p> <p><strong>NUMA:</strong> Non-Uniform Memory Access, 非统一内存访问。系统中会有很多的内存节点和多个CPU簇， 所有节点中的CPU可以访问全部的物理内存，但是CPU访问本地的节点速度远快于访问远端的内存节点的速度。目前NUMA架构广泛应用于大型的硬件平台，如服务器。</p> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202204021829279.png" alt=""></p> <p>NUMA架构最主要的目的是提供可扩展的内存带宽。为了兼容这一设计，linux将系统的硬件资源分成称为“Node”的多个软件抽象。如上图所示，CPU0和CPU1组成一个节点(Node 0), 它们可以通过系统总线访问本地的L3 cache和内存， I/O总线等资源。<strong>对于UMA架构而言，内核可以把内存当成只有一个内存node节点。</strong></p> <p>==Linux内存架构分为UMA(统一内存访问)和NUMA(非统一内存访问)，UMA可以看成是一个节点的NUMA。NUMA是因为物理内存组织是分布式的，每个cpu有自己的本地内存，可以快速访问本地内存，可以通过总线进行访问其它cpu的本地内存。==</p> <h3 id="pglist-data数据结构"><a href="#pglist-data数据结构" class="header-anchor">#</a> pglist_data数据结构</h3> <p>node的数据结构为pglist_data, 每一个node对应一个struct pglist_data.</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">struct</span> <span class="token class-name">pglist_data</span> <span class="token operator">*</span>node_data<span class="token punctuation">[</span>MAX_NUMNODES<span class="token punctuation">]</span> __read_mostly<span class="token punctuation">;</span>
+
+</code></pre></div><p>pg_data_t的数据结构：</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">pglist_data</span> <span class="token punctuation">{</span>
+	<span class="token keyword">struct</span> <span class="token class-name">zone</span> node_zones<span class="token punctuation">[</span>MAX_NR_ZONES<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">zonelist</span> node_zonelists<span class="token punctuation">[</span>MAX_ZONELISTS<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> nr_zones<span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> node_start_pfn<span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> node_present_pages<span class="token punctuation">;</span> 
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> node_spanned_pages<span class="token punctuation">;</span> 
+	<span class="token keyword">int</span> node_id<span class="token punctuation">;</span>
+	<span class="token class-name">wait_queue_head_t</span> kswapd_wait<span class="token punctuation">;</span>
+	<span class="token class-name">wait_queue_head_t</span> pfmemalloc_wait<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">task_struct</span> <span class="token operator">*</span>kswapd<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> kswapd_order<span class="token punctuation">;</span>
+	<span class="token keyword">enum</span> <span class="token class-name">zone_type</span> kswapd_highest_zoneidx<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> kswapd_failures<span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span>		min_unmapped_pages<span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span>		min_slab_pages<span class="token punctuation">;</span>
+	<span class="token function">ZONE_PADDING</span><span class="token punctuation">(</span>_pad1_<span class="token punctuation">)</span>
+	<span class="token class-name">spinlock_t</span>		lru_lock<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">deferred_split</span> deferred_split_queue<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">lruvec</span>		__lruvec<span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span>		flags<span class="token punctuation">;</span>
+	<span class="token function">ZONE_PADDING</span><span class="token punctuation">(</span>_pad2_<span class="token punctuation">)</span>
+	<span class="token keyword">struct</span> <span class="token class-name">per_cpu_nodestat</span> __percpu <span class="token operator">*</span>per_cpu_nodestats<span class="token punctuation">;</span>
+	<span class="token class-name">atomic_long_t</span>		vm_stat<span class="token punctuation">[</span>NR_VM_NODE_STAT_ITEMS<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token class-name">pg_data_t</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>关键的数据成员:</p> <table><thead><tr><th>属性</th> <th>描述</th></tr></thead> <tbody><tr><td>node_zones[MAX_NR_ZONES]</td> <td>对应该node包含的各个类型的zone</td></tr> <tr><td>node_zonelists</td> <td>包含了2个zonelist，自身node的zones列表以及备用的zones列表(用于本地node分配不到内存时的备选，也称为fallback)</td></tr> <tr><td>nr_zones</td> <td>包含zone的个数</td></tr> <tr><td>node_start_pfn</td> <td>该node中内存的起始页帧号</td></tr> <tr><td>node_present_pages</td> <td>该node地址范围内的实际管理的页面数量</td></tr> <tr><td>node_spanned_pages</td> <td>该node地址范围内的所有页面数量， 包括空洞的页面</td></tr> <tr><td>kswapd</td> <td>负责回收该node内存的内核线程，每个node对应一个内核线程kswapd</td></tr> <tr><td>lru_lock</td> <td>用于保护Zone中lru链表的锁</td></tr> <tr><td>lruvec</td> <td>LRU链表的集合</td></tr> <tr><td>flags</td> <td>内存域的当前状态, 在mmzone.h定义了zone的所有可用zone_flag</td></tr> <tr><td>vm_stat</td> <td>node的计数</td></tr></tbody></table> <p>ZONE_PADDING宏作用是让前后的成员分布在不同的cache line中, 以空间换取时间。</p> <p>在linux环境中我们可以使用numactl命令查看Node中的cpu和内存，以及各个node之间的distance</p> <div class="language-sh extra-class"><pre class="language-sh"><code>numactl --hardware
+
+available: <span class="token number">2</span> nodes <span class="token punctuation">(</span><span class="token number">0</span>-1<span class="token punctuation">)</span>
+<span class="token function">node</span> <span class="token number">0</span> cpus: <span class="token number">0</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span> <span class="token number">7</span> <span class="token number">16</span> <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span> <span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span>
+<span class="token function">node</span> <span class="token number">0</span> size: <span class="token number">131037</span> MB
+<span class="token function">node</span> <span class="token number">0</span> free: <span class="token number">3019</span> MB
+<span class="token function">node</span> <span class="token number">1</span> cpus: <span class="token number">8</span> <span class="token number">9</span> <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span> <span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span> <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span> <span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span> <span class="token number">30</span> <span class="token number">31</span>
+<span class="token function">node</span> <span class="token number">1</span> size: <span class="token number">131071</span> MB
+<span class="token function">node</span> <span class="token number">1</span> free: <span class="token number">9799</span> MB
+<span class="token function">node</span> distances:
+<span class="token function">node</span> <span class="token number">0</span> <span class="token number">1</span>
+ <span class="token number">0</span>: <span class="token number">10</span> <span class="token number">20</span>
+ <span class="token number">1</span>: <span class="token number">20</span> <span class="token number">10</span>
+
+</code></pre></div><h2 id="zones"><a href="#zones" class="header-anchor">#</a> Zones</h2> <hr> <h3 id="为什么需要将node拆分成不同的zone"><a href="#为什么需要将node拆分成不同的zone" class="header-anchor">#</a> 为什么需要将node拆分成不同的zone</h3> <p>其实这是个历史遗留问题，出于对不同架构的兼容性的考虑。</p> <p>比如<strong>32位的处理器只支持4G的虚拟地址，然后1G的地址空间给内核，但这样无法对超过1个G的物理内存进行一一映射</strong>。 Linux内核提出的解决方案是将物理内存分成2部分，一部分直接做线性映射，另一部分叫高端内存。这两部分对应<a href="https://so.csdn.net/so/search?q=%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86&amp;spm=1001.2101.3001.7020" target="_blank" rel="noopener noreferrer">内存管理<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>区就分别为ZONE_NORMAL和ZONE_HIGNMEM。 当然对于64位的架构而言，有足够大的内核地址空间可以映射物理内存，所以就不需要ZONE_HIGHMEM了。</p> <p>所以，将node拆分成zone主要还是出于Linux为了兼容各种架构和平台，对不同区域的内存需要采用不同的管理方式和映射方式。</p> <p>由于硬件的限制，内核对不同的page frame采用不同的处理方法，将相同属性的page frame归到一个zone中，主要分为DMA、Normal和Highmem，<strong>==切记zone是对物理地址的划分，不是对虚拟地址的划分。==</strong></p> <ul><li>DMA可以直接在内存和外设之间进行数据的读写，不需要cpu的直接参与。由于硬件的限制，DMA并不是可以访问所有的内存，实际只可以访问16M一下的内存。</li> <li>Highmem：适用于要访问的物理内存地址空间大于虚拟地址空间的，不能直接建立直接映射场景的高端内存。</li> <li>normal：除开dma和highmem的物理内存。</li></ul> <h3 id="zone-type"><a href="#zone-type" class="header-anchor">#</a> Zone type</h3> <p>linux内存管理区可以分为如下几种：[include/linux/mmzone.h]</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">enum</span> <span class="token class-name">zone_type</span> <span class="token punctuation">{</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifdef</span> <span class="token expression">CONFIG_ZONE_DMA</span></span>
+	ZONE_DMA<span class="token punctuation">,</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifdef</span> <span class="token expression">CONFIG_ZONE_DMA32</span></span>
+	ZONE_DMA32<span class="token punctuation">,</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+	ZONE_NORMAL<span class="token punctuation">,</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifdef</span> <span class="token expression">CONFIG_HIGHMEM</span></span>
+	ZONE_HIGHMEM<span class="token punctuation">,</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+	ZONE_MOVABLE<span class="token punctuation">,</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifdef</span> <span class="token expression">CONFIG_ZONE_DEVICE</span></span>
+	ZONE_DEVICE<span class="token punctuation">,</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+	__MAX_NR_ZONES
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre></div><table><thead><tr><th>zone type</th> <th>descrpition</th></tr></thead> <tbody><tr><td>ZONE_DMA</td> <td>ISA设备的DMA操作，<strong>范围是0~16M</strong>，ARM架构没有这个zone</td></tr> <tr><td>ZONE_DMA32</td> <td>用于<strong>低于4G内存</strong>进行DMA操作的32位设备</td></tr> <tr><td>ZONE_NORMAL</td> <td>标记了线性映射物理内存, <strong>4G以上的物理内存</strong>。 如果系统内存不足4G, 那么所有的内存都属于ZONE_DMA32范围, ZONE_NORMAL则为空</td></tr> <tr><td>ZONE_HIGHMEM</td> <td>高端内存，标记超出内核虚拟地址空间的物理内存段. 64位架构没有该ZONE</td></tr> <tr><td>ZONE_MOVABLE</td> <td>虚拟内存域， 在防止物理内存碎片的机制中会使用到该内存区域</td></tr> <tr><td>ZONE_DEVICE</td> <td>为支持热插拔设备而分配的Non Volatile Memory非易失性内存</td></tr></tbody></table> <p>在linux环境中，我们可以通过下面命令查看Zone的分类</p> <div class="language-c extra-class"><pre class="language-c"><code>cat <span class="token operator">/</span>proc<span class="token operator">/</span>zoneinfo <span class="token operator">|</span>grep Node
+
+Node <span class="token number">0</span><span class="token punctuation">,</span> zone					DMA32
+Node <span class="token number">0</span><span class="token punctuation">,</span> zone					Normal
+Node <span class="token number">0</span><span class="token punctuation">,</span> zone					Movable
+Node <span class="token number">1</span><span class="token punctuation">,</span> zone					DMA32
+Node <span class="token number">1</span><span class="token punctuation">,</span> zone					Normal
+Node <span class="token number">1</span><span class="token punctuation">,</span> zone					Movable
+Node <span class="token number">2</span><span class="token punctuation">,</span> zone					DMA32
+Node <span class="token number">2</span><span class="token punctuation">,</span> zone					Normal
+Node <span class="token number">2</span><span class="token punctuation">,</span> zone					Movable
+Node <span class="token number">3</span><span class="token punctuation">,</span> zone					DMA32
+Node <span class="token number">3</span><span class="token punctuation">,</span> zone					Normal
+Node <span class="token number">3</span><span class="token punctuation">,</span> zone					Movable
+
+</code></pre></div><h3 id="zone的数据结构"><a href="#zone的数据结构" class="header-anchor">#</a> zone的数据结构</h3> <p>zone的数据结构定义在[include/mm/mmzone.h]</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">struct</span> <span class="token class-name">zone</span> <span class="token punctuation">{</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> _watermark<span class="token punctuation">[</span>NR_WMARK<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> watermark_boost<span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> nr_reserved_highatomic<span class="token punctuation">;</span>
+	<span class="token keyword">long</span> lowmem_reserve<span class="token punctuation">[</span>MAX_NR_ZONES<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> node<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">pglist_data</span>	<span class="token operator">*</span>zone_pgdat<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">per_cpu_pageset</span> __percpu <span class="token operator">*</span>pageset<span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span>		<span class="token operator">*</span>pageblock_flags<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> initialized<span class="token punctuation">;</span>
+	<span class="token function">ZONE_PADDING</span><span class="token punctuation">(</span>_pad1_<span class="token punctuation">)</span>
+	<span class="token keyword">struct</span> <span class="token class-name">free_area</span>	free_area<span class="token punctuation">[</span>MAX_ORDER<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span>		flags<span class="token punctuation">;</span>
+	<span class="token class-name">spinlock_t</span>		lock<span class="token punctuation">;</span>
+	<span class="token function">ZONE_PADDING</span><span class="token punctuation">(</span>_pad2_<span class="token punctuation">)</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> percpu_drift_mark<span class="token punctuation">;</span>
+	bool			contiguous<span class="token punctuation">;</span>
+	<span class="token function">ZONE_PADDING</span><span class="token punctuation">(</span>_pad3_<span class="token punctuation">)</span>
+	<span class="token class-name">atomic_long_t</span>		vm_stat<span class="token punctuation">[</span>NR_VM_ZONE_STAT_ITEMS<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token class-name">atomic_long_t</span>		vm_numa_stat<span class="token punctuation">[</span>NR_VM_NUMA_STAT_ITEMS<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> ____cacheline_internodealigned_in_smp<span class="token punctuation">;</span>
+
+
+</code></pre></div><p>几个比较关键的数据成员:</p> <table><thead><tr><th>属性</th> <th>描述</th></tr></thead> <tbody><tr><td>watermark</td> <td>水线， 在系统启动时会计算WMARK_MIN、WMARK_LOW、WMARK_HIGH， 在kswapd页面回收中和分配页面时会有用到</td></tr> <tr><td>lowmem_reserve</td> <td>本管理区预留的物理内存大小</td></tr> <tr><td>zone_pgdat</td> <td>指向所属的node节点</td></tr> <tr><td>pageset</td> <td>每个CPU维护一个page list，避免自旋锁的冲突</td></tr> <tr><td>free_area[MAX_ORDER]</td> <td>空闲内存链表，按2的幂次分组，用于实现伙伴系统</td></tr> <tr><td>lock</td> <td>对zone并发访问的保护的自旋锁</td></tr> <tr><td>vm_stat</td> <td>zone的计数</td></tr></tbody></table> <h2 id="pages"><a href="#pages" class="header-anchor">#</a> Pages</h2> <hr> <p>物理页面通常被称作Page Frames。 Linux内核使用struct page数据结构来描述一个物理页面， 这些page数据结构会存放在一个数组中。<br>
+struct page和物理页面是一对一的映射关系。</p> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202204021831229.png" alt=""></p> <p>映射的关系取决于当前的内存模型， 当前内核支持3种内存模型FLATMEM、DISCONTIGMEM、SPARSEMEM。<br>
+关于内存模型，可以看wowotech的这篇文章【<a href="http://www.wowotech.net/memory_management/memory_model.html" target="_blank" rel="noopener noreferrer">Linux内存模型<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>】</p> <div class="language-c extra-class"><pre class="language-c"><code>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">if</span> <span class="token expression"><span class="token function">defined</span><span class="token punctuation">(</span>CONFIG_FLATMEM<span class="token punctuation">)</span></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">__pfn_to_page</span><span class="token expression"><span class="token punctuation">(</span>pfn<span class="token punctuation">)</span>	<span class="token punctuation">(</span>mem_map <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>pfn<span class="token punctuation">)</span> <span class="token operator">-</span> ARCH_PFN_OFFSET<span class="token punctuation">)</span><span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">__page_to_pfn</span><span class="token expression"><span class="token punctuation">(</span>page<span class="token punctuation">)</span>	<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span> <span class="token operator">-</span> mem_map<span class="token punctuation">)</span> <span class="token operator">+</span> </span><span class="token punctuation">\</span>
+				 <span class="token expression">ARCH_PFN_OFFSET<span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">elif</span> <span class="token expression"><span class="token function">defined</span><span class="token punctuation">(</span>CONFIG_DISCONTIGMEM<span class="token punctuation">)</span></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">__pfn_to_page</span><span class="token expression"><span class="token punctuation">(</span>pfn<span class="token punctuation">)</span>			</span><span class="token punctuation">\</span>
+<span class="token expression"><span class="token punctuation">(</span><span class="token punctuation">{</span>	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> __pfn <span class="token operator">=</span> <span class="token punctuation">(</span>pfn<span class="token punctuation">)</span><span class="token punctuation">;</span>		</span><span class="token punctuation">\</span>
+	<span class="token expression"><span class="token keyword">unsigned</span> <span class="token keyword">long</span> __nid <span class="token operator">=</span> <span class="token function">arch_pfn_to_nid</span><span class="token punctuation">(</span>__pfn<span class="token punctuation">)</span><span class="token punctuation">;</span>  </span><span class="token punctuation">\</span>
+	<span class="token expression"><span class="token function">NODE_DATA</span><span class="token punctuation">(</span>__nid<span class="token punctuation">)</span><span class="token operator">-&gt;</span>node_mem_map <span class="token operator">+</span> <span class="token function">arch_local_page_offset</span><span class="token punctuation">(</span>__pfn<span class="token punctuation">,</span> __nid<span class="token punctuation">)</span><span class="token punctuation">;</span></span><span class="token punctuation">\</span>
+<span class="token expression"><span class="token punctuation">}</span><span class="token punctuation">)</span></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">__page_to_pfn</span><span class="token expression"><span class="token punctuation">(</span>pg<span class="token punctuation">)</span>						</span><span class="token punctuation">\</span>
+<span class="token expression"><span class="token punctuation">(</span><span class="token punctuation">{</span>	<span class="token keyword">const</span> <span class="token keyword">struct</span> <span class="token class-name">page</span> <span class="token operator">*</span>__pg <span class="token operator">=</span> <span class="token punctuation">(</span>pg<span class="token punctuation">)</span><span class="token punctuation">;</span>					</span><span class="token punctuation">\</span>
+	<span class="token expression"><span class="token keyword">struct</span> <span class="token class-name">pglist_data</span> <span class="token operator">*</span>__pgdat <span class="token operator">=</span> <span class="token function">NODE_DATA</span><span class="token punctuation">(</span><span class="token function">page_to_nid</span><span class="token punctuation">(</span>__pg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	</span><span class="token punctuation">\</span>
+	<span class="token expression"><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">(</span>__pg <span class="token operator">-</span> __pgdat<span class="token operator">-&gt;</span>node_mem_map<span class="token punctuation">)</span> <span class="token operator">+</span>			</span><span class="token punctuation">\</span>
+	 <span class="token expression">__pgdat<span class="token operator">-&gt;</span>node_start_pfn<span class="token punctuation">;</span>					</span><span class="token punctuation">\</span>
+<span class="token expression"><span class="token punctuation">}</span><span class="token punctuation">)</span></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">elif</span> <span class="token expression"><span class="token function">defined</span><span class="token punctuation">(</span>CONFIG_SPARSEMEM_VMEMMAP<span class="token punctuation">)</span></span></span>
+
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">__pfn_to_page</span><span class="token expression"><span class="token punctuation">(</span>pfn<span class="token punctuation">)</span>	<span class="token punctuation">(</span>vmemmap <span class="token operator">+</span> <span class="token punctuation">(</span>pfn<span class="token punctuation">)</span><span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">__page_to_pfn</span><span class="token expression"><span class="token punctuation">(</span>page<span class="token punctuation">)</span>	<span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span> <span class="token operator">-</span> vmemmap<span class="token punctuation">)</span></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">elif</span> <span class="token expression"><span class="token function">defined</span><span class="token punctuation">(</span>CONFIG_SPARSEMEM<span class="token punctuation">)</span></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">__page_to_pfn</span><span class="token expression"><span class="token punctuation">(</span>pg<span class="token punctuation">)</span>					</span><span class="token punctuation">\</span>
+<span class="token expression"><span class="token punctuation">(</span><span class="token punctuation">{</span>	<span class="token keyword">const</span> <span class="token keyword">struct</span> <span class="token class-name">page</span> <span class="token operator">*</span>__pg <span class="token operator">=</span> <span class="token punctuation">(</span>pg<span class="token punctuation">)</span><span class="token punctuation">;</span>				</span><span class="token punctuation">\</span>
+	<span class="token expression"><span class="token keyword">int</span> __sec <span class="token operator">=</span> <span class="token function">page_to_section</span><span class="token punctuation">(</span>__pg<span class="token punctuation">)</span><span class="token punctuation">;</span>			</span><span class="token punctuation">\</span>
+	<span class="token expression"><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">(</span>__pg <span class="token operator">-</span> <span class="token function">__section_mem_map_addr</span><span class="token punctuation">(</span><span class="token function">__nr_to_section</span><span class="token punctuation">(</span>__sec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	</span><span class="token punctuation">\</span>
+<span class="token expression"><span class="token punctuation">}</span><span class="token punctuation">)</span></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">__pfn_to_page</span><span class="token expression"><span class="token punctuation">(</span>pfn<span class="token punctuation">)</span>				</span><span class="token punctuation">\</span>
+<span class="token expression"><span class="token punctuation">(</span><span class="token punctuation">{</span>	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> __pfn <span class="token operator">=</span> <span class="token punctuation">(</span>pfn<span class="token punctuation">)</span><span class="token punctuation">;</span>			</span><span class="token punctuation">\</span>
+	<span class="token expression"><span class="token keyword">struct</span> <span class="token class-name">mem_section</span> <span class="token operator">*</span>__sec <span class="token operator">=</span> <span class="token function">__pfn_to_section</span><span class="token punctuation">(</span>__pfn<span class="token punctuation">)</span><span class="token punctuation">;</span>	</span><span class="token punctuation">\</span>
+	<span class="token expression"><span class="token function">__section_mem_map_addr</span><span class="token punctuation">(</span>__sec<span class="token punctuation">)</span> <span class="token operator">+</span> __pfn<span class="token punctuation">;</span>		</span><span class="token punctuation">\</span>
+<span class="token expression"><span class="token punctuation">}</span><span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span> </span>
+
+</code></pre></div><h3 id="page的数据结构"><a href="#page的数据结构" class="header-anchor">#</a> page的数据结构</h3> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">struct</span> <span class="token class-name">page</span> <span class="token punctuation">{</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">long</span> flags<span class="token punctuation">;</span>
+	<span class="token keyword">union</span> <span class="token punctuation">{</span>
+		<span class="token keyword">struct</span> <span class="token punctuation">{</span>	
+			<span class="token keyword">struct</span> <span class="token class-name">list_head</span> lru<span class="token punctuation">;</span>
+			<span class="token keyword">struct</span> <span class="token class-name">address_space</span> <span class="token operator">*</span>mapping<span class="token punctuation">;</span>
+			<span class="token class-name">pgoff_t</span> index<span class="token punctuation">;</span>		
+			<span class="token keyword">unsigned</span> <span class="token keyword">long</span> private<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token keyword">struct</span> <span class="token punctuation">{</span>
+			<span class="token class-name">dma_addr_t</span> dma_addr<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token keyword">struct</span> 
+			<span class="token class-name">union</span> <span class="token punctuation">{</span>
+				<span class="token keyword">struct</span> <span class="token class-name">list_head</span> slab_list<span class="token punctuation">;</span>
+				<span class="token keyword">struct</span> <span class="token punctuation">{</span>
+					<span class="token keyword">struct</span> <span class="token class-name">page</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+					<span class="token keyword">int</span> pages<span class="token punctuation">;</span>	
+					<span class="token keyword">int</span> pobjects<span class="token punctuation">;</span>
+				<span class="token punctuation">}</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+			<span class="token keyword">struct</span> <span class="token class-name">kmem_cache</span> <span class="token operator">*</span>slab_cache<span class="token punctuation">;</span>
+			<span class="token keyword">void</span> <span class="token operator">*</span>freelist<span class="token punctuation">;</span>	
+			<span class="token keyword">union</span> <span class="token punctuation">{</span>
+				<span class="token keyword">void</span> <span class="token operator">*</span>s_mem<span class="token punctuation">;</span>
+				<span class="token keyword">unsigned</span> <span class="token keyword">long</span> counters<span class="token punctuation">;</span>	
+				<span class="token keyword">struct</span> <span class="token punctuation">{</span>	
+					<span class="token keyword">unsigned</span> inuse<span class="token operator">:</span><span class="token number">16</span><span class="token punctuation">;</span>
+					<span class="token keyword">unsigned</span> objects<span class="token operator">:</span><span class="token number">15</span><span class="token punctuation">;</span>
+					<span class="token keyword">unsigned</span> frozen<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token keyword">struct</span> <span class="token punctuation">{</span>	
+			<span class="token keyword">unsigned</span> <span class="token keyword">long</span> compound_head<span class="token punctuation">;</span>	
+
+			
+			<span class="token keyword">unsigned</span> <span class="token keyword">char</span> compound_dtor<span class="token punctuation">;</span>
+			<span class="token keyword">unsigned</span> <span class="token keyword">char</span> compound_order<span class="token punctuation">;</span>
+			<span class="token class-name">atomic_t</span> compound_mapcount<span class="token punctuation">;</span>
+			<span class="token keyword">unsigned</span> <span class="token keyword">int</span> compound_nr<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token keyword">struct</span> <span class="token punctuation">{</span>	
+			<span class="token keyword">unsigned</span> <span class="token keyword">long</span> _compound_pad_1<span class="token punctuation">;</span>	<span class="token operator">/</span>
+			<span class="token class-name">atomic_t</span> hpage_pinned_refcount<span class="token punctuation">;</span>
+			<span class="token keyword">struct</span> <span class="token class-name">list_head</span> deferred_list<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token keyword">struct</span> <span class="token punctuation">{</span>	
+			<span class="token keyword">unsigned</span> <span class="token keyword">long</span> _pt_pad_1<span class="token punctuation">;</span>
+			<span class="token class-name">pgtable_t</span> pmd_huge_pte<span class="token punctuation">;</span> 
+			<span class="token keyword">unsigned</span> <span class="token keyword">long</span> _pt_pad_2<span class="token punctuation">;</span>
+			<span class="token keyword">union</span> <span class="token punctuation">{</span>
+				<span class="token keyword">struct</span> <span class="token class-name">mm_struct</span> <span class="token operator">*</span>pt_mm<span class="token punctuation">;</span>
+				<span class="token class-name">atomic_t</span> pt_frag_refcount<span class="token punctuation">;</span> 
+			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+			<span class="token class-name">spinlock_t</span> ptl<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token keyword">struct</span> <span class="token punctuation">{</span>	
+			<span class="token keyword">struct</span> <span class="token class-name">dev_pagemap</span> <span class="token operator">*</span>pgmap<span class="token punctuation">;</span>
+			<span class="token keyword">void</span> <span class="token operator">*</span>zone_device_data<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">struct</span> <span class="token class-name">rcu_head</span> rcu_head<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">union</span> <span class="token punctuation">{</span>	
+		<span class="token class-name">atomic_t</span> _mapcount<span class="token punctuation">;</span>
+		<span class="token keyword">unsigned</span> <span class="token keyword">int</span> page_type<span class="token punctuation">;</span>
+		<span class="token keyword">unsigned</span> <span class="token keyword">int</span> active<span class="token punctuation">;</span>		
+		<span class="token keyword">int</span> units<span class="token punctuation">;</span>			
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token class-name">atomic_t</span> _refcount<span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifdef</span> <span class="token expression">CONFIG_MEMCG</span></span>
+	<span class="token keyword">union</span> <span class="token punctuation">{</span>
+		<span class="token keyword">struct</span> <span class="token class-name">mem_cgroup</span> <span class="token operator">*</span>mem_cgroup<span class="token punctuation">;</span>
+		<span class="token keyword">struct</span> <span class="token class-name">obj_cgroup</span> <span class="token operator">*</span><span class="token operator">*</span>obj_cgroups<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span> _struct_page_alignment<span class="token punctuation">;</span>
+
+</code></pre></div><p>重要的数据成员：</p> <table><thead><tr><th>属性</th> <th>描述</th></tr></thead> <tbody><tr><td>flags</td> <td>用于描述page的状态或者其他属性, 每一bit代表一种状态；在 include/linux/page_flags.h定义有page的各个可用状态pageflags</td></tr> <tr><td>mapping</td> <td>mapping指定了页帧所在的地址空间。有三种含义：mapping = 0，说明该page属于swap cache;  mapping != 0，bit[0] = 0，说明该page属于页缓存或文件映射，mapping指向文件的地址空间address_space;  mapping != 0，bit[0] != 0，说明该page为匿名映射，mapping指向struct anon_vma对象</td></tr> <tr><td>index</td> <td>index是页帧在映射内部的偏移量, 即在映射的虚拟空间（vma_area）内的偏移</td></tr> <tr><td>private</td> <td>私有数据指针，由应用场景确定其具体的含义</td></tr> <tr><td>_mapcount</td> <td>被页表映射的次数，也就是说该page同时被多少个进程共享.(注意:被映射了不一定在使用, 需要和下面的refcount进行区分)</td></tr> <tr><td>_refcount</td> <td>表示引用计数。当count值为0时，该page frame可被free掉；如果不为0，说明该page正在被某个进程或者内核使用，调用page_count()可获得count值。</td></tr></tbody></table> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <p><a href="https://blog.csdn.net/yhb1047818384/article/details/111789736" target="_blank" rel="noopener noreferrer">Linux内存管理(五)：描述物理内存_Hober_yao的博客-CSDN博客<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">4/2/2022, 6:43:57 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/notes/blog/linux/linux命令/linux环境变量.html" class="prev">
+            linux环境变量
+          </a></span> <span class="next"><a href="/notes/blog/linux/linux内存管理/内存分配机制.html">
+            内存分配机制
+          </a></span></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-22d702a7><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html#概述" class="sidebar-link reco-side-概述" data-v-22d702a7>概述</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html#nodes" class="sidebar-link reco-side-nodes" data-v-22d702a7>Nodes</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html#为什么需要node" class="sidebar-link reco-side-为什么需要node" data-v-22d702a7>为什么需要Node？</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html#pglist-data数据结构" class="sidebar-link reco-side-pglist-data数据结构" data-v-22d702a7>pglist_data数据结构</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html#zones" class="sidebar-link reco-side-zones" data-v-22d702a7>Zones</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html#为什么需要将node拆分成不同的zone" class="sidebar-link reco-side-为什么需要将node拆分成不同的zone" data-v-22d702a7>为什么需要将node拆分成不同的zone</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html#zone-type" class="sidebar-link reco-side-zone-type" data-v-22d702a7>Zone type</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html#zone的数据结构" class="sidebar-link reco-side-zone的数据结构" data-v-22d702a7>zone的数据结构</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html#pages" class="sidebar-link reco-side-pages" data-v-22d702a7>Pages</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html#page的数据结构" class="sidebar-link reco-side-page的数据结构" data-v-22d702a7>page的数据结构</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html#参考" class="sidebar-link reco-side-参考" data-v-22d702a7>参考</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/notes/assets/js/app.c9da24a6.js" defer></script><script src="/notes/assets/js/3.15042843.js" defer></script><script src="/notes/assets/js/1.8ca8e0eb.js" defer></script><script src="/notes/assets/js/58.516ab1c4.js" defer></script>
+  </body>
+</html>

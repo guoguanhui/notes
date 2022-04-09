@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>处理输入 | WaleGarrett</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/notes/logo.jpg">
+    <meta name="description" content="WaleGarrett的学习记录">
+    
+    <link rel="preload" href="/notes/assets/css/0.styles.54ab1000.css" as="style"><link rel="preload" href="/notes/assets/js/app.c9da24a6.js" as="script"><link rel="preload" href="/notes/assets/js/3.15042843.js" as="script"><link rel="preload" href="/notes/assets/js/1.8ca8e0eb.js" as="script"><link rel="preload" href="/notes/assets/js/68.d4eb82fd.js" as="script"><link rel="prefetch" href="/notes/assets/js/10.1becd84f.js"><link rel="prefetch" href="/notes/assets/js/100.e686635a.js"><link rel="prefetch" href="/notes/assets/js/101.d90ba6a2.js"><link rel="prefetch" href="/notes/assets/js/102.37c9c783.js"><link rel="prefetch" href="/notes/assets/js/103.dec1797e.js"><link rel="prefetch" href="/notes/assets/js/104.9e4cdf99.js"><link rel="prefetch" href="/notes/assets/js/105.8616c171.js"><link rel="prefetch" href="/notes/assets/js/106.bc2f20eb.js"><link rel="prefetch" href="/notes/assets/js/107.4fc0003b.js"><link rel="prefetch" href="/notes/assets/js/108.f7ed7756.js"><link rel="prefetch" href="/notes/assets/js/109.867fe8d3.js"><link rel="prefetch" href="/notes/assets/js/11.11eeb9c8.js"><link rel="prefetch" href="/notes/assets/js/110.ce3c1db9.js"><link rel="prefetch" href="/notes/assets/js/111.5f88fd17.js"><link rel="prefetch" href="/notes/assets/js/112.0ec3be4a.js"><link rel="prefetch" href="/notes/assets/js/113.b17af37a.js"><link rel="prefetch" href="/notes/assets/js/114.c3bd0ee7.js"><link rel="prefetch" href="/notes/assets/js/115.e942f535.js"><link rel="prefetch" href="/notes/assets/js/116.a07fe354.js"><link rel="prefetch" href="/notes/assets/js/117.7f109010.js"><link rel="prefetch" href="/notes/assets/js/118.70cf9c49.js"><link rel="prefetch" href="/notes/assets/js/119.68965728.js"><link rel="prefetch" href="/notes/assets/js/12.e21b4812.js"><link rel="prefetch" href="/notes/assets/js/120.9065ed1d.js"><link rel="prefetch" href="/notes/assets/js/121.a8a35fe7.js"><link rel="prefetch" href="/notes/assets/js/122.70596256.js"><link rel="prefetch" href="/notes/assets/js/123.b9715cd7.js"><link rel="prefetch" href="/notes/assets/js/124.7345d826.js"><link rel="prefetch" href="/notes/assets/js/125.d4392f5d.js"><link rel="prefetch" href="/notes/assets/js/126.ff7fff9e.js"><link rel="prefetch" href="/notes/assets/js/127.acc1dff7.js"><link rel="prefetch" href="/notes/assets/js/128.81dcc7a3.js"><link rel="prefetch" href="/notes/assets/js/129.6c2d778a.js"><link rel="prefetch" href="/notes/assets/js/13.afb6371c.js"><link rel="prefetch" href="/notes/assets/js/130.1c463291.js"><link rel="prefetch" href="/notes/assets/js/131.fade390b.js"><link rel="prefetch" href="/notes/assets/js/132.a1fe16f6.js"><link rel="prefetch" href="/notes/assets/js/133.a719a028.js"><link rel="prefetch" href="/notes/assets/js/134.66c5c006.js"><link rel="prefetch" href="/notes/assets/js/135.5b78fa9f.js"><link rel="prefetch" href="/notes/assets/js/136.2e6405e5.js"><link rel="prefetch" href="/notes/assets/js/137.41fb8a7a.js"><link rel="prefetch" href="/notes/assets/js/138.06de929f.js"><link rel="prefetch" href="/notes/assets/js/139.2f7ab686.js"><link rel="prefetch" href="/notes/assets/js/14.a2175c4c.js"><link rel="prefetch" href="/notes/assets/js/140.6918a01b.js"><link rel="prefetch" href="/notes/assets/js/141.95f9f12a.js"><link rel="prefetch" href="/notes/assets/js/142.aa0cee93.js"><link rel="prefetch" href="/notes/assets/js/143.d60a38b0.js"><link rel="prefetch" href="/notes/assets/js/144.638c8e0a.js"><link rel="prefetch" href="/notes/assets/js/145.1a1685af.js"><link rel="prefetch" href="/notes/assets/js/146.bc665756.js"><link rel="prefetch" href="/notes/assets/js/147.809233d9.js"><link rel="prefetch" href="/notes/assets/js/148.d6b15e4e.js"><link rel="prefetch" href="/notes/assets/js/149.646dfac5.js"><link rel="prefetch" href="/notes/assets/js/15.7ec2be59.js"><link rel="prefetch" href="/notes/assets/js/150.64b53d63.js"><link rel="prefetch" href="/notes/assets/js/151.0984c27e.js"><link rel="prefetch" href="/notes/assets/js/152.42cf7076.js"><link rel="prefetch" href="/notes/assets/js/153.80ae1b86.js"><link rel="prefetch" href="/notes/assets/js/154.1b7e1514.js"><link rel="prefetch" href="/notes/assets/js/155.0a6c1fb7.js"><link rel="prefetch" href="/notes/assets/js/156.916e2a53.js"><link rel="prefetch" href="/notes/assets/js/157.8d361889.js"><link rel="prefetch" href="/notes/assets/js/158.858d71f6.js"><link rel="prefetch" href="/notes/assets/js/159.9a2f07f9.js"><link rel="prefetch" href="/notes/assets/js/16.679c7661.js"><link rel="prefetch" href="/notes/assets/js/160.4f54106a.js"><link rel="prefetch" href="/notes/assets/js/161.3cc67e9e.js"><link rel="prefetch" href="/notes/assets/js/162.c94a5be4.js"><link rel="prefetch" href="/notes/assets/js/163.dc11bf4c.js"><link rel="prefetch" href="/notes/assets/js/164.5f0bb30d.js"><link rel="prefetch" href="/notes/assets/js/165.17595a0b.js"><link rel="prefetch" href="/notes/assets/js/166.26cc364b.js"><link rel="prefetch" href="/notes/assets/js/167.a8b2ddf0.js"><link rel="prefetch" href="/notes/assets/js/168.17f43071.js"><link rel="prefetch" href="/notes/assets/js/169.d5e82e04.js"><link rel="prefetch" href="/notes/assets/js/17.016980ed.js"><link rel="prefetch" href="/notes/assets/js/170.11696f57.js"><link rel="prefetch" href="/notes/assets/js/171.70305f2f.js"><link rel="prefetch" href="/notes/assets/js/172.f4b63da4.js"><link rel="prefetch" href="/notes/assets/js/173.42057c95.js"><link rel="prefetch" href="/notes/assets/js/174.246a6e0b.js"><link rel="prefetch" href="/notes/assets/js/175.4855ab27.js"><link rel="prefetch" href="/notes/assets/js/176.d75790bd.js"><link rel="prefetch" href="/notes/assets/js/177.f616c3f5.js"><link rel="prefetch" href="/notes/assets/js/178.659b087d.js"><link rel="prefetch" href="/notes/assets/js/179.010eacce.js"><link rel="prefetch" href="/notes/assets/js/18.6f1dbb8f.js"><link rel="prefetch" href="/notes/assets/js/180.a11dd312.js"><link rel="prefetch" href="/notes/assets/js/181.c74fb0b6.js"><link rel="prefetch" href="/notes/assets/js/182.4f548539.js"><link rel="prefetch" href="/notes/assets/js/183.32dc4b08.js"><link rel="prefetch" href="/notes/assets/js/184.7b15f3e9.js"><link rel="prefetch" href="/notes/assets/js/185.ad484525.js"><link rel="prefetch" href="/notes/assets/js/186.db3693bc.js"><link rel="prefetch" href="/notes/assets/js/187.2a0df038.js"><link rel="prefetch" href="/notes/assets/js/188.987a82c9.js"><link rel="prefetch" href="/notes/assets/js/189.c693f3a1.js"><link rel="prefetch" href="/notes/assets/js/19.9e1eac04.js"><link rel="prefetch" href="/notes/assets/js/190.2e253fc8.js"><link rel="prefetch" href="/notes/assets/js/191.d70ee914.js"><link rel="prefetch" href="/notes/assets/js/192.4f808c44.js"><link rel="prefetch" href="/notes/assets/js/193.133fd0a8.js"><link rel="prefetch" href="/notes/assets/js/194.c1c26af9.js"><link rel="prefetch" href="/notes/assets/js/195.5d112624.js"><link rel="prefetch" href="/notes/assets/js/196.e756a155.js"><link rel="prefetch" href="/notes/assets/js/197.6f9b8105.js"><link rel="prefetch" href="/notes/assets/js/198.3c59ba72.js"><link rel="prefetch" href="/notes/assets/js/199.15e2d96e.js"><link rel="prefetch" href="/notes/assets/js/20.e41f5564.js"><link rel="prefetch" href="/notes/assets/js/200.992db7f7.js"><link rel="prefetch" href="/notes/assets/js/201.9c266b22.js"><link rel="prefetch" href="/notes/assets/js/202.842ef603.js"><link rel="prefetch" href="/notes/assets/js/203.01bca3f3.js"><link rel="prefetch" href="/notes/assets/js/204.f9c2a70d.js"><link rel="prefetch" href="/notes/assets/js/205.f9268403.js"><link rel="prefetch" href="/notes/assets/js/206.4cf08b44.js"><link rel="prefetch" href="/notes/assets/js/207.0ef45ecc.js"><link rel="prefetch" href="/notes/assets/js/208.0ac3b838.js"><link rel="prefetch" href="/notes/assets/js/209.5e055156.js"><link rel="prefetch" href="/notes/assets/js/21.2d865954.js"><link rel="prefetch" href="/notes/assets/js/210.d8204d91.js"><link rel="prefetch" href="/notes/assets/js/211.acc0168d.js"><link rel="prefetch" href="/notes/assets/js/212.5eec4fbf.js"><link rel="prefetch" href="/notes/assets/js/213.272bf6e6.js"><link rel="prefetch" href="/notes/assets/js/214.bf006247.js"><link rel="prefetch" href="/notes/assets/js/215.f11c4fd7.js"><link rel="prefetch" href="/notes/assets/js/216.cf94ea1b.js"><link rel="prefetch" href="/notes/assets/js/217.330e075c.js"><link rel="prefetch" href="/notes/assets/js/218.0b9e982c.js"><link rel="prefetch" href="/notes/assets/js/219.7e778a76.js"><link rel="prefetch" href="/notes/assets/js/22.88dd9e53.js"><link rel="prefetch" href="/notes/assets/js/220.6d5ffbc6.js"><link rel="prefetch" href="/notes/assets/js/221.bac51660.js"><link rel="prefetch" href="/notes/assets/js/23.a8a4e106.js"><link rel="prefetch" href="/notes/assets/js/24.6a7395f6.js"><link rel="prefetch" href="/notes/assets/js/25.3e79ff45.js"><link rel="prefetch" href="/notes/assets/js/26.33e76c58.js"><link rel="prefetch" href="/notes/assets/js/27.2e20fce9.js"><link rel="prefetch" href="/notes/assets/js/28.92202fbe.js"><link rel="prefetch" href="/notes/assets/js/29.31e72924.js"><link rel="prefetch" href="/notes/assets/js/30.63118840.js"><link rel="prefetch" href="/notes/assets/js/31.40bb3db2.js"><link rel="prefetch" href="/notes/assets/js/32.34771f12.js"><link rel="prefetch" href="/notes/assets/js/33.12f2bfaf.js"><link rel="prefetch" href="/notes/assets/js/34.0685ab4b.js"><link rel="prefetch" href="/notes/assets/js/35.497cff30.js"><link rel="prefetch" href="/notes/assets/js/36.1f5c1fc2.js"><link rel="prefetch" href="/notes/assets/js/37.bd6b811a.js"><link rel="prefetch" href="/notes/assets/js/38.a7a23117.js"><link rel="prefetch" href="/notes/assets/js/39.cdf8ca3c.js"><link rel="prefetch" href="/notes/assets/js/4.0716db17.js"><link rel="prefetch" href="/notes/assets/js/40.21388ef8.js"><link rel="prefetch" href="/notes/assets/js/41.ee9dc436.js"><link rel="prefetch" href="/notes/assets/js/42.a3ec0597.js"><link rel="prefetch" href="/notes/assets/js/43.be5d9816.js"><link rel="prefetch" href="/notes/assets/js/44.2f99673b.js"><link rel="prefetch" href="/notes/assets/js/45.c443ff93.js"><link rel="prefetch" href="/notes/assets/js/46.bd004ac4.js"><link rel="prefetch" href="/notes/assets/js/47.20add895.js"><link rel="prefetch" href="/notes/assets/js/48.1c5da96b.js"><link rel="prefetch" href="/notes/assets/js/49.31c7e29d.js"><link rel="prefetch" href="/notes/assets/js/5.03d74ef1.js"><link rel="prefetch" href="/notes/assets/js/50.b48ca783.js"><link rel="prefetch" href="/notes/assets/js/51.b4bc061c.js"><link rel="prefetch" href="/notes/assets/js/52.77dc2135.js"><link rel="prefetch" href="/notes/assets/js/53.3fc2d110.js"><link rel="prefetch" href="/notes/assets/js/54.ab331494.js"><link rel="prefetch" href="/notes/assets/js/55.59fa9d3a.js"><link rel="prefetch" href="/notes/assets/js/56.6864911d.js"><link rel="prefetch" href="/notes/assets/js/57.44dbdabe.js"><link rel="prefetch" href="/notes/assets/js/58.516ab1c4.js"><link rel="prefetch" href="/notes/assets/js/59.56d4d38d.js"><link rel="prefetch" href="/notes/assets/js/6.c1d1ac7a.js"><link rel="prefetch" href="/notes/assets/js/60.9038d0d8.js"><link rel="prefetch" href="/notes/assets/js/61.d5696bbd.js"><link rel="prefetch" href="/notes/assets/js/62.59b5f172.js"><link rel="prefetch" href="/notes/assets/js/63.e9c7508b.js"><link rel="prefetch" href="/notes/assets/js/64.4241a14e.js"><link rel="prefetch" href="/notes/assets/js/65.91a07396.js"><link rel="prefetch" href="/notes/assets/js/66.b82f5c7e.js"><link rel="prefetch" href="/notes/assets/js/67.afcaae6c.js"><link rel="prefetch" href="/notes/assets/js/69.a4267fbd.js"><link rel="prefetch" href="/notes/assets/js/7.8e24ac99.js"><link rel="prefetch" href="/notes/assets/js/70.430fd8cd.js"><link rel="prefetch" href="/notes/assets/js/71.1016e8c6.js"><link rel="prefetch" href="/notes/assets/js/72.9ec57099.js"><link rel="prefetch" href="/notes/assets/js/73.20c4449a.js"><link rel="prefetch" href="/notes/assets/js/74.39b9604e.js"><link rel="prefetch" href="/notes/assets/js/75.4f09e706.js"><link rel="prefetch" href="/notes/assets/js/76.88ffa9c5.js"><link rel="prefetch" href="/notes/assets/js/77.eec6caf8.js"><link rel="prefetch" href="/notes/assets/js/78.166b5a56.js"><link rel="prefetch" href="/notes/assets/js/79.ef2af5da.js"><link rel="prefetch" href="/notes/assets/js/8.00d48dd8.js"><link rel="prefetch" href="/notes/assets/js/80.c0eb3a50.js"><link rel="prefetch" href="/notes/assets/js/81.21ed8523.js"><link rel="prefetch" href="/notes/assets/js/82.a7717793.js"><link rel="prefetch" href="/notes/assets/js/83.cb39ac8d.js"><link rel="prefetch" href="/notes/assets/js/84.3a0c34dc.js"><link rel="prefetch" href="/notes/assets/js/85.379f9075.js"><link rel="prefetch" href="/notes/assets/js/86.500344a3.js"><link rel="prefetch" href="/notes/assets/js/87.a52c8c96.js"><link rel="prefetch" href="/notes/assets/js/88.d14778d2.js"><link rel="prefetch" href="/notes/assets/js/89.ca52efc6.js"><link rel="prefetch" href="/notes/assets/js/9.5b519f35.js"><link rel="prefetch" href="/notes/assets/js/90.8529f3f5.js"><link rel="prefetch" href="/notes/assets/js/91.65963b3b.js"><link rel="prefetch" href="/notes/assets/js/92.041432c3.js"><link rel="prefetch" href="/notes/assets/js/93.d97cc1eb.js"><link rel="prefetch" href="/notes/assets/js/94.4c8de3b2.js"><link rel="prefetch" href="/notes/assets/js/95.81ea24d1.js"><link rel="prefetch" href="/notes/assets/js/96.4190ea57.js"><link rel="prefetch" href="/notes/assets/js/97.a72a27df.js"><link rel="prefetch" href="/notes/assets/js/98.504f98ad.js"><link rel="prefetch" href="/notes/assets/js/99.1da9035d.js">
+    <link rel="stylesheet" href="/notes/assets/css/0.styles.54ab1000.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>WaleGarrett</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>WaleGarrett的学习记录</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes/" class="home-link router-link-active"><img src="/notes/logo.jpg" alt="WaleGarrett" class="logo"> <span class="site-name">WaleGarrett</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>JavaSE</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/JavaSE/" class="nav-link"><i class="undefined"></i>
+  JavaSE基础
+</a></li></ul></li><li class="dropdown-item"><h4>Java IO</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java IO/" class="nav-link"><i class="undefined"></i>
+  Java IO
+</a></li></ul></li><li class="dropdown-item"><h4>Java容器</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java容器/" class="nav-link"><i class="undefined"></i>
+  Java容器
+</a></li></ul></li><li class="dropdown-item"><h4>Java并发</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/多线程与并发/" class="nav-link"><i class="undefined"></i>
+  多线程与并发
+</a></li></ul></li><li class="dropdown-item"><h4>JVM</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java运行时内存区.html" class="nav-link"><i class="undefined"></i>
+  Java运行时内存区
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java内存模型.html" class="nav-link"><i class="undefined"></i>
+  Java内存模型
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/类加载.html" class="nav-link"><i class="undefined"></i>
+  类加载
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/程序编译.html" class="nav-link"><i class="undefined"></i>
+  程序编译
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/虚拟机对象.html" class="nav-link"><i class="undefined"></i>
+  虚拟机对象
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/垃圾收集/" class="nav-link"><i class="undefined"></i>
+  垃圾收集
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/JVM调优.html" class="nav-link"><i class="undefined"></i>
+  JVM调优
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Spring系列
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring/" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring MVC/" class="nav-link"><i class="undefined"></i>
+  Spring MVC
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring Boot/" class="nav-link"><i class="undefined"></i>
+  Spring Boot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      计算机基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>操作系统</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/操作系统/" class="nav-link"><i class="undefined"></i>
+  操作系统知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>计算机网络</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据结构</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/数据库基础/" class="nav-link"><i class="undefined"></i>
+  数据库基础
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/数据库/MySQL/" class="nav-link"><i class="undefined"></i>
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      linux
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux命令/" class="nav-link"><i class="undefined"></i>
+  linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/脚本编程/" class="nav-link"><i class="undefined"></i>
+  脚本编程
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux内存管理/" class="nav-link"><i class="undefined"></i>
+  linux内存管理
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux文件系统/" class="nav-link"><i class="undefined"></i>
+  linux文件系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/git/git基础知识.html" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/maven/maven基础知识.html" class="nav-link"><i class="undefined"></i>
+  maven
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/kafka/" class="nav-link"><i class="undefined"></i>
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/HBase/" class="nav-link"><i class="undefined"></i>
+  HBase
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>ORM框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/MyBatis/" class="nav-link"><i class="undefined"></i>
+  MyBatis框架
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      架构
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/架构/" class="nav-link"><i class="undefined"></i>
+  系统架构
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.cnblogs.com/GarrettWale/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客文章
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><!----> <!----> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>211</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>106</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/notes/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>JavaSE</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/JavaSE/" class="nav-link"><i class="undefined"></i>
+  JavaSE基础
+</a></li></ul></li><li class="dropdown-item"><h4>Java IO</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java IO/" class="nav-link"><i class="undefined"></i>
+  Java IO
+</a></li></ul></li><li class="dropdown-item"><h4>Java容器</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java容器/" class="nav-link"><i class="undefined"></i>
+  Java容器
+</a></li></ul></li><li class="dropdown-item"><h4>Java并发</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/多线程与并发/" class="nav-link"><i class="undefined"></i>
+  多线程与并发
+</a></li></ul></li><li class="dropdown-item"><h4>JVM</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java运行时内存区.html" class="nav-link"><i class="undefined"></i>
+  Java运行时内存区
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java内存模型.html" class="nav-link"><i class="undefined"></i>
+  Java内存模型
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/类加载.html" class="nav-link"><i class="undefined"></i>
+  类加载
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/程序编译.html" class="nav-link"><i class="undefined"></i>
+  程序编译
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/虚拟机对象.html" class="nav-link"><i class="undefined"></i>
+  虚拟机对象
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/垃圾收集/" class="nav-link"><i class="undefined"></i>
+  垃圾收集
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/JVM调优.html" class="nav-link"><i class="undefined"></i>
+  JVM调优
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Spring系列
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring/" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring MVC/" class="nav-link"><i class="undefined"></i>
+  Spring MVC
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring Boot/" class="nav-link"><i class="undefined"></i>
+  Spring Boot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      计算机基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>操作系统</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/操作系统/" class="nav-link"><i class="undefined"></i>
+  操作系统知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>计算机网络</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据结构</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/数据库基础/" class="nav-link"><i class="undefined"></i>
+  数据库基础
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/数据库/MySQL/" class="nav-link"><i class="undefined"></i>
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      linux
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux命令/" class="nav-link"><i class="undefined"></i>
+  linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/脚本编程/" class="nav-link"><i class="undefined"></i>
+  脚本编程
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux内存管理/" class="nav-link"><i class="undefined"></i>
+  linux内存管理
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux文件系统/" class="nav-link"><i class="undefined"></i>
+  linux文件系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/git/git基础知识.html" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/maven/maven基础知识.html" class="nav-link"><i class="undefined"></i>
+  maven
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/kafka/" class="nav-link"><i class="undefined"></i>
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/HBase/" class="nav-link"><i class="undefined"></i>
+  HBase
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>ORM框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/MyBatis/" class="nav-link"><i class="undefined"></i>
+  MyBatis框架
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      架构
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/架构/" class="nav-link"><i class="undefined"></i>
+  系统架构
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.cnblogs.com/GarrettWale/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客文章
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>linux</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux命令/" class="sidebar-heading clickable"><span>linux命令</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux内存管理/" class="sidebar-heading clickable"><span>linux内存管理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/linux文件系统/" class="sidebar-heading clickable"><span>linux文件系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/notes/blog/linux/脚本编程/" class="sidebar-heading clickable open"><span>脚本编程</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/blog/linux/脚本编程/脚本编程基础.html" class="sidebar-link">脚本编程基础</a></li><li><a href="/notes/blog/linux/脚本编程/处理输入.html" class="active sidebar-link">处理输入</a></li><li><a href="/notes/blog/linux/脚本编程/处理输出.html" class="sidebar-link">处理输出</a></li><li><a href="/notes/blog/linux/脚本编程/结构化命令.html" class="sidebar-link">结构化命令</a></li><li><a href="/notes/blog/linux/脚本编程/函数.html" class="sidebar-link">函数</a></li><li><a href="/notes/blog/linux/脚本编程/sed与gawk.html" class="sidebar-link">sed与gawk</a></li></ul></section></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>处理输入</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page"><section><div class="page-title"><h1 class="title">处理输入</h1> <div data-v-f875f3fc><!----> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>4/1/2022</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>linux</span><span class="tag-item" data-v-f875f3fc>shell</span></i></div></div> <div class="theme-reco-content content__default"><p>到目前为止，你已经看到了如何编写脚本，处理数据、变量和 Linux 系统上的文件。有时，你编写的脚本还得能够与使用者进行交互。bash shell 提供了一些不同的方法来从用户处获得数据，包括命令行参数（添加在命令后的数据）、命令行选项（可修改命令行为的单个字母）以及直接从键盘读取输入的能力。本章将会讨论如何在你的 bash shell 脚本运用这些方法来从脚本用户处获得数据。</p> <h2 id="命令行参数"><a href="#命令行参数" class="header-anchor">#</a> 命令行参数</h2> <p>向 shell 脚本传递数据的最基本方法是使用命令行参数。命令行参数允许在运行脚本时向命令行添加数据。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./addem <span class="token number">10</span> <span class="token number">30</span>
+</code></pre></div><p>本例向脚本 addem 传递了两个命令行参数（10 和 30）。脚本会通过特殊的变量来处理命令行参数。后面几节将会介绍如何在 bash shell 脚本中使用命令行参数。</p> <h3 id="读取参数"><a href="#读取参数" class="header-anchor">#</a> 读取参数</h3> <p>bash shell 会将一些称为<code>位置参数</code>（positional parameter）的特殊变量分配给输入到命令行中的所有参数。这也包括 shell 所执行的脚本名称。位置参数变量是标准的数字：$0 是程序名，$1 是第一个参数，$2 是第二个参数，依次类推，直到第九个参数$9。</p> <p>下面是在 shell 脚本中使用单个命令行参数的简单例子。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> test1.sh
+
+<span class="token assign-left variable">factorial</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">for</span> <span class="token variable"><span class="token punctuation">((</span> number <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> number <span class="token operator">&lt;=</span> $<span class="token number">1</span> <span class="token punctuation">;</span> number<span class="token operator">++</span> <span class="token punctuation">))</span></span>
+<span class="token keyword">do</span>
+    <span class="token assign-left variable">factorial</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$factorial</span> * <span class="token variable">$number</span> <span class="token punctuation">]</span>
+<span class="token keyword">done</span>
+<span class="token builtin class-name">echo</span> The factorial of <span class="token variable">$1</span> is <span class="token variable">$factorial</span>
+$
+$ ./test1.sh <span class="token number">5</span>
+The factorial of <span class="token number">5</span> is <span class="token number">120</span>
+$
+</code></pre></div><p>可以在 shell 脚本中像使用其他变量一样使用$1 变量。shell 脚本会自动将命令行参数的值分配给变量，不需要你作任何处理。</p> <p>如果需要输入更多的命令行参数，则每个参数都必须用空格分开。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test2.sh
+
+<span class="token assign-left variable">total</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$1</span> * <span class="token variable">$2</span> <span class="token punctuation">]</span>
+<span class="token builtin class-name">echo</span> The first parameter is <span class="token variable">$1</span><span class="token builtin class-name">.</span>
+<span class="token builtin class-name">echo</span> The second parameter is <span class="token variable">$2</span><span class="token builtin class-name">.</span>
+<span class="token builtin class-name">echo</span> The total value is <span class="token variable">$total</span><span class="token builtin class-name">.</span>
+$
+$ ./test2.sh <span class="token number">2</span> <span class="token number">5</span>
+The first parameter is <span class="token number">2</span>.
+The second parameter is <span class="token number">5</span>.
+The total value is <span class="token number">10</span>.
+$
+</code></pre></div><p>shell 会将每个参数分配给对应的变量。在前面的例子中，用到的命令行参数都是数值。也可以在命令行上用文本字符串。shell 将输入到命令行的字符串值传给脚本。但碰到含有空格的文本字符串时就会出现问题。记住，每个参数都是用空格分隔的，所以 shell 会将空格当成两个值的分隔符。要在参数值中包含空格，必须要用引号（单引号或双引号均可）。</p> <blockquote><p>将文本字符串作为参数传递时，引号并非数据的一部分。它们只是表明数据的起止位置。</p></blockquote> <p>如果脚本需要的命令行参数不止 9 个，你仍然可以处理，但是需要稍微修改一下变量名。<strong>在第 9 个变量之后，你必须在变量数字周围加上花括号，比如${10}。这种方法允许你根据需要向脚本添加任意多的命令行参数</strong>。加上花括号会显得比较直观，不过经过测试，目前版本的 bash 不加花括号也可以正常运行，只是不是那么直观罢了。</p> <h3 id="读取脚本名"><a href="#读取脚本名" class="header-anchor">#</a> 读取脚本名</h3> <p>可以用$0 参数获取 shell 在命令行启动的脚本名。这在编写多功能工具时很方便。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test5.sh
+
+<span class="token builtin class-name">echo</span> The zero parameter is <span class="token builtin class-name">set</span> to: <span class="token variable">$0</span>
+
+$
+$ <span class="token function">bash</span> test5.sh
+The zero parameter is <span class="token builtin class-name">set</span> to: test5.sh
+$
+</code></pre></div><p>但是这里存在一个潜在的问题。如果使用另一种方式来运行 shell 脚本，命令会和脚本名混在一起，出现在$0 参数中。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ ./test5.sh
+The zero parameter is <span class="token builtin class-name">set</span> to: ./test5.sh
+$
+</code></pre></div><p>这还不是唯一的问题。当传给$0 变量的实际字符串不仅仅是脚本名，而是完整的脚本路径时，变量$0 就会使用整个路径。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">bash</span> /home/Christine/test5.sh
+The zero parameter is <span class="token builtin class-name">set</span> to: /home/Christine/test5.sh
+$
+</code></pre></div><p>如果你要编写一个根据脚本名来执行不同功能的脚本，就得做点额外工作。你得把脚本的运行路径给剥离掉。另外，还要删除与脚本名混杂在一起的命令。 幸好有个方便的小命令可以帮到我们。basename 命令会返回不包含路径的脚本名。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test5b.sh
+
+<span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">basename</span> $0<span class="token variable">)</span></span>
+<span class="token builtin class-name">echo</span>
+<span class="token builtin class-name">echo</span> The script name is: <span class="token variable">$name</span>
+
+$
+$ <span class="token function">bash</span> /home/Christine/test5b.sh
+The script name is: test5b.sh
+$
+$ ./test5b.sh
+The script name is: test5b.sh
+$
+
+</code></pre></div><p>现在好多了。可以用这种方法来编写基于脚本名执行不同功能的脚本。这里有个简单的例子。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test6.sh
+
+<span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">basename</span> $0<span class="token variable">)</span></span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$name</span> <span class="token operator">=</span> <span class="token string">&quot;addem&quot;</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+    <span class="token assign-left variable">total</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$1</span> + <span class="token variable">$2</span> <span class="token punctuation">]</span>
+
+<span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token variable">$name</span> <span class="token operator">=</span> <span class="token string">&quot;multem&quot;</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+    <span class="token assign-left variable">total</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$1</span> * <span class="token variable">$2</span> <span class="token punctuation">]</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">echo</span> The calculated value is <span class="token variable">$total</span>
+
+$
+$ <span class="token function">cp</span> test6.sh addem
+$ <span class="token function">chmod</span> u+x addem
+$
+$ <span class="token function">ln</span> -s test6.sh multem
+$
+$ <span class="token function">ls</span> -l *em
+-rwxrw-r--. <span class="token number">1</span> Christine Christine <span class="token number">224</span> Jun <span class="token number">30</span> <span class="token number">23</span>:50 addem
+lrwxrwxrwx. <span class="token number">1</span> Christine Christine   <span class="token number">8</span> Jun <span class="token number">30</span> <span class="token number">23</span>:50 multem -<span class="token operator">&gt;</span> test6.sh
+$
+$ ./addem <span class="token number">2</span> <span class="token number">5</span>
+The calculated value is <span class="token number">7</span>
+$
+$ ./multem <span class="token number">2</span> <span class="token number">5</span>
+The calculated value is <span class="token number">10</span>
+$
+</code></pre></div><p>本例从 test6.sh 脚本中创建了两个不同的文件名：一个通过复制文件创建（addem），另一个通过链接（参见第 3 章）创建（multem）。在两种情况下都会先获得脚本的基本名称，然后根据该值执行相应的功能。</p> <h3 id="测试参数"><a href="#测试参数" class="header-anchor">#</a> 测试参数</h3> <p>在 shell 脚本中使用命令行参数时要小心些。如果脚本不加参数运行，可能会出问题。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ ./addem <span class="token number">2</span>
+./addem: line <span class="token number">8</span>: <span class="token number">2</span> +  <span class="token builtin class-name">:</span> syntax error: operand expected <span class="token punctuation">(</span>error
+token is <span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
+The calculated value is
+$
+</code></pre></div><p>当脚本认为参数变量中会有数据而实际上并没有时，脚本很有可能会产生错误消息。这种写脚本的方法并不可取。在使用参数前一定要检查其中是否存在数据。</p> <div class="language- extra-class"><pre class="language-text"><code>$ cat test7.sh
+
+if [ -n &quot;$1&quot; ]
+then
+    echo Hello $1, glad to meet you.
+else
+    echo &quot;Sorry, you did not identify yourself. &quot;
+fi
+$
+$ ./test7.sh Rich
+Hello Rich, glad to meet you.
+$
+$ ./test7.sh
+Sorry, you did not identify yourself.
+$
+</code></pre></div><p>在本例中，<strong>==使用了-n 测试来检查命令行参数$1 中是否有数据==</strong>。在下一节中，你会看到还有另一种检查命令行参数的方法。</p> <h2 id="特殊参数变量"><a href="#特殊参数变量" class="header-anchor">#</a> 特殊参数变量</h2> <table><thead><tr><th>变量</th> <th>含义</th></tr></thead> <tbody><tr><td>$0</td> <td>当前脚本的文件名</td></tr> <tr><td>$n</td> <td>传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。</td></tr> <tr><td>$#</td> <td>传递给脚本或函数的<strong>参数个数</strong>。</td></tr> <tr><td>$*</td> <td>传递给脚本或函数的<strong>所有参数</strong>。</td></tr> <tr><td>$@</td> <td>传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同，下面将会讲到。</td></tr> <tr><td>$?</td> <td><strong>上个命令的退出状态，或函数的返回值。</strong></td></tr> <tr><td>$$</td> <td>当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。</td></tr></tbody></table> <p>在 bash shell 中有些特殊变量，它们会记录命令行参数。本节将会介绍这些变量及其用法。</p> <h3 id="参数统计"><a href="#参数统计" class="header-anchor">#</a> 参数统计</h3> <p>如在上一节中看到的，在脚本中使用命令行参数之前应该检查一下命令行参数。对于使用多个命令行参数的脚本来说，这有点麻烦。 你可以统计一下命令行中输入了多少个参数，无需测试每个参数。bash shell 为此提供了一个特殊变量。</p> <p>特殊变量$#含有脚本运行时携带的命令行参数的个数。可以在脚本中任何地方使用这个特殊变量，就跟普通变量一样。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test8.sh
+
+<span class="token builtin class-name">echo</span> There were <span class="token variable">$#</span> parameters supplied.
+$
+$ ./test8.sh
+There were <span class="token number">0</span> parameters supplied.
+$
+$ ./test8.sh <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span>
+There were <span class="token number">5</span> parameters supplied.
+</code></pre></div><p>现在你就能在使用参数前测试参数的总数了。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test9.sh
+
+
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$#</span> -ne <span class="token number">2</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span>
+    <span class="token builtin class-name">echo</span> Usage: test9.sh a b
+    <span class="token builtin class-name">echo</span>
+<span class="token keyword">else</span>
+    <span class="token assign-left variable">total</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$1</span> + <span class="token variable">$2</span> <span class="token punctuation">]</span>
+    <span class="token builtin class-name">echo</span>
+    <span class="token builtin class-name">echo</span> The total is <span class="token variable">$total</span>
+    <span class="token builtin class-name">echo</span>
+<span class="token keyword">fi</span>
+
+$
+$ <span class="token function">bash</span> test9.sh
+Usage: test9.sh a b
+$ <span class="token function">bash</span> test9.sh <span class="token number">10</span> <span class="token number">15</span>
+The total is <span class="token number">25</span>
+$
+</code></pre></div><p>if-then 语句用-ne 测试命令行参数数量。如果参数数量不对，会显示一条错误消息告知脚本的正确用法。</p> <p>这个变量还提供了一个简便方法来获取命令行中最后一个参数，完全不需要知道实际上到底用了多少个参数。不过要实现这一点，得稍微多花点工夫。如果你仔细考虑过，可能会觉得既然$#变量含有参数的总数，那么变量${$#}就代表了最后一个命令行参数变量。试试看会发生什么。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> badtest1.sh
+
+<span class="token builtin class-name">echo</span> The last parameter was <span class="token variable">${$<span class="token operator">#</span>}</span>
+$
+$ ./badtest1.sh <span class="token number">10</span>
+The last parameter was <span class="token number">15354</span>
+$
+</code></pre></div><p>怎么了？显然，出了点问题。它表明你==不能在花括号内使用美元符。必须将美元符换成感叹号。==很奇怪，但的确管用。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test10.sh
+
+
+
+<span class="token assign-left variable">params</span><span class="token operator">=</span><span class="token variable">$#</span>
+<span class="token builtin class-name">echo</span>
+<span class="token builtin class-name">echo</span> The last parameter is <span class="token variable">$params</span>
+<span class="token builtin class-name">echo</span> The last parameter is <span class="token variable">${<span class="token operator">!</span><span class="token operator">#</span>}</span>
+<span class="token builtin class-name">echo</span>
+
+$
+$ <span class="token function">bash</span> test10.sh <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span>
+The last parameter is <span class="token number">5</span>
+The last parameter is <span class="token number">5</span>
+$
+$ <span class="token function">bash</span> test10.sh
+The last parameter is <span class="token number">0</span>
+The last parameter is test10.sh
+$
+</code></pre></div><p>这个测试将$#变量的值赋给了变量params，然后也按特殊命令行参数变量的格式使用了该变量。两种方法都没问题。重要的是要注意，当命令行上没有任何参数时，$#的值为 0，params 变量的值也一样，但${!#}变量会返回命令行用到的脚本名。</p> <h3 id="抓取所有的数据"><a href="#抓取所有的数据" class="header-anchor">#</a> 抓取所有的数据</h3> <p>有时候需要抓取命令行上提供的所有参数。这时候不需要先用$#变量来判断命令行上有多少参数，然后再进行遍历，你可以使用一组其他的特殊变量来解决这个问题。 $*和$@变量可以用来轻松访问所有的参数。这两个变量都能够在单个变量中存储所有的命令行参数。 <strong>==$*变量会将命令行上提供的所有参数当作一个单词保存。这个单词包含了命令行中出现的每一个参数值。基本上$*变量会将这些参数视为一个整体，而不是多个个体。 另一方面，$@变量会将命令行上提供的所有参数当作同一字符串中的多个独立的单词。这样你就能够遍历所有的参数值，得到每个参数。这通常通过 for 命令完成==</strong>。 这两个变量的工作方式不太容易理解。看个例子，你就能理解二者之间的区别了。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test11.sh
+
+
+
+<span class="token builtin class-name">echo</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Using the \<span class="token variable">$*</span> method: <span class="token variable">$*</span>&quot;</span>
+<span class="token builtin class-name">echo</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Using the \<span class="token variable">$@</span> method: <span class="token variable">$@</span>&quot;</span>
+$
+$ ./test11.sh rich barbara katie jessica
+Using the <span class="token variable">$*</span> method: rich barbara katie jessica
+Using the <span class="token variable">$@</span> method: rich barbara katie jessica
+$
+
+</code></pre></div><p>注意，从表面上看，两个变量产生的是同样的输出，都显示出了所有命令行参数。下面的例子给出了二者的差异。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test12.sh
+
+
+
+<span class="token builtin class-name">echo</span>
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">param</span> <span class="token keyword">in</span> <span class="token string">&quot;<span class="token variable">$*</span>&quot;</span>
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;\<span class="token variable">$*</span> Parameter #<span class="token variable">$count</span> = <span class="token variable">$param</span>&quot;</span>
+    <span class="token assign-left variable">count</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$count</span> + <span class="token number">1</span> <span class="token punctuation">]</span>
+<span class="token keyword">done</span>
+
+<span class="token builtin class-name">echo</span>
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">param</span> <span class="token keyword">in</span> <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span>
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;\<span class="token variable">$@</span> Parameter #<span class="token variable">$count</span> = <span class="token variable">$param</span>&quot;</span>
+    <span class="token assign-left variable">count</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$count</span> + <span class="token number">1</span> <span class="token punctuation">]</span>
+<span class="token keyword">done</span>
+$
+$ ./test12.sh rich barbara katie jessica
+<span class="token variable">$*</span> Parameter 
+<span class="token variable">$@</span> Parameter 
+<span class="token variable">$@</span> Parameter 
+<span class="token variable">$@</span> Parameter 
+<span class="token variable">$@</span> Parameter 
+$
+</code></pre></div><p>现在清楚多了。通过使用 for 命令遍历这两个特殊变量，你能看到它们是如何不同地处理命令行参数的。<strong>$*变量会将所有参数当成单个参数，而$@变量会单独处理每个参数</strong>。这是遍历命令行参数的一个绝妙方法。</p> <h2 id="移动变量-常用"><a href="#移动变量-常用" class="header-anchor">#</a> 移动变量-常用</h2> <p>bash shell 工具箱中另一件工具是 shift 命令。bash shell 的 shift 命令能够用来操作命令行参数。跟字面上的意思一样，shift 命令会根据它们的相对位置来移动命令行参数。</p> <p>在使用 shift 命令时，<strong>默认情况下它会将每个参数变量向左移动一个位置</strong>。所以，变量$3 的值会移到$2 中，变量$2 的值会移到$1 中，而变量$1 的值则会被删除（注意，变量$0 的值，也就是程序名，不会改变）。</p> <p><strong>==这是遍历命令行参数的另一个好方法，尤其是在你不知道到底有多少参数时。你可以只操作第一个参数，移动参数，然后继续操作第一个参数==</strong>。这里有个例子来解释它是如何工作的。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test13.sh
+
+
+<span class="token builtin class-name">echo</span>
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">while</span> <span class="token punctuation">[</span> -n <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token punctuation">]</span>
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Parameter #<span class="token variable">$count</span> = <span class="token variable">$1</span>&quot;</span>
+    <span class="token assign-left variable">count</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$count</span> + <span class="token number">1</span> <span class="token punctuation">]</span>
+    <span class="token builtin class-name">shift</span>
+<span class="token keyword">done</span>
+$
+$ ./test13.sh rich barbara katie jessica
+Parameter 
+Parameter 
+Parameter 
+Parameter 
+$
+</code></pre></div><p>这个脚本通过测试第一个参数值的长度执行了一个 while 循环。当第一个参数的长度为零时，循环结束。测试完第一个参数后，shift 命令会将所有参数的位置移动一个位置。</p> <blockquote><p>==使用 shift 命令的时候要小心。如果某个参数被移出，它的值就被丢弃了，无法再恢复。==</p></blockquote> <p>另外，你也可以一次性移动多个位置，只需要给 shift 命令提供一个参数，指明要移动的位置数就行了。如<code>shift 2</code>一次性移动两个位置。</p> <h2 id="处理选项"><a href="#处理选项" class="header-anchor">#</a> 处理选项</h2> <p>如果你认真读过本书前面的所有内容，应该就见过了一些同时提供了参数和选项的 bash 命令。选项是跟在单破折线后面的单个字母，它能改变命令的行为。本节将会介绍 3 种在脚本中处理选项的方法。</p> <h3 id="查找选项"><a href="#查找选项" class="header-anchor">#</a> 查找选项</h3> <p>表面上看，命令行选项也没什么特殊的。在命令行上，它们紧跟在脚本名之后，就跟命令行参数一样。实际上，如果愿意，你可以像处理命令行参数一样处理命令行选项。</p> <ol><li>处理简单选项</li></ol> <p>在前面的 test13.sh 脚本中，你看到了如何使用 shift 命令来依次处理脚本程序携带的命令行参数。你也可以用同样的方法来处理命令行选项。在提取每个单独参数时，用 case 语句来判断某个参数是否为选项。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test15.sh
+
+
+
+<span class="token builtin class-name">echo</span>
+<span class="token keyword">while</span> <span class="token punctuation">[</span> -n <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token punctuation">]</span>
+<span class="token keyword">do</span>
+    <span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token keyword">in</span>
+        -a<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -a option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        -b<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -b option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        -c<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -c option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        *<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$1</span> is not an option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token keyword">esac</span>
+    <span class="token builtin class-name">shift</span>
+<span class="token keyword">done</span>
+$
+$ ./test15.sh -a -b -c -d
+Found the -a option
+Found the -b option
+Found the -c option
+-d is not an option
+$
+</code></pre></div><p>case 语句会检查每个参数是不是有效选项。如果是的话，就运行对应 case 语句中的命令。不管选项按什么顺序出现在命令行上，这种方法都适用。case 语句在命令行参数中找到一个选项，就处理一个选项。如果命令行上还提供了其他参数，你可以在 case 语句的通用情况处理部分中处理。</p> <ol start="2"><li>分离参数和选项</li></ol> <p>你会经常遇到在 shell 脚本中同时使用选项和参数的情况。Linux 中处理这个问题的标准方式是用特殊字符来将二者分开，该字符会告诉脚本何时选项结束以及普通参数何时开始。 对 Linux 来说，这个特殊字符是双破折线（--）。<strong>==shell 会用双破折线来表明选项列表结束。在双破折线之后，脚本就可以放心地将剩下的命令行参数当作参数，而不是选项来处理了==</strong>。</p> <p>要检查双破折线，只要在 case 语句中加一项就行了。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test16.sh
+
+
+
+<span class="token builtin class-name">echo</span>
+<span class="token keyword">while</span> <span class="token punctuation">[</span> -n <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token punctuation">]</span>
+<span class="token keyword">do</span>
+    <span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token keyword">in</span>
+        -a<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -a option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        -b<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -b option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        -c<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -c option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        --<span class="token punctuation">)</span> <span class="token builtin class-name">shift</span>
+            <span class="token builtin class-name">break</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        *<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$1</span> is not an option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token keyword">esac</span>
+    <span class="token builtin class-name">shift</span>
+<span class="token keyword">done</span>
+
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">param</span> <span class="token keyword">in</span> <span class="token variable">$@</span>
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Parameter #<span class="token variable">$count</span>: <span class="token variable">$param</span>&quot;</span>
+    <span class="token assign-left variable">count</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$count</span> + <span class="token number">1</span> <span class="token punctuation">]</span>
+<span class="token keyword">done</span>
+
+</code></pre></div><p>在遇到双破折线时，脚本用 break 命令来跳出 while 循环。由于过早地跳出了循环，我们需要再加一条 shift 命令来将双破折线移出参数变量。 对于第一个测试，试试用一组普通的选项和参数来运行这个脚本。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$
+$ ./test16.sh -c -a -b test1 test2 test3
+Found the -c option
+Found the -a option
+Found the -b option
+test1 is not an option
+test2 is not an option
+test3 is not an option
+$
+</code></pre></div><p>结果说明在处理时脚本认为所有的命令行参数都是选项。接下来，进行同样的测试，只是这次会用双破折线来将命令行上的选项和参数划分开来。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ ./test16.sh -c -a -b -- test1 test2 test3
+Found the -c option
+Found the -a option
+Found the -b option
+Parameter 
+Parameter 
+Parameter 
+$
+</code></pre></div><p>当脚本遇到双破折线时，它会停止处理选项，并将剩下的参数都当作命令行参数。</p> <ol start="3"><li>处理带值的选项</li></ol> <p>有些选项会带上一个额外的参数值。在这种情况下，命令行看起来像下面这样。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ ./testing.sh -a test1 -b -c -d test2
+
+</code></pre></div><p>当命令行选项要求额外的参数时，脚本必须能检测到并正确处理。下面是如何处理的例子。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test17.sh
+
+
+<span class="token builtin class-name">echo</span>
+<span class="token keyword">while</span> <span class="token punctuation">[</span> -n <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token punctuation">]</span>
+<span class="token keyword">do</span>
+    <span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token keyword">in</span>
+        -a<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -a option&quot;</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+        -b<span class="token punctuation">)</span> <span class="token assign-left variable">param</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$2</span>&quot;</span>
+            <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -b option, with parameter value <span class="token variable">$param</span>&quot;</span>
+            <span class="token builtin class-name">shift</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        -c<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -c option&quot;</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+        --<span class="token punctuation">)</span> <span class="token builtin class-name">shift</span>
+            <span class="token builtin class-name">break</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        *<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$1</span> is not an option&quot;</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token keyword">esac</span>
+    <span class="token builtin class-name">shift</span>
+<span class="token keyword">done</span>
+
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">param</span> <span class="token keyword">in</span> <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span>
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Parameter #<span class="token variable">$count</span>: <span class="token variable">$param</span>&quot;</span>
+    <span class="token assign-left variable">count</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$count</span> + <span class="token number">1</span> <span class="token punctuation">]</span>
+<span class="token keyword">done</span>
+$
+$ ./test17.sh -a -b test1 -d
+Found the -a option
+Found the -b option, with parameter value test1
+-d is not an option
+$
+</code></pre></div><p>在这个例子中，case 语句定义了三个它要处理的选项。-b 选项还需要一个额外的参数值。由于要处理的参数是$1，额外的参数值就应该位于$2（因为所有的参数在处理完之后都会被移出）。只要将参数值从$2 变量中提取出来就可以了。当然，因为这个选项占用了两个参数位，所以你还需要使用 shift 命令多移动一个位置。</p> <p>只用这些基本的特性，整个过程就能正常工作，不管按什么顺序放置选项（但要记住包含每个选项相应的选项参数）。现在 shell 脚本中已经有了处理命令行选项的基本能力，但还有一些限制。比如，如果你想将多个选项放进一个参数中时，它就不能工作了。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ ./test17.sh -ac
+-ac is not an option
+$
+</code></pre></div><p>在 Linux 中，合并选项是一个很常见的用法，而且如果脚本想要对用户更友好一些，也要给用户提供这种特性。幸好，有另外一种处理选项的方法能够帮忙。</p> <h3 id="使用-getopt-命令"><a href="#使用-getopt-命令" class="header-anchor">#</a> 使用 getopt 命令</h3> <p>getopt 命令是一个在处理命令行选项和参数时非常方便的工具。它能够识别命令行参数，从而在脚本中解析它们时更方便。</p> <ol><li>命令的格式</li></ol> <p>getopt 命令可以接受一系列任意形式的命令行选项和参数，并自动将它们转换成适当的格式。它的命令格式如下：</p> <div class="language-sh extra-class"><pre class="language-sh"><code>getopt optstring parameters
+</code></pre></div><p>optstring 是这个过程的关键所在。它定义了命令行有效的选项字母，还定义了哪些选项字母需要参数值。</p> <p>首先，在 optstring 中列出你要在脚本中用到的每个命令行选项字母。然后，在每个需要参数值的选项字母后加一个冒号。getopt 命令会基于你定义的 optstring 解析提供的参数。</p> <blockquote><p>getopt 命令有一个更高级的版本叫作 getopts（注意这是复数形式）。getopts 命令会在本章随后部分讲到。因为这两个命令的拼写几乎一模一样，所以很容易搞混。一定要小心</p></blockquote> <p>下面是个 getopt 如何工作的简单例子。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ getopt ab:cd -a -b test1 -cd test2 test3
+-a -b test1 -c -d -- test2 test3
+$
+</code></pre></div><p>optstring 定义了四个有效选项字母：a、b、c 和 d。冒号（:）被放在了字母 b 后面，因为 b 选项需要一个参数值。当 getopt 命令运行时，它会检查提供的参数列表（-a -b test1 -cd test2 test3），并基于提供的 optstring 进行解析。注意，它会自动将-cd 选项分成两个单独的选项，并插入双破折线来分隔行中的额外参数。</p> <p>如果指定了一个不在 optstring 中的选项，默认情况下，getopt 命令会产生一条错误消息。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ getopt ab:cd -a -b test1 -cde test2 test3
+getopt: invalid option -- e
+-a -b test1 -c -d -- test2 test3
+$
+</code></pre></div><p>如果想忽略这条错误消息，可以在命令后加-q 选项。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ getopt -q ab:cd -a -b test1 -cde test2 test3
+-a -b test1 -c -d -- test2 test3
+$
+</code></pre></div><p>注意，getopt 命令选项必须出现在 optstring 之前。现在应该可以在脚本中使用此命令处理命令行选项了</p> <ol start="2"><li>在脚本中使用 getopt</li></ol> <p>可以在脚本中使用 getopt 来格式化脚本所携带的任何命令行选项或参数，但用起来略微复杂。方法是用 getopt 命令生成的格式化后的版本来替换已有的命令行选项和参数。用 set 命令能够做到。在环境变量的章节中，你就已经见过 set 命令了。set 命令能够处理 shell 中的各种变量。</p> <p>set 命令的选项之一是双破折线（--），它会将命令行参数替换成 set 命令的命令行值。然后，该方法会将原始脚本的命令行参数传给 getopt 命令，之后再将 getopt 命令的输出传给 set 命令，用 getopt 格式化后的命令行参数来替换原始的命令行参数，看起来如下所示。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token builtin class-name">set</span> -- <span class="token variable"><span class="token variable">$(</span>getopt -q ab:cd <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span><span class="token variable">)</span></span>
+</code></pre></div><p>现在原始的命令行参数变量的值会被 getopt 命令的输出替换，而 getopt 已经为我们格式化好了命令行参数。利用该方法，现在就可以写出能帮我们处理命令行参数的脚本。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test18.sh
+
+
+
+<span class="token builtin class-name">set</span> -- <span class="token variable"><span class="token variable">$(</span>getopt -q ab:cd <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span><span class="token variable">)</span></span>
+
+<span class="token builtin class-name">echo</span>
+<span class="token keyword">while</span> <span class="token punctuation">[</span> -n <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token punctuation">]</span>
+<span class="token keyword">do</span>
+    <span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token keyword">in</span>
+    -a<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -a option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    -b<span class="token punctuation">)</span> <span class="token assign-left variable">param</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$2</span>&quot;</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -b option, with parameter value <span class="token variable">$param</span>&quot;</span>
+        <span class="token builtin class-name">shift</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    -c<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -c option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    --<span class="token punctuation">)</span> <span class="token builtin class-name">shift</span>
+        <span class="token builtin class-name">break</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    *<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$1</span> is not an option&quot;</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token keyword">esac</span>
+    <span class="token builtin class-name">shift</span>
+<span class="token keyword">done</span>
+
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">param</span> <span class="token keyword">in</span> <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span>
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Parameter #<span class="token variable">$count</span>: <span class="token variable">$param</span>&quot;</span>
+    <span class="token assign-left variable">count</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$count</span> + <span class="token number">1</span> <span class="token punctuation">]</span>
+<span class="token keyword">done</span>
+
+$
+</code></pre></div><p>你会注意到它跟脚本 test17.sh 一样，唯一不同的是加入了 getopt 命令来帮助格式化命令行参数。现在如果运行带有复杂选项的脚本，就可以看出效果更好了。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ ./test18.sh -ac
+Found the -a option
+Found the -c option
+$
+</code></pre></div><p>当然，之前的功能照样没有问题。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ ./test18.sh -a -b test1 -cd test2 test3 test4
+Found the -a option
+Found the -b option, with parameter value <span class="token string">'test1'</span>
+Found the -c option
+-d is not an option
+Parameter 
+Parameter 
+Parameter 
+$
+</code></pre></div><p>现在看起来相当不错了。但是，在 getopt 命令中仍然隐藏着一个小问题。看看这个例子。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ ./test18.sh -a -b test1 -cd <span class="token string">&quot;test2 test3&quot;</span> test4
+Found the -a option
+Found the -b option, with parameter value <span class="token string">'test1'</span>
+Found the -c option
+-d is not an option
+Parameter 
+Parameter 
+Parameter 
+$
+</code></pre></div><p>getopt 命令并不擅长处理带空格和引号的参数值。它会将空格当作参数分隔符，而不是根据双引号将二者当作一个参数。幸而还有另外一个办法能解决这个问题。</p> <h3 id="使用更高级的-getopts"><a href="#使用更高级的-getopts" class="header-anchor">#</a> 使用更高级的 getopts</h3> <p>getopts 命令（注意是复数）内建于 bash shell。它跟近亲 getopt 看起来很像，但多了一些扩展功能。</p> <p>与 getopt 不同，前者将命令行上选项和参数处理后只生成一个输出，而 getopts 命令能够和已有的 shell 参数变量配合默契。</p> <p>每次调用它时，它一次只处理命令行上检测到的一个参数。处理完所有的参数后，它会退出并返回一个大于 0 的退出状态码。这让它非常适合用于解析命令行所有参数的循环中。 getopts 命令的格式如下：</p> <div class="language- extra-class"><pre class="language-text"><code>getopts optstring variable
+</code></pre></div><p>optstring 值类似于 getopt 命令中的那个。有效的选项字母都会列在 optstring 中，如果选项字母要求有个参数值，就加一个冒号。要去掉错误消息的话，可以在 optstring 之前加一个冒号。getopts 命令将当前参数保存在命令行中定义的 variable 中。</p> <p>getopts 命令会用到两个环境变量。如果选项需要跟一个参数值，OPTARG 环境变量就会保存这个值。OPTIND 环境变量保存了参数列表中 getopts 正在处理的参数位置。这样你就能在处理完选项之后继续处理其他命令行参数了。让我们看个使用 getopts 命令的简单例子。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test19.sh
+
+
+
+<span class="token builtin class-name">echo</span>
+<span class="token keyword">while</span> <span class="token builtin class-name">getopts</span> :ab:c opt
+<span class="token keyword">do</span>
+    <span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$opt</span>&quot;</span> <span class="token keyword">in</span>
+        a<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -a option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        b<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -b option, with value <span class="token variable">$OPTARG</span>&quot;</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -c option&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        *<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Unknown option: <span class="token variable">$opt</span>&quot;</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token keyword">esac</span>
+<span class="token keyword">done</span>
+$
+$ ./test19.sh -ab test1 -c
+Found the -a option
+Found the -b option, with value test1
+Found the -c option
+$
+</code></pre></div><p>while 语句定义了 getopts 命令，指明了要查找哪些命令行选项，以及每次迭代中存储它们的变量名（opt）。</p> <p>你会注意到在本例中 case 语句的用法有些不同。getopts 命令解析命令行选项时会移除开头的单破折线，所以在 case 定义中不用单破折线。</p> <p>getopts 命令有几个好用的功能。对新手来说，可以在参数值中包含空格。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ ./test19.sh -b <span class="token string">&quot;test1 test2&quot;</span> -a
+Found the -b option, with value test1 test2
+Found the -a option
+$
+</code></pre></div><p>另一个好用的功能是将选项字母和参数值放在一起使用，而不用加空格。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ ./test19.sh -abtest1
+Found the -a option
+Found the -b option, with value test1
+$
+</code></pre></div><p>getopts 命令能够从-b 选项中正确解析出 test1 值。除此之外，getopts 还能够将命令行上找到的所有未定义的选项统一输出成问号。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ ./test19.sh -d
+Unknown option: ?
+$
+$ ./test19.sh -acde
+Found the -a option
+Found the -c option
+Unknown option: ?
+Unknown option: ?
+$
+</code></pre></div><p>optstring 中未定义的选项字母会以问号形式发送给代码。</p> <p>getopts 命令知道何时停止处理选项，并将参数留给你处理。在 getopts 处理每个选项时，它会将 OPTIND 环境变量值增一。在 getopts 完成处理时，你可以使用 shift 命令和 OPTIND 值来移动参数。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test20.sh
+
+
+
+<span class="token builtin class-name">echo</span>
+<span class="token keyword">while</span> <span class="token builtin class-name">getopts</span> :ab:cd opt
+<span class="token keyword">do</span>
+    <span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$opt</span>&quot;</span> <span class="token keyword">in</span>
+        a<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -a option&quot;</span>  <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        b<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -b option, with value <span class="token variable">$OPTARG</span>&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -c option&quot;</span>  <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        d<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Found the -d option&quot;</span>  <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        *<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Unknown option: <span class="token variable">$opt</span>&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token keyword">esac</span>
+<span class="token keyword">done</span>
+
+<span class="token builtin class-name">shift</span> $<span class="token punctuation">[</span> <span class="token environment constant">$OPTIND</span> - <span class="token number">1</span> <span class="token punctuation">]</span>
+
+<span class="token builtin class-name">echo</span>
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">param</span> <span class="token keyword">in</span> <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span>
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Parameter <span class="token variable">$count</span>: <span class="token variable">$param</span>&quot;</span>
+    <span class="token assign-left variable">count</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$count</span> + <span class="token number">1</span> <span class="token punctuation">]</span>
+<span class="token keyword">done</span>
+
+$
+$ ./test20.sh -a -b test1 -d test2 test3 test4
+Found the -a option
+Found the -b option, with value test1
+Found the -d option
+Parameter <span class="token number">1</span>: test2
+Parameter <span class="token number">2</span>: test3
+Parameter <span class="token number">3</span>: test4
+$
+</code></pre></div><p>现在你就拥有了一个能在所有 shell 脚本中使用的全功能命令行选项和参数处理工具。</p> <h2 id="将选项标准化"><a href="#将选项标准化" class="header-anchor">#</a> 将选项标准化</h2> <p>在创建 shell 脚本时，显然可以控制具体怎么做。你完全可以决定用哪些字母选项以及它们的用法。但有些字母选项在 Linux 世界里已经拥有了某种程度的标准含义。如果你能在 shell 脚本中支持这些选项，脚本看起来能更友好一些。下面展示了 Linux 中用到的一些命令行选项的常用含义。</p> <ul><li>-a 显示所有对象</li> <li>-c 生成一个计数</li> <li>-d 指定一个目录</li> <li>-e 扩展一个对象</li> <li>-f 指定读入数据的文件</li> <li>-h 显示命令的帮助信息</li> <li>-i 忽略文本大小写</li> <li>-l 产生输出的长格式版本</li> <li>-n 使用非交互模式（批处理）</li> <li>-o 将所有输出重定向到的指定的输出文件</li> <li>-q 以安静模式运行</li> <li>-r 递归地处理目录和文件</li> <li>-s 以安静模式运行</li> <li>-v 生成详细输出</li> <li>-x 排除某个对象</li> <li>-y 对所有问题回答 yes</li></ul> <p>通过学习本书时遇到的各种 bash 命令，你大概已经知道这些选项中大部分的含义了。如果你的选项也采用同样的含义，这样用户在使用你的脚本时就不用去查手册了。</p> <h2 id="获得用户输入"><a href="#获得用户输入" class="header-anchor">#</a> 获得用户输入</h2> <p>尽管命令行选项和参数是从脚本用户处获得输入的一种重要方式，但有时脚本的交互性还需要更强一些。比如你想要在脚本运行时问个问题，并等待运行脚本的人来回答。bash shell 为此提供了 read 命令。</p> <h3 id="基本的读取-read"><a href="#基本的读取-read" class="header-anchor">#</a> 基本的读取-read</h3> <p>read 命令从标准输入（键盘）或另一个文件描述符中接受输入。在收到输入后，read 命令会将数据放进一个变量。下面是 read 命令的最简单用法。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test21.sh
+
+
+
+<span class="token builtin class-name">echo</span> -n <span class="token string">&quot;Enter your name: &quot;</span>
+<span class="token builtin class-name">read</span> name
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Hello <span class="token variable">$name</span>, welcome to my program. &quot;</span>
+
+$
+$ ./test21.sh
+Enter your name: Rich Blum
+Hello Rich Blum, welcome to my program.
+$
+</code></pre></div><p>相当简单。注意，生成提示的 echo 命令使用了-n 选项。该选项不会在字符串末尾输出换行符，允许脚本用户紧跟其后输入数据，而不是下一行。这让脚本看起来更像表单。</p> <p>实际上，read 命令包含了-p 选项，允许你直接在 read 命令行指定提示符。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test22.sh
+
+
+
+<span class="token builtin class-name">read</span> -p <span class="token string">&quot;Please enter your age: &quot;</span> age
+<span class="token assign-left variable">days</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$age</span> * <span class="token number">365</span> <span class="token punctuation">]</span>
+<span class="token builtin class-name">echo</span>
+<span class="token string">&quot;That makes you over <span class="token variable">$days</span> days old! &quot;</span>
+
+$
+$ ./test22.sh
+Please enter your age: <span class="token number">10</span>
+That makes you over <span class="token number">3650</span> days old<span class="token operator">!</span>
+$
+</code></pre></div><p>你会注意到，在第一个例子中当有名字输入时，read 命令会将姓和名保存在同一个变量中。read 命令会将提示符后输入的所有数据分配给单个变量，要么你就指定多个变量。输入的每个数据值都会分配给变量列表中的下一个变量。如果变量数量不够，剩下的数据就全部分配给最后一个变量。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test23.sh
+
+
+
+<span class="token builtin class-name">read</span> -p <span class="token string">&quot;Enter your name: &quot;</span> first last
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Checking data for <span class="token variable">$last</span>, <span class="token variable">$first</span>...&quot;</span>
+$
+$ ./test23.sh
+Enter your name: Rich Blum
+Checking data <span class="token keyword">for</span> Blum, Rich<span class="token punctuation">..</span>.
+$
+</code></pre></div><p>也可以在 read 命令行中不指定变量。如果是这样，read 命令会将它收到的任何数据都放进特殊环境变量 REPLY 中。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test24.sh
+
+
+
+<span class="token builtin class-name">read</span> -p <span class="token string">&quot;Enter your name: &quot;</span>
+<span class="token builtin class-name">echo</span>
+<span class="token builtin class-name">echo</span> Hello <span class="token environment constant">$REPLY</span>, welcome to my program.
+
+$
+$ ./test24.sh
+Enter your name: Christine
+Hello Christine, welcome to my program.
+$
+</code></pre></div><p>REPLY 环境变量会保存输入的所有数据，可以在 shell 脚本中像其他变量一样使用。</p> <h3 id="超时"><a href="#超时" class="header-anchor">#</a> 超时</h3> <p>使用 read 命令时要当心。脚本很可能会一直苦等着脚本用户的输入。如果不管是否有数据输入，脚本都必须继续执行，你可以用-t 选项来指定一个计时器。-t 选项指定了 read 命令等待输入的秒数。当计时器过期后，read 命令会返回一个非零退出状态码。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test25.sh
+
+
+
+<span class="token keyword">if</span> <span class="token builtin class-name">read</span> -t <span class="token number">5</span> -p <span class="token string">&quot;Please enter your name: &quot;</span> name
+<span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Hello <span class="token variable">$name</span>, welcome to my script&quot;</span>
+<span class="token keyword">else</span>
+    <span class="token builtin class-name">echo</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Sorry, too slow! &quot;</span>
+<span class="token keyword">fi</span>
+$
+$ ./test25.sh
+Please enter your name: Rich
+Hello Rich, welcome to my script
+$
+</code></pre></div><p>如果计时器过期，read 命令会以非零退出状态码退出，可以使用如 if-then 语句或 while 循环这种标准的结构化语句来理清所发生的具体情况。在本例中，计时器过期时，if 语句不成立，shell 会执行 else 部分的命令。</p> <p>也可以不对输入过程计时，而是让 read 命令来统计输入的字符数。当输入的字符达到预设的字符数时，就自动退出，将输入的数据赋给变量。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test26.sh
+
+
+
+<span class="token builtin class-name">read</span> -n1 -p <span class="token string">&quot;Do you want to continue [Y/N]? &quot;</span> answer
+<span class="token keyword">case</span> <span class="token variable">$answer</span> <span class="token keyword">in</span>
+Y <span class="token operator">|</span> y<span class="token punctuation">)</span>  <span class="token builtin class-name">echo</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;fine, continue on...&quot;</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+N <span class="token operator">|</span> n<span class="token punctuation">)</span>  <span class="token builtin class-name">echo</span>
+        <span class="token builtin class-name">echo</span> OK, goodbye
+        <span class="token builtin class-name">exit</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;This is the end of the script&quot;</span>
+$
+$ ./test26.sh
+Do you want to <span class="token builtin class-name">continue</span> <span class="token punctuation">[</span>Y/N<span class="token punctuation">]</span>? Y
+fine, <span class="token builtin class-name">continue</span> on<span class="token punctuation">..</span>.
+This is the end of the script
+$
+$ ./test26.sh
+Do you want to <span class="token builtin class-name">continue</span> <span class="token punctuation">[</span>Y/N<span class="token punctuation">]</span>? n
+OK, goodbye
+$
+</code></pre></div><p>本例中将-n 选项和值 1 一起使用，告诉 read 命令在接受单个字符后退出。只要按下单个字符回答后，read 命令就会接受输入并将它传给变量，无需按回车键。</p> <h3 id="隐藏方式读取"><a href="#隐藏方式读取" class="header-anchor">#</a> 隐藏方式读取</h3> <p>有时你需要从脚本用户处得到输入，但又不在屏幕上显示输入信息。其中典型的例子就是输入的密码，但除此之外还有很多其他需要隐藏的数据类型。</p> <p>-s 选项可以避免在 read 命令中输入的数据出现在显示器上（实际上，数据会被显示，只是 read 命令会将文本颜色设成跟背景色一样）。这里有个在脚本中使用-s 选项的例子。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test27.sh
+
+
+
+<span class="token builtin class-name">read</span> -s -p <span class="token string">&quot;Enter your password: &quot;</span> pass
+<span class="token builtin class-name">echo</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Is your password really <span class="token variable">$pass</span>? &quot;</span>
+$
+$ ./test27.sh
+Enter your password:
+Is your password really T3st1ng?
+$
+</code></pre></div><p>输入提示符输入的数据不会出现在屏幕上，但会赋给变量，以便在脚本中使用。</p> <h3 id="从文件中读取"><a href="#从文件中读取" class="header-anchor">#</a> 从文件中读取</h3> <p>最后，也可以用 read 命令来读取 Linux 系统上文件里保存的数据。每次调用 read 命令，它都会从文件中读取一行文本。当文件中再没有内容时，read 命令会退出并返回非零退出状态码。</p> <p>其中最难的部分是将文件中的数据传给 read 命令。最常见的方法是对文件使用 cat 命令，将结果通过管道直接传给含有 read 命令的 while 命令。下面的例子说明怎么处理。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> test28.sh
+
+
+
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token function">cat</span> <span class="token builtin class-name">test</span> <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token builtin class-name">read</span> line
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Line <span class="token variable">$count</span>: <span class="token variable">$line</span>&quot;</span>
+    <span class="token assign-left variable">count</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$count</span> + <span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token keyword">done</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Finished processing the file&quot;</span>
+$
+$ <span class="token function">cat</span> <span class="token builtin class-name">test</span>
+The quick brown dog jumps over the lazy fox.
+This is a test, this is only a test.
+O Romeo, Romeo<span class="token operator">!</span> Wherefore art thou Romeo?
+$
+$ ./test28.sh
+Line <span class="token number">1</span>: The quick brown dog jumps over the lazy fox.
+Line <span class="token number">2</span>: This is a test, this is only a test.
+Line <span class="token number">3</span>: O Romeo, Romeo<span class="token operator">!</span> Wherefore art thou Romeo?
+Finished processing the <span class="token function">file</span>
+$
+</code></pre></div><p>while 循环会持续通过 read 命令处理文件中的行，直到 read 命令以非零退出状态码退出。</p> <hr> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <p><a href="https://archlinuxstudio.github.io/ShellTutorial/#/shellBasic/shell_input" target="_blank" rel="noopener noreferrer">Linux命令行与Shell脚本教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">4/4/2022, 11:35:53 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/notes/blog/linux/脚本编程/脚本编程基础.html" class="prev">
+            脚本编程基础
+          </a></span> <span class="next"><a href="/notes/blog/linux/脚本编程/处理输出.html">
+            处理输出
+          </a></span></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-22d702a7><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#命令行参数" class="sidebar-link reco-side-命令行参数" data-v-22d702a7>命令行参数</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#读取参数" class="sidebar-link reco-side-读取参数" data-v-22d702a7>读取参数</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#读取脚本名" class="sidebar-link reco-side-读取脚本名" data-v-22d702a7>读取脚本名</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#测试参数" class="sidebar-link reco-side-测试参数" data-v-22d702a7>测试参数</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#特殊参数变量" class="sidebar-link reco-side-特殊参数变量" data-v-22d702a7>特殊参数变量</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#参数统计" class="sidebar-link reco-side-参数统计" data-v-22d702a7>参数统计</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#抓取所有的数据" class="sidebar-link reco-side-抓取所有的数据" data-v-22d702a7>抓取所有的数据</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#移动变量-常用" class="sidebar-link reco-side-移动变量-常用" data-v-22d702a7>移动变量-常用</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#处理选项" class="sidebar-link reco-side-处理选项" data-v-22d702a7>处理选项</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#查找选项" class="sidebar-link reco-side-查找选项" data-v-22d702a7>查找选项</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#使用-getopt-命令" class="sidebar-link reco-side-使用-getopt-命令" data-v-22d702a7>使用 getopt 命令</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#使用更高级的-getopts" class="sidebar-link reco-side-使用更高级的-getopts" data-v-22d702a7>使用更高级的 getopts</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#将选项标准化" class="sidebar-link reco-side-将选项标准化" data-v-22d702a7>将选项标准化</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#获得用户输入" class="sidebar-link reco-side-获得用户输入" data-v-22d702a7>获得用户输入</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#基本的读取-read" class="sidebar-link reco-side-基本的读取-read" data-v-22d702a7>基本的读取-read</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#超时" class="sidebar-link reco-side-超时" data-v-22d702a7>超时</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#隐藏方式读取" class="sidebar-link reco-side-隐藏方式读取" data-v-22d702a7>隐藏方式读取</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#从文件中读取" class="sidebar-link reco-side-从文件中读取" data-v-22d702a7>从文件中读取</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/linux/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%A4%84%E7%90%86%E8%BE%93%E5%85%A5.html#参考" class="sidebar-link reco-side-参考" data-v-22d702a7>参考</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/notes/assets/js/app.c9da24a6.js" defer></script><script src="/notes/assets/js/3.15042843.js" defer></script><script src="/notes/assets/js/1.8ca8e0eb.js" defer></script><script src="/notes/assets/js/68.d4eb82fd.js" defer></script>
+  </body>
+</html>

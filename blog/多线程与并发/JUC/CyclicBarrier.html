@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CyclicBarrier | WaleGarrett</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/notes/logo.jpg">
+    <meta name="description" content="WaleGarrett的学习记录">
+    
+    <link rel="preload" href="/notes/assets/css/0.styles.54ab1000.css" as="style"><link rel="preload" href="/notes/assets/js/app.c9da24a6.js" as="script"><link rel="preload" href="/notes/assets/js/3.15042843.js" as="script"><link rel="preload" href="/notes/assets/js/1.8ca8e0eb.js" as="script"><link rel="preload" href="/notes/assets/js/97.a72a27df.js" as="script"><link rel="prefetch" href="/notes/assets/js/10.1becd84f.js"><link rel="prefetch" href="/notes/assets/js/100.e686635a.js"><link rel="prefetch" href="/notes/assets/js/101.d90ba6a2.js"><link rel="prefetch" href="/notes/assets/js/102.37c9c783.js"><link rel="prefetch" href="/notes/assets/js/103.dec1797e.js"><link rel="prefetch" href="/notes/assets/js/104.9e4cdf99.js"><link rel="prefetch" href="/notes/assets/js/105.8616c171.js"><link rel="prefetch" href="/notes/assets/js/106.bc2f20eb.js"><link rel="prefetch" href="/notes/assets/js/107.4fc0003b.js"><link rel="prefetch" href="/notes/assets/js/108.f7ed7756.js"><link rel="prefetch" href="/notes/assets/js/109.867fe8d3.js"><link rel="prefetch" href="/notes/assets/js/11.11eeb9c8.js"><link rel="prefetch" href="/notes/assets/js/110.ce3c1db9.js"><link rel="prefetch" href="/notes/assets/js/111.5f88fd17.js"><link rel="prefetch" href="/notes/assets/js/112.0ec3be4a.js"><link rel="prefetch" href="/notes/assets/js/113.b17af37a.js"><link rel="prefetch" href="/notes/assets/js/114.c3bd0ee7.js"><link rel="prefetch" href="/notes/assets/js/115.e942f535.js"><link rel="prefetch" href="/notes/assets/js/116.a07fe354.js"><link rel="prefetch" href="/notes/assets/js/117.7f109010.js"><link rel="prefetch" href="/notes/assets/js/118.70cf9c49.js"><link rel="prefetch" href="/notes/assets/js/119.68965728.js"><link rel="prefetch" href="/notes/assets/js/12.e21b4812.js"><link rel="prefetch" href="/notes/assets/js/120.9065ed1d.js"><link rel="prefetch" href="/notes/assets/js/121.a8a35fe7.js"><link rel="prefetch" href="/notes/assets/js/122.70596256.js"><link rel="prefetch" href="/notes/assets/js/123.b9715cd7.js"><link rel="prefetch" href="/notes/assets/js/124.7345d826.js"><link rel="prefetch" href="/notes/assets/js/125.d4392f5d.js"><link rel="prefetch" href="/notes/assets/js/126.ff7fff9e.js"><link rel="prefetch" href="/notes/assets/js/127.acc1dff7.js"><link rel="prefetch" href="/notes/assets/js/128.81dcc7a3.js"><link rel="prefetch" href="/notes/assets/js/129.6c2d778a.js"><link rel="prefetch" href="/notes/assets/js/13.afb6371c.js"><link rel="prefetch" href="/notes/assets/js/130.1c463291.js"><link rel="prefetch" href="/notes/assets/js/131.fade390b.js"><link rel="prefetch" href="/notes/assets/js/132.a1fe16f6.js"><link rel="prefetch" href="/notes/assets/js/133.a719a028.js"><link rel="prefetch" href="/notes/assets/js/134.66c5c006.js"><link rel="prefetch" href="/notes/assets/js/135.5b78fa9f.js"><link rel="prefetch" href="/notes/assets/js/136.2e6405e5.js"><link rel="prefetch" href="/notes/assets/js/137.41fb8a7a.js"><link rel="prefetch" href="/notes/assets/js/138.06de929f.js"><link rel="prefetch" href="/notes/assets/js/139.2f7ab686.js"><link rel="prefetch" href="/notes/assets/js/14.a2175c4c.js"><link rel="prefetch" href="/notes/assets/js/140.6918a01b.js"><link rel="prefetch" href="/notes/assets/js/141.95f9f12a.js"><link rel="prefetch" href="/notes/assets/js/142.aa0cee93.js"><link rel="prefetch" href="/notes/assets/js/143.d60a38b0.js"><link rel="prefetch" href="/notes/assets/js/144.638c8e0a.js"><link rel="prefetch" href="/notes/assets/js/145.1a1685af.js"><link rel="prefetch" href="/notes/assets/js/146.bc665756.js"><link rel="prefetch" href="/notes/assets/js/147.809233d9.js"><link rel="prefetch" href="/notes/assets/js/148.d6b15e4e.js"><link rel="prefetch" href="/notes/assets/js/149.646dfac5.js"><link rel="prefetch" href="/notes/assets/js/15.7ec2be59.js"><link rel="prefetch" href="/notes/assets/js/150.64b53d63.js"><link rel="prefetch" href="/notes/assets/js/151.0984c27e.js"><link rel="prefetch" href="/notes/assets/js/152.42cf7076.js"><link rel="prefetch" href="/notes/assets/js/153.80ae1b86.js"><link rel="prefetch" href="/notes/assets/js/154.1b7e1514.js"><link rel="prefetch" href="/notes/assets/js/155.0a6c1fb7.js"><link rel="prefetch" href="/notes/assets/js/156.916e2a53.js"><link rel="prefetch" href="/notes/assets/js/157.8d361889.js"><link rel="prefetch" href="/notes/assets/js/158.858d71f6.js"><link rel="prefetch" href="/notes/assets/js/159.9a2f07f9.js"><link rel="prefetch" href="/notes/assets/js/16.679c7661.js"><link rel="prefetch" href="/notes/assets/js/160.4f54106a.js"><link rel="prefetch" href="/notes/assets/js/161.3cc67e9e.js"><link rel="prefetch" href="/notes/assets/js/162.c94a5be4.js"><link rel="prefetch" href="/notes/assets/js/163.dc11bf4c.js"><link rel="prefetch" href="/notes/assets/js/164.5f0bb30d.js"><link rel="prefetch" href="/notes/assets/js/165.17595a0b.js"><link rel="prefetch" href="/notes/assets/js/166.26cc364b.js"><link rel="prefetch" href="/notes/assets/js/167.a8b2ddf0.js"><link rel="prefetch" href="/notes/assets/js/168.17f43071.js"><link rel="prefetch" href="/notes/assets/js/169.d5e82e04.js"><link rel="prefetch" href="/notes/assets/js/17.016980ed.js"><link rel="prefetch" href="/notes/assets/js/170.11696f57.js"><link rel="prefetch" href="/notes/assets/js/171.70305f2f.js"><link rel="prefetch" href="/notes/assets/js/172.f4b63da4.js"><link rel="prefetch" href="/notes/assets/js/173.42057c95.js"><link rel="prefetch" href="/notes/assets/js/174.246a6e0b.js"><link rel="prefetch" href="/notes/assets/js/175.4855ab27.js"><link rel="prefetch" href="/notes/assets/js/176.d75790bd.js"><link rel="prefetch" href="/notes/assets/js/177.f616c3f5.js"><link rel="prefetch" href="/notes/assets/js/178.659b087d.js"><link rel="prefetch" href="/notes/assets/js/179.010eacce.js"><link rel="prefetch" href="/notes/assets/js/18.6f1dbb8f.js"><link rel="prefetch" href="/notes/assets/js/180.a11dd312.js"><link rel="prefetch" href="/notes/assets/js/181.c74fb0b6.js"><link rel="prefetch" href="/notes/assets/js/182.4f548539.js"><link rel="prefetch" href="/notes/assets/js/183.32dc4b08.js"><link rel="prefetch" href="/notes/assets/js/184.7b15f3e9.js"><link rel="prefetch" href="/notes/assets/js/185.ad484525.js"><link rel="prefetch" href="/notes/assets/js/186.db3693bc.js"><link rel="prefetch" href="/notes/assets/js/187.2a0df038.js"><link rel="prefetch" href="/notes/assets/js/188.987a82c9.js"><link rel="prefetch" href="/notes/assets/js/189.c693f3a1.js"><link rel="prefetch" href="/notes/assets/js/19.9e1eac04.js"><link rel="prefetch" href="/notes/assets/js/190.2e253fc8.js"><link rel="prefetch" href="/notes/assets/js/191.d70ee914.js"><link rel="prefetch" href="/notes/assets/js/192.4f808c44.js"><link rel="prefetch" href="/notes/assets/js/193.133fd0a8.js"><link rel="prefetch" href="/notes/assets/js/194.c1c26af9.js"><link rel="prefetch" href="/notes/assets/js/195.5d112624.js"><link rel="prefetch" href="/notes/assets/js/196.e756a155.js"><link rel="prefetch" href="/notes/assets/js/197.6f9b8105.js"><link rel="prefetch" href="/notes/assets/js/198.3c59ba72.js"><link rel="prefetch" href="/notes/assets/js/199.15e2d96e.js"><link rel="prefetch" href="/notes/assets/js/20.e41f5564.js"><link rel="prefetch" href="/notes/assets/js/200.992db7f7.js"><link rel="prefetch" href="/notes/assets/js/201.9c266b22.js"><link rel="prefetch" href="/notes/assets/js/202.842ef603.js"><link rel="prefetch" href="/notes/assets/js/203.01bca3f3.js"><link rel="prefetch" href="/notes/assets/js/204.f9c2a70d.js"><link rel="prefetch" href="/notes/assets/js/205.f9268403.js"><link rel="prefetch" href="/notes/assets/js/206.4cf08b44.js"><link rel="prefetch" href="/notes/assets/js/207.0ef45ecc.js"><link rel="prefetch" href="/notes/assets/js/208.0ac3b838.js"><link rel="prefetch" href="/notes/assets/js/209.5e055156.js"><link rel="prefetch" href="/notes/assets/js/21.2d865954.js"><link rel="prefetch" href="/notes/assets/js/210.d8204d91.js"><link rel="prefetch" href="/notes/assets/js/211.acc0168d.js"><link rel="prefetch" href="/notes/assets/js/212.5eec4fbf.js"><link rel="prefetch" href="/notes/assets/js/213.272bf6e6.js"><link rel="prefetch" href="/notes/assets/js/214.bf006247.js"><link rel="prefetch" href="/notes/assets/js/215.f11c4fd7.js"><link rel="prefetch" href="/notes/assets/js/216.cf94ea1b.js"><link rel="prefetch" href="/notes/assets/js/217.330e075c.js"><link rel="prefetch" href="/notes/assets/js/218.0b9e982c.js"><link rel="prefetch" href="/notes/assets/js/219.7e778a76.js"><link rel="prefetch" href="/notes/assets/js/22.88dd9e53.js"><link rel="prefetch" href="/notes/assets/js/220.6d5ffbc6.js"><link rel="prefetch" href="/notes/assets/js/221.bac51660.js"><link rel="prefetch" href="/notes/assets/js/23.a8a4e106.js"><link rel="prefetch" href="/notes/assets/js/24.6a7395f6.js"><link rel="prefetch" href="/notes/assets/js/25.3e79ff45.js"><link rel="prefetch" href="/notes/assets/js/26.33e76c58.js"><link rel="prefetch" href="/notes/assets/js/27.2e20fce9.js"><link rel="prefetch" href="/notes/assets/js/28.92202fbe.js"><link rel="prefetch" href="/notes/assets/js/29.31e72924.js"><link rel="prefetch" href="/notes/assets/js/30.63118840.js"><link rel="prefetch" href="/notes/assets/js/31.40bb3db2.js"><link rel="prefetch" href="/notes/assets/js/32.34771f12.js"><link rel="prefetch" href="/notes/assets/js/33.12f2bfaf.js"><link rel="prefetch" href="/notes/assets/js/34.0685ab4b.js"><link rel="prefetch" href="/notes/assets/js/35.497cff30.js"><link rel="prefetch" href="/notes/assets/js/36.1f5c1fc2.js"><link rel="prefetch" href="/notes/assets/js/37.bd6b811a.js"><link rel="prefetch" href="/notes/assets/js/38.a7a23117.js"><link rel="prefetch" href="/notes/assets/js/39.cdf8ca3c.js"><link rel="prefetch" href="/notes/assets/js/4.0716db17.js"><link rel="prefetch" href="/notes/assets/js/40.21388ef8.js"><link rel="prefetch" href="/notes/assets/js/41.ee9dc436.js"><link rel="prefetch" href="/notes/assets/js/42.a3ec0597.js"><link rel="prefetch" href="/notes/assets/js/43.be5d9816.js"><link rel="prefetch" href="/notes/assets/js/44.2f99673b.js"><link rel="prefetch" href="/notes/assets/js/45.c443ff93.js"><link rel="prefetch" href="/notes/assets/js/46.bd004ac4.js"><link rel="prefetch" href="/notes/assets/js/47.20add895.js"><link rel="prefetch" href="/notes/assets/js/48.1c5da96b.js"><link rel="prefetch" href="/notes/assets/js/49.31c7e29d.js"><link rel="prefetch" href="/notes/assets/js/5.03d74ef1.js"><link rel="prefetch" href="/notes/assets/js/50.b48ca783.js"><link rel="prefetch" href="/notes/assets/js/51.b4bc061c.js"><link rel="prefetch" href="/notes/assets/js/52.77dc2135.js"><link rel="prefetch" href="/notes/assets/js/53.3fc2d110.js"><link rel="prefetch" href="/notes/assets/js/54.ab331494.js"><link rel="prefetch" href="/notes/assets/js/55.59fa9d3a.js"><link rel="prefetch" href="/notes/assets/js/56.6864911d.js"><link rel="prefetch" href="/notes/assets/js/57.44dbdabe.js"><link rel="prefetch" href="/notes/assets/js/58.516ab1c4.js"><link rel="prefetch" href="/notes/assets/js/59.56d4d38d.js"><link rel="prefetch" href="/notes/assets/js/6.c1d1ac7a.js"><link rel="prefetch" href="/notes/assets/js/60.9038d0d8.js"><link rel="prefetch" href="/notes/assets/js/61.d5696bbd.js"><link rel="prefetch" href="/notes/assets/js/62.59b5f172.js"><link rel="prefetch" href="/notes/assets/js/63.e9c7508b.js"><link rel="prefetch" href="/notes/assets/js/64.4241a14e.js"><link rel="prefetch" href="/notes/assets/js/65.91a07396.js"><link rel="prefetch" href="/notes/assets/js/66.b82f5c7e.js"><link rel="prefetch" href="/notes/assets/js/67.afcaae6c.js"><link rel="prefetch" href="/notes/assets/js/68.d4eb82fd.js"><link rel="prefetch" href="/notes/assets/js/69.a4267fbd.js"><link rel="prefetch" href="/notes/assets/js/7.8e24ac99.js"><link rel="prefetch" href="/notes/assets/js/70.430fd8cd.js"><link rel="prefetch" href="/notes/assets/js/71.1016e8c6.js"><link rel="prefetch" href="/notes/assets/js/72.9ec57099.js"><link rel="prefetch" href="/notes/assets/js/73.20c4449a.js"><link rel="prefetch" href="/notes/assets/js/74.39b9604e.js"><link rel="prefetch" href="/notes/assets/js/75.4f09e706.js"><link rel="prefetch" href="/notes/assets/js/76.88ffa9c5.js"><link rel="prefetch" href="/notes/assets/js/77.eec6caf8.js"><link rel="prefetch" href="/notes/assets/js/78.166b5a56.js"><link rel="prefetch" href="/notes/assets/js/79.ef2af5da.js"><link rel="prefetch" href="/notes/assets/js/8.00d48dd8.js"><link rel="prefetch" href="/notes/assets/js/80.c0eb3a50.js"><link rel="prefetch" href="/notes/assets/js/81.21ed8523.js"><link rel="prefetch" href="/notes/assets/js/82.a7717793.js"><link rel="prefetch" href="/notes/assets/js/83.cb39ac8d.js"><link rel="prefetch" href="/notes/assets/js/84.3a0c34dc.js"><link rel="prefetch" href="/notes/assets/js/85.379f9075.js"><link rel="prefetch" href="/notes/assets/js/86.500344a3.js"><link rel="prefetch" href="/notes/assets/js/87.a52c8c96.js"><link rel="prefetch" href="/notes/assets/js/88.d14778d2.js"><link rel="prefetch" href="/notes/assets/js/89.ca52efc6.js"><link rel="prefetch" href="/notes/assets/js/9.5b519f35.js"><link rel="prefetch" href="/notes/assets/js/90.8529f3f5.js"><link rel="prefetch" href="/notes/assets/js/91.65963b3b.js"><link rel="prefetch" href="/notes/assets/js/92.041432c3.js"><link rel="prefetch" href="/notes/assets/js/93.d97cc1eb.js"><link rel="prefetch" href="/notes/assets/js/94.4c8de3b2.js"><link rel="prefetch" href="/notes/assets/js/95.81ea24d1.js"><link rel="prefetch" href="/notes/assets/js/96.4190ea57.js"><link rel="prefetch" href="/notes/assets/js/98.504f98ad.js"><link rel="prefetch" href="/notes/assets/js/99.1da9035d.js">
+    <link rel="stylesheet" href="/notes/assets/css/0.styles.54ab1000.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>WaleGarrett</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>WaleGarrett的学习记录</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes/" class="home-link router-link-active"><img src="/notes/logo.jpg" alt="WaleGarrett" class="logo"> <span class="site-name">WaleGarrett</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>JavaSE</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/JavaSE/" class="nav-link"><i class="undefined"></i>
+  JavaSE基础
+</a></li></ul></li><li class="dropdown-item"><h4>Java IO</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java IO/" class="nav-link"><i class="undefined"></i>
+  Java IO
+</a></li></ul></li><li class="dropdown-item"><h4>Java容器</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java容器/" class="nav-link"><i class="undefined"></i>
+  Java容器
+</a></li></ul></li><li class="dropdown-item"><h4>Java并发</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/多线程与并发/" class="nav-link"><i class="undefined"></i>
+  多线程与并发
+</a></li></ul></li><li class="dropdown-item"><h4>JVM</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java运行时内存区.html" class="nav-link"><i class="undefined"></i>
+  Java运行时内存区
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java内存模型.html" class="nav-link"><i class="undefined"></i>
+  Java内存模型
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/类加载.html" class="nav-link"><i class="undefined"></i>
+  类加载
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/程序编译.html" class="nav-link"><i class="undefined"></i>
+  程序编译
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/虚拟机对象.html" class="nav-link"><i class="undefined"></i>
+  虚拟机对象
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/垃圾收集/" class="nav-link"><i class="undefined"></i>
+  垃圾收集
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/JVM调优.html" class="nav-link"><i class="undefined"></i>
+  JVM调优
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Spring系列
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring/" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring MVC/" class="nav-link"><i class="undefined"></i>
+  Spring MVC
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring Boot/" class="nav-link"><i class="undefined"></i>
+  Spring Boot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      计算机基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>操作系统</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/操作系统/" class="nav-link"><i class="undefined"></i>
+  操作系统知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>计算机网络</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据结构</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/数据库基础/" class="nav-link"><i class="undefined"></i>
+  数据库基础
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/数据库/MySQL/" class="nav-link"><i class="undefined"></i>
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      linux
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux命令/" class="nav-link"><i class="undefined"></i>
+  linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/脚本编程/" class="nav-link"><i class="undefined"></i>
+  脚本编程
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux内存管理/" class="nav-link"><i class="undefined"></i>
+  linux内存管理
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux文件系统/" class="nav-link"><i class="undefined"></i>
+  linux文件系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/git/git基础知识.html" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/maven/maven基础知识.html" class="nav-link"><i class="undefined"></i>
+  maven
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/kafka/" class="nav-link"><i class="undefined"></i>
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/HBase/" class="nav-link"><i class="undefined"></i>
+  HBase
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>ORM框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/MyBatis/" class="nav-link"><i class="undefined"></i>
+  MyBatis框架
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      架构
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/架构/" class="nav-link"><i class="undefined"></i>
+  系统架构
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.cnblogs.com/GarrettWale/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客文章
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><!----> <!----> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>211</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>106</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/notes/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>JavaSE</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/JavaSE/" class="nav-link"><i class="undefined"></i>
+  JavaSE基础
+</a></li></ul></li><li class="dropdown-item"><h4>Java IO</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java IO/" class="nav-link"><i class="undefined"></i>
+  Java IO
+</a></li></ul></li><li class="dropdown-item"><h4>Java容器</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/Java/Java容器/" class="nav-link"><i class="undefined"></i>
+  Java容器
+</a></li></ul></li><li class="dropdown-item"><h4>Java并发</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/多线程与并发/" class="nav-link"><i class="undefined"></i>
+  多线程与并发
+</a></li></ul></li><li class="dropdown-item"><h4>JVM</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java运行时内存区.html" class="nav-link"><i class="undefined"></i>
+  Java运行时内存区
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/Java内存模型.html" class="nav-link"><i class="undefined"></i>
+  Java内存模型
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/类加载.html" class="nav-link"><i class="undefined"></i>
+  类加载
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/程序编译.html" class="nav-link"><i class="undefined"></i>
+  程序编译
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/虚拟机对象.html" class="nav-link"><i class="undefined"></i>
+  虚拟机对象
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/垃圾收集/" class="nav-link"><i class="undefined"></i>
+  垃圾收集
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/JVM/JVM调优.html" class="nav-link"><i class="undefined"></i>
+  JVM调优
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Spring系列
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring/" class="nav-link"><i class="undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring MVC/" class="nav-link"><i class="undefined"></i>
+  Spring MVC
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/Spring系列/Spring Boot/" class="nav-link"><i class="undefined"></i>
+  Spring Boot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      计算机基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>操作系统</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/操作系统/" class="nav-link"><i class="undefined"></i>
+  操作系统知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>计算机网络</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据结构</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构知识体系
+</a></li></ul></li><li class="dropdown-item"><h4>数据库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/数据库基础/" class="nav-link"><i class="undefined"></i>
+  数据库基础
+</a></li><li class="dropdown-subitem"><a href="/notes/blog/数据库/MySQL/" class="nav-link"><i class="undefined"></i>
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      linux
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux命令/" class="nav-link"><i class="undefined"></i>
+  linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/脚本编程/" class="nav-link"><i class="undefined"></i>
+  脚本编程
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux内存管理/" class="nav-link"><i class="undefined"></i>
+  linux内存管理
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/linux/linux文件系统/" class="nav-link"><i class="undefined"></i>
+  linux文件系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/git/git基础知识.html" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/开发工具/maven/maven基础知识.html" class="nav-link"><i class="undefined"></i>
+  maven
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      中间件
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/kafka/" class="nav-link"><i class="undefined"></i>
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/中间件/HBase/" class="nav-link"><i class="undefined"></i>
+  HBase
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>ORM框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/blog/数据库/MyBatis/" class="nav-link"><i class="undefined"></i>
+  MyBatis框架
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      架构
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/blog/架构/" class="nav-link"><i class="undefined"></i>
+  系统架构
+</a></li><li class="dropdown-item"><!----> <a href="/notes/blog/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.cnblogs.com/GarrettWale/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客文章
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>多线程与并发</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group is-sub-group depth-1"><a href="/notes/blog/多线程与并发/Java线程基础/" class="sidebar-heading clickable"><span>Java线程基础</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/blog/多线程与并发/Java线程基础/Java线程.html" class="sidebar-link">Java线程</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><a href="/notes/blog/多线程与并发/Java并发核心机制/" class="sidebar-heading clickable"><span>Java并发核心机制</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/blog/多线程与并发/Java并发核心机制/synchronized.html" class="sidebar-link">synchronized</a></li><li><a href="/notes/blog/多线程与并发/Java并发核心机制/volatile.html" class="sidebar-link">volatile</a></li><li><a href="/notes/blog/多线程与并发/Java并发核心机制/CAS.html" class="sidebar-link">CAS</a></li><li><a href="/notes/blog/多线程与并发/Java并发核心机制/final.html" class="sidebar-link">final</a></li><li><a href="/notes/blog/多线程与并发/Java并发核心机制/ThreadLocal.html" class="sidebar-link">ThreadLocal</a></li></ul></section></li><li><a href="/notes/blog/多线程与并发/Java原子变量类.html" class="sidebar-link">Java原子变量类</a></li><li><section class="sidebar-group is-sub-group depth-1"><a href="/notes/blog/多线程与并发/JUC/" class="sidebar-heading clickable open"><span>JUC</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/blog/多线程与并发/JUC/AQS机制.html" class="sidebar-link">AQS机制</a></li><li><a href="/notes/blog/多线程与并发/JUC/ReentrantLock.html" class="sidebar-link">ReentrantLock</a></li><li><a href="/notes/blog/多线程与并发/JUC/CountDownLatch.html" class="sidebar-link">CountDownLatch</a></li><li><a href="/notes/blog/多线程与并发/JUC/CyclicBarrier.html" class="active sidebar-link">CyclicBarrier</a></li><li><a href="/notes/blog/多线程与并发/JUC/Semaphore.html" class="sidebar-link">Semaphore</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><a href="/notes/blog/多线程与并发/Java并发容器/" class="sidebar-heading clickable"><span>Java并发容器</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/blog/多线程与并发/Java并发容器/ConcurrentHashMap.html" class="sidebar-link">ConcurrentHashMap</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><a href="/notes/blog/多线程与并发/线程池/" class="sidebar-heading clickable"><span>线程池</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/blog/多线程与并发/线程池/线程池基础.html" class="sidebar-link">线程池基础</a></li><li><a href="/notes/blog/多线程与并发/线程池/Fork-Join.html" class="sidebar-link">Fork-Join</a></li><li><a href="/notes/blog/多线程与并发/线程池/FutureTask.html" class="sidebar-link">FutureTask</a></li></ul></section></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>CyclicBarrier</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page"><section><div class="page-title"><h1 class="title">CyclicBarrier</h1> <div data-v-f875f3fc><!----> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>3/23/2022</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>锁</span><span class="tag-item" data-v-f875f3fc>AQS</span></i></div></div> <div class="theme-reco-content content__default"><p>CyclicBarrier底层是<strong>基于ReentrantLock和AbstractQueuedSynchronizer来实现的</strong>, 在理解的时候最好和CountDownLatch放在一起理解(相见本文分析)。</p> <h2 id="cyclicbarrier简介"><a href="#cyclicbarrier简介" class="header-anchor">#</a> CyclicBarrier简介</h2> <ul><li>对于CountDownLatch，其他线程为游戏玩家，比如英雄联盟，主线程为控制游戏开始的线程。在所有的玩家都准备好之前，主线程是处于等待状态的，也就是游戏不能开始。当所有的玩家准备好之后，下一步的动作实施者为主线程，即开始游戏。</li> <li>对于CyclicBarrier，假设有一家公司要全体员工进行团建活动，活动内容为翻越三个障碍物，每一个人翻越障碍物所用的时间是不一样的。但是公司要求所有人在翻越当前障碍物之后再开始翻越下一个障碍物，也就是所有人翻越第一个障碍物之后，才开始翻越第二个，以此类推。类比地，每一个员工都是一个“其他线程”。当所有人都翻越的所有的障碍物之后，程序才结束。而主线程可能早就结束了，这里我们不用管主线程。</li></ul> <h2 id="cyclicbarrier源码分析"><a href="#cyclicbarrier源码分析" class="header-anchor">#</a> CyclicBarrier源码分析</h2> <h3 id="类的继承关系"><a href="#类的继承关系" class="header-anchor">#</a> 类的继承关系</h3> <p><strong>CyclicBarrier没有显示继承哪个父类或者实现哪个父接口, 所有AQS和重入锁不是通过继承实现的，而是通过组合实现的。</strong></p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CyclicBarrier</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><h3 id="类的内部类"><a href="#类的内部类" class="header-anchor">#</a> 类的内部类</h3> <p>CyclicBarrier类存在一个内部类Generation，每一次使用的CycBarrier可以当成Generation的实例，其源代码如下</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Generation</span> <span class="token punctuation">{</span>
+    <span class="token keyword">boolean</span> broken <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>说明: Generation类有一个属性broken，用来表示当前屏障是否被损坏。</p> <h3 id="类的属性"><a href="#类的属性" class="header-anchor">#</a> 类的属性</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CyclicBarrier</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">ReentrantLock</span> lock <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ReentrantLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">Condition</span> trip <span class="token operator">=</span> lock<span class="token punctuation">.</span><span class="token function">newCondition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">int</span> parties<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">Runnable</span> barrierCommand<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Generation</span> generation <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Generation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">private</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>说明: <strong>该属性有一个为ReentrantLock对象，有一个为Condition对象，而Condition对象又是基于AQS的，所以，归根到底，底层还是由AQS提供支持</strong>。</p> <h3 id="类的构造函数"><a href="#类的构造函数" class="header-anchor">#</a> 类的构造函数</h3> <ul><li>CyclicBarrier(int, Runnable)型构造函数</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token class-name">CyclicBarrier</span><span class="token punctuation">(</span><span class="token keyword">int</span> parties<span class="token punctuation">,</span> <span class="token class-name">Runnable</span> barrierAction<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>parties <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">this</span><span class="token punctuation">.</span>parties <span class="token operator">=</span> parties<span class="token punctuation">;</span>
+    
+    <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> parties<span class="token punctuation">;</span>
+    
+    <span class="token keyword">this</span><span class="token punctuation">.</span>barrierCommand <span class="token operator">=</span> barrierAction<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>说明: 该构造函数可以指定关联该CyclicBarrier的线程数量，并且可以指定在所有线程都进入屏障后的执行动作，该执行动作由最后一个进行屏障的线程执行。</p> <ul><li>CyclicBarrier(int)型构造函数</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token class-name">CyclicBarrier</span><span class="token punctuation">(</span><span class="token keyword">int</span> parties<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+    <span class="token keyword">this</span><span class="token punctuation">(</span>parties<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>说明: 该构造函数仅仅执行了关联该CyclicBarrier的线程数量，没有设置执行动作。</p> <h3 id="核心函数-dowait函数"><a href="#核心函数-dowait函数" class="header-anchor">#</a> 核心函数 - dowait函数</h3> <p>此函数为CyclicBarrier类的核心函数，CyclicBarrier类对外提供的await函数在底层都是调用该了doawait函数，其源代码如下。</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">dowait</span><span class="token punctuation">(</span><span class="token keyword">boolean</span> timed<span class="token punctuation">,</span> <span class="token keyword">long</span> nanos<span class="token punctuation">)</span>
+    <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span><span class="token punctuation">,</span> <span class="token class-name">BrokenBarrierException</span><span class="token punctuation">,</span>
+            <span class="token class-name">TimeoutException</span> <span class="token punctuation">{</span>
+    
+    <span class="token keyword">final</span> <span class="token class-name">ReentrantLock</span> lock <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lock<span class="token punctuation">;</span>
+    
+    lock<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        
+        <span class="token keyword">final</span> <span class="token class-name">Generation</span> g <span class="token operator">=</span> generation<span class="token punctuation">;</span>
+        
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>g<span class="token punctuation">.</span>broken<span class="token punctuation">)</span> 
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">BrokenBarrierException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">interrupted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+            
+            <span class="token function">breakBarrier</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">InterruptedException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        
+        
+        <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token operator">--</span>count<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            
+            <span class="token keyword">boolean</span> ranAction <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                
+                <span class="token keyword">final</span> <span class="token class-name">Runnable</span> command <span class="token operator">=</span> barrierCommand<span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>command <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> 
+                    
+                    command<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                
+                ranAction <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                <span class="token comment">// 当所有线程都进入等待后，生成下一次屏障</span>
+                <span class="token function">nextGeneration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>ranAction<span class="token punctuation">)</span> 
+                    
+                    <span class="token function">breakBarrier</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        
+        
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>timed<span class="token punctuation">)</span> 
+                    
+                    trip<span class="token punctuation">.</span><span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+                <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>nanos <span class="token operator">&gt;</span> <span class="token number">0L</span><span class="token punctuation">)</span> 
+                    
+                    nanos <span class="token operator">=</span> trip<span class="token punctuation">.</span><span class="token function">awaitNanos</span><span class="token punctuation">(</span>nanos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> ie<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">==</span> generation <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span> g<span class="token punctuation">.</span>broken<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+                    
+                    <span class="token function">breakBarrier</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    
+                    <span class="token keyword">throw</span> ie<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+
+                    <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">interrupt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>g<span class="token punctuation">.</span>broken<span class="token punctuation">)</span> 
+                <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">BrokenBarrierException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">!=</span> generation<span class="token punctuation">)</span> 
+                
+                <span class="token keyword">return</span> index<span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>timed <span class="token operator">&amp;&amp;</span> nanos <span class="token operator">&lt;=</span> <span class="token number">0L</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+                
+                <span class="token function">breakBarrier</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                
+                <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TimeoutException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+        
+        lock<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>说明: dowait方法的逻辑会进行一系列的判断，大致流程如下:</p> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202203231139297.png" alt="img"></p> <h3 id="核心函数-nextgeneration函数"><a href="#核心函数-nextgeneration函数" class="header-anchor">#</a> 核心函数 - nextGeneration函数</h3> <p>此函数<strong>在所有线程进入屏障后会被调用，即生成下一个版本，所有线程又可以重新进入到屏障中</strong>，其源代码如下</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">nextGeneration</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    trip<span class="token punctuation">.</span><span class="token function">signalAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    count <span class="token operator">=</span> parties<span class="token punctuation">;</span>
+    
+    generation <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Generation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在此函数中会调用AQS的signalAll方法，即唤醒所有等待线程。如果所有的线程都在等待此条件，则唤醒所有线程。其源代码如下</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">void</span> <span class="token function">signalAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isHeldExclusively</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalMonitorStateException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token class-name">Node</span> first <span class="token operator">=</span> firstWaiter<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>first <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> 
+        
+        <span class="token function">doSignalAll</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>说明: 此函数判断头节点是否为空，即条件队列是否为空，然后会调用doSignalAll函数，doSignalAll函数源码如下</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">doSignalAll</span><span class="token punctuation">(</span><span class="token class-name">Node</span> first<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+    lastWaiter <span class="token operator">=</span> firstWaiter <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">do</span> <span class="token punctuation">{</span>
+        
+        <span class="token class-name">Node</span> next <span class="token operator">=</span> first<span class="token punctuation">.</span>nextWaiter<span class="token punctuation">;</span>
+        
+        first<span class="token punctuation">.</span>nextWaiter <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        
+        <span class="token function">transferForSignal</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        first <span class="token operator">=</span> next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>first <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>说明: 此函数会依次将条件队列中的节点转移到同步队列中，会调用到transferForSignal函数，其源码如下</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">final</span> <span class="token keyword">boolean</span> <span class="token function">transferForSignal</span><span class="token punctuation">(</span><span class="token class-name">Node</span> node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">compareAndSetWaitStatus</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> <span class="token class-name">Node</span><span class="token punctuation">.</span>CONDITION<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+    
+    <span class="token class-name">Node</span> p <span class="token operator">=</span> <span class="token function">enq</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> ws <span class="token operator">=</span> p<span class="token punctuation">.</span>waitStatus<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ws <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token operator">!</span><span class="token function">compareAndSetWaitStatus</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> ws<span class="token punctuation">,</span> <span class="token class-name">Node</span><span class="token punctuation">.</span>SIGNAL<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token class-name">LockSupport</span><span class="token punctuation">.</span><span class="token function">unpark</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>thread<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>说明: 此函数的作用就是将处于条件队列中的节点转移到同步队列中，并设置结点的状态信息，其中会调用到enq函数，其源代码如下。</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">private</span> <span class="token class-name">Node</span> <span class="token function">enq</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token class-name">Node</span> node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        
+        <span class="token class-name">Node</span> t <span class="token operator">=</span> tail<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>t <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">compareAndSetHead</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+                tail <span class="token operator">=</span> head<span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+            
+            node<span class="token punctuation">.</span>prev <span class="token operator">=</span> t<span class="token punctuation">;</span> 
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">compareAndSetTail</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> node<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+                
+                t<span class="token punctuation">.</span>next <span class="token operator">=</span> node<span class="token punctuation">;</span> 
+                <span class="token keyword">return</span> t<span class="token punctuation">;</span> 
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>说明: 此函数完成了结点插入同步队列的过程，也很好理解。</p> <p>综合上面的分析可知，newGeneration函数的主要方法的调用如下，之后会通过一个例子详细讲解:</p> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202203231139280.png" alt="img"></p> <h3 id="breakbarrier函数"><a href="#breakbarrier函数" class="header-anchor">#</a> breakBarrier函数</h3> <p>此函数的作用是损坏当前屏障，会唤醒所有在屏障中的线程。源代码如下:</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">breakBarrier</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+    generation<span class="token punctuation">.</span>broken <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    
+    count <span class="token operator">=</span> parties<span class="token punctuation">;</span>
+    
+    trip<span class="token punctuation">.</span><span class="token function">signalAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>说明: 可以看到，此函数也调用了AQS的signalAll函数，由signal函数提供支持。</p> <h2 id="cyclicbarrier实例-图解分析"><a href="#cyclicbarrier实例-图解分析" class="header-anchor">#</a> CyclicBarrier实例-图解分析</h2> <p>下面通过一个例子来详解CyclicBarrier的使用和内部工作机制，源代码如下</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">BrokenBarrierException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">CyclicBarrier</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">CyclicBarrier</span> cb<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token class-name">CyclicBarrier</span> cb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>cb <span class="token operator">=</span> cb<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; going to await&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            cb<span class="token punctuation">.</span><span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; continue&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CyclicBarrierDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span><span class="token punctuation">,</span> <span class="token class-name">BrokenBarrierException</span> <span class="token punctuation">{</span>
+        <span class="token class-name">CyclicBarrier</span> cb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CyclicBarrier</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token string">&quot;barrierAction&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; barrier action&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MyThread</span> t1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token string">&quot;t1&quot;</span><span class="token punctuation">,</span> cb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MyThread</span> t2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token string">&quot;t2&quot;</span><span class="token punctuation">,</span> cb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t1<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t2<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; going to await&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cb<span class="token punctuation">.</span><span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; continue&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>运行结果(某一次):</p> <div class="language-java extra-class"><pre class="language-java"><code>t1 going <span class="token keyword">to</span> <span class="token namespace">await</span>
+main going <span class="token keyword">to</span> <span class="token namespace">await</span>
+t2 going <span class="token keyword">to</span> <span class="token namespace">await</span>
+t2 barrier action
+t2 <span class="token keyword">continue</span>
+t1 <span class="token keyword">continue</span>
+main <span class="token keyword">continue</span>
+</code></pre></div><p>说明: 根据结果可知，可能会存在如下的调用时序。</p> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202203231139085.png" alt="img"></p> <p>说明: 由上图可知，假设t1线程的cb.await是在main线程的cb.barrierAction动作是由最后一个进入屏障的线程执行的。根据时序图，进一步分析出其内部工作流程。</p> <ul><li>main(主)线程执行cb.await操作，主要调用的函数如下。</li></ul> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202203231139697.png" alt="img"></p> <p>说明: 由于ReentrantLock的默认采用非公平策略，所以在dowait函数中调用的是ReentrantLock.NonfairSync的lock函数，由于此时AQS的状态是0，表示还没有被任何线程占用，故main线程可以占用，之后在dowait中会调用trip.await函数，<strong>最终的结果是条件队列中存放了一个包含main线程的结点，并且被禁止运行了，同时，main线程所拥有的资源也被释放了，可以供其他线程获取</strong>。</p> <ul><li>t1线程执行cb.await操作，其中假设t1线程的lock.lock操作在main线程释放了资源之后，则其主要调用的函数如下。</li></ul> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202203231139350.png" alt="img"></p> <p>说明: 可以看到，之后condition queue(条件队列)里面有两个节点，包含t1线程的结点插入在队列的尾部，并且t1线程也被禁止了，因为执行了park操作，此时两个线程都被禁止了。</p> <ul><li>t2线程执行cb.await操作，其中假设t2线程的lock.lock操作在t1线程释放了资源之后，则其主要调用的函数如下。</li></ul> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202203231139320.png" alt="img"></p> <p>说明: 由上图可知，在t2线程执行await操作后，会直接执行command.run方法，不是重新开启一个线程，而是最后进入屏障的线程执行。同时，<strong>会将Condition queue中的所有节点都转移到Sync queue中，并且最后main线程会被unpark，可以继续运行。main线程获取cpu资源，继续运行</strong>。</p> <ul><li>main线程获取cpu资源，继续运行，下图给出了主要的方法调用:</li></ul> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202203231139673.png" alt="img"></p> <p>说明: 其中，由于main线程是在AQS.CO的wait中被park的，所以恢复时，会继续在该方法中运行。运行过后，t1线程被unpark，它获得cpu资源可以继续运行。</p> <ul><li>t1线程获取cpu资源，继续运行，下图给出了主要的方法调用。</li></ul> <p><img src="https://walegarrett-image-1304556108.cos.ap-chengdu.myqcloud.com/markdown_img/202203231139887.png" alt="img"></p> <p>说明: 其中，由于t1线程是在AQS.CO的wait方法中被park，所以恢复时，会继续在该方法中运行。运行过后，Sync queue中保持着一个空节点。头节点与尾节点均指向它。</p> <p>注意: 在线程await过程中中断线程会抛出异常，所有进入屏障的线程都将被释放。至于CyclicBarrier的其他用法，读者可以自行查阅API，不再累赘。</p> <h2 id="和countdonwlatch再对比"><a href="#和countdonwlatch再对比" class="header-anchor">#</a> 和CountDonwLatch再对比</h2> <ul><li>CountDownLatch减计数，CyclicBarrier加计数。</li> <li>CountDownLatch是一次性的，CyclicBarrier可以重用。</li> <li>CountDownLatch和CyclicBarrier都有让多个线程等待同步然后再开始下一步动作的意思，但是<strong>CountDownLatch的下一步的动作实施者是主线程，具有不可重复性；而CyclicBarrier的下一步动作实施者还是“其他线程”本身，具有往复多次实施动作的特点</strong>。</li></ul> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <p><a href="https://pdai.tech/md/java/thread/java-thread-x-juc-tool-cyclicbarrier.html" target="_blank" rel="noopener noreferrer">JUC工具类: CyclicBarrier详解 | Java 全栈知识体系<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://www.cnblogs.com/leesf456/p/5392816.html" target="_blank" rel="noopener noreferrer">JUC工具类: CyclicBarrier详解 | Java 全栈知识体系<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">3/28/2022, 9:29:49 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/notes/blog/多线程与并发/JUC/CountDownLatch.html" class="prev">
+            CountDownLatch
+          </a></span> <span class="next"><a href="/notes/blog/多线程与并发/JUC/Semaphore.html">
+            Semaphore
+          </a></span></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-22d702a7><li class="level-2" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#cyclicbarrier简介" class="sidebar-link reco-side-cyclicbarrier简介" data-v-22d702a7>CyclicBarrier简介</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#cyclicbarrier源码分析" class="sidebar-link reco-side-cyclicbarrier源码分析" data-v-22d702a7>CyclicBarrier源码分析</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#类的继承关系" class="sidebar-link reco-side-类的继承关系" data-v-22d702a7>类的继承关系</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#类的内部类" class="sidebar-link reco-side-类的内部类" data-v-22d702a7>类的内部类</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#类的属性" class="sidebar-link reco-side-类的属性" data-v-22d702a7>类的属性</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#类的构造函数" class="sidebar-link reco-side-类的构造函数" data-v-22d702a7>类的构造函数</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#核心函数-dowait函数" class="sidebar-link reco-side-核心函数-dowait函数" data-v-22d702a7>核心函数 - dowait函数</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#核心函数-nextgeneration函数" class="sidebar-link reco-side-核心函数-nextgeneration函数" data-v-22d702a7>核心函数 - nextGeneration函数</a></li><li class="level-3" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#breakbarrier函数" class="sidebar-link reco-side-breakbarrier函数" data-v-22d702a7>breakBarrier函数</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#cyclicbarrier实例-图解分析" class="sidebar-link reco-side-cyclicbarrier实例-图解分析" data-v-22d702a7>CyclicBarrier实例-图解分析</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#和countdonwlatch再对比" class="sidebar-link reco-side-和countdonwlatch再对比" data-v-22d702a7>和CountDonwLatch再对比</a></li><li class="level-2" data-v-22d702a7><a href="/notes/blog/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/JUC/CyclicBarrier.html#参考" class="sidebar-link reco-side-参考" data-v-22d702a7>参考</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/notes/assets/js/app.c9da24a6.js" defer></script><script src="/notes/assets/js/3.15042843.js" defer></script><script src="/notes/assets/js/1.8ca8e0eb.js" defer></script><script src="/notes/assets/js/97.a72a27df.js" defer></script>
+  </body>
+</html>
